@@ -6,6 +6,7 @@
     <title>八字命理 - 天机</title>
     <link rel="stylesheet" href="../../css/page.css">
     <link rel="stylesheet" href="../../css/bazi.css">
+    <link rel="stylesheet" href="../../css/fortune.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☯</text></svg>">
 </head>
 <body>
@@ -111,12 +112,29 @@
                     </div>
                     <div class="match-result" id="matchResult" style="display: none;"></div>
                 </div>
+
+                <button class="more-details-floating-btn" id="moreDetailsBtn" title="查看深度命理分析">
+                    <span class="btn-glow"></span>
+                    <span class="btn-content">
+                        <span class="btn-icon">🔮</span>
+                        <span class="btn-text">更多详情</span>
+                    </span>
+                </button>
             </section>
 
             <section class="loading-section" id="loadingSection" style="display: none;">
                 <div class="loading-container">
                     <div class="loading-symbol">🎯</div>
                     <p class="loading-text">推演命理中...</p>
+                </div>
+            </section>
+
+            <section class="expanded-details" id="expandedDetails" style="display: none;">
+                <div class="expanded-header">
+                    <h2>🔮 八字深度命理分析</h2>
+                    <button class="close-expanded" id="closeExpanded">×</button>
+                </div>
+                <div class="expanded-content" id="expandedContent">
                 </div>
             </section>
         </main>

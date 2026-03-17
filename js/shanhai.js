@@ -168,4 +168,129 @@
     } else {
         init();
     }
+
+    function setupEventListeners() {
+        const moreDetailsBtn = document.getElementById('moreDetailsBtn');
+        if (moreDetailsBtn) {
+            moreDetailsBtn.addEventListener('click', showExpandedDetails);
+        }
+
+        const closeExpanded = document.getElementById('closeExpanded');
+        if (closeExpanded) {
+            closeExpanded.addEventListener('click', hideExpandedDetails);
+        }
+    }
+
+    function showExpandedDetails() {
+        const expandedDetails = document.getElementById('expandedDetails');
+        const expandedContent = document.getElementById('expandedContent');
+        
+        if (!expandedDetails || !expandedContent) return;
+
+        const mythology = getMythologyHistory();
+        const culture = getCulturalSignificance();
+        const interpretation = getModernInterpretation();
+
+        expandedContent.innerHTML = `
+            <div class="detail-section">
+                <h3>📖 《山海经》历史渊源</h3>
+                <div class="analysis-block">
+                    ${mythology}
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h3>🏛️ 文化意义解析</h3>
+                <div class="analysis-block">
+                    ${culture}
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h3>🔮 现代解读</h3>
+                <div class="analysis-block">
+                    ${interpretation}
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h3>🌟 神兽象征意义</h3>
+                <div class="analysis-block">
+                    <p class="section-title">瑞兽</p>
+                    <p>${Math.random() > 0.5 ? '凤凰：象征吉祥如意，预示着太平盛世的到来。' : '麒麟：象征仁德祥瑞，是太平盛世的标志。'} ${Math.random() > 0.5 ? '龙：象征着权力与尊贵，是中华民族的图腾。' : '龟：象征长寿与智慧，是吉祥的神兽。'}</p>
+                    <p class="section-title">神兽功效</p>
+                    <p>${Math.random() > 0.5 ? '佩戴瑞兽饰品可趋吉避凶，带来好运。' : '在家中摆放神兽摆件可镇宅安宅，提升气场。'} ${Math.random() > 0.5 ? '不同神兽有不同的功效，需根据需要选择。' : '摆放位置也有讲究，不可随意放置。'}</p>
+                </div>
+            </div>
+        `;
+        
+        expandedDetails.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        
+        setTimeout(() => {
+            if (expandedDetails) {
+                expandedDetails.animate([
+                    { opacity: 0, transform: 'translateY(30px)' },
+                    { opacity: 1, transform: 'translateY(0)' }
+                ], {
+                    duration: 500,
+                    easing: 'ease-out'
+                });
+            }
+        }, 10);
+    }
+
+    function hideExpandedDetails() {
+        const expandedDetails = document.getElementById('expandedDetails');
+        if (!expandedDetails) return;
+        
+        expandedDetails.animate([
+            { opacity: 1, transform: 'translateY(0)' },
+            { opacity: 0, transform: 'translateY(30px)' }
+        ], {
+            duration: 400,
+            easing: 'ease-in'
+        }).onfinish = () => {
+            expandedDetails.style.display = 'none';
+            document.body.style.overflow = '';
+        };
+    }
+
+    function getMythologyHistory() {
+        return `
+            <p><span class="highlight">《山海经》</span>是中国古代神话地理名著，成书于战国至西汉时期。全书分为《山经》五卷和《海经》十三卷，记载了古代山川地理、神话传说、奇珍异兽等内容。</p>
+            <p class="section-title">成书背景</p>
+            <p>《山海经》的作者不详，传说为大禹、伯益等人所著。该书保存了大量上古时期的神话传说和地理知识，是研究中国古代文化的重要文献。</p>
+            <p class="section-title">历史价值</p>
+            <p>《山海经》记载了大量山川河流、矿产分布、植物动物等自然科学知识，同时保留了丰富的神话传说，对于研究上古历史、文化、神话具有不可替代的价值。</p>
+            <p class="section-title">神话体系</p>
+            <p>《山海经》构建了完整的神话体系，包括开天辟地的盘古、炼石补天的女娲、射日除妖的后羿等神话人物，以及各种神兽、异人的奇异形象。</p>
+        `;
+    }
+
+    function getCulturalSignificance() {
+        return `
+            <p class="section-title">文学影响</p>
+            <p>《山海经》对后世文学产生了深远影响，屈原《离骚》、庄子的《逍遥游》等作品都受到《山海经》神话的影响。它是中国浪漫主义文学的源头之一。</p>
+            <p class="section-title">艺术价值</p>
+            <p>《山海经》中的神兽异形象成为古代艺术的重要题材，从青铜器到玉器，从绘画到雕刻，都能见到《山海经》神兽的身影。</p>
+            <p class="section-title">思想内涵</p>
+            <p>${Math.random() > 0.5 ? '《山海经》体现了古人天人合一的自然观，强调人与自然的和谐相处。' : '《山海经》蕴含着原始宗教思想，反映了古人对自然力量的敬畏与崇拜。'}</p>
+            <p class="section-title">现代意义</p>
+            <p>${Math.random() > 0.5 ? '《山海经》作为中国传统文化的重要组成部分，对现代文化创意产业有着重要启示。' : '《山海经》的神话思维为现代人提供了丰富的想象空间和创作灵感。'}</p>
+        `;
+    }
+
+    function getModernInterpretation() {
+        return `
+            <p class="section-title">地理解读</p>
+            <p>现代学者认为，《山海经》中记载的山川地理可能反映上古时期的地理面貌。有些学者通过对照现代地图，尝试还原《山海经》中的地理路线。</p>
+            <p class="section-title">神话解读</p>
+            <p>《山海经》中的神兽异人可能是古代部落图腾的反映，也可能是对某些自然现象的神话解释。有些异兽可能是对灭绝动物的夸张描述。</p>
+            <p class="section-title">心理学解读</p>
+            <p>${Math.random() > 0.5 ? '从心理学角度，《山海经》的神话形象反映了古人的集体无意识和原始思维模式。' : '《山海经》中的神兽形象蕴含着古人的情感诉求和精神追求，具有象征意义。'}</p>
+            <p class="section-title">文化创意</p>
+            <p>${Math.random() > 0.5 ? '《山海经》的神兽形象被广泛用于现代游戏、动漫、影视等文化创意产业。' : '越来越多的设计师从《山海经》中汲取灵感，创造具有中国特色的文化产品。'}</p>
+        `;
+    }
 })();

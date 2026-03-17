@@ -6,6 +6,7 @@
     <title>风水堪舆 - 天机</title>
     <link rel="stylesheet" href="../../css/page.css">
     <link rel="stylesheet" href="../../css/fengshui.css">
+    <link rel="stylesheet" href="../../css/fortune.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☯</text></svg>">
 </head>
 <body>
@@ -36,12 +37,29 @@
                 <h2 class="section-title">风水知识</h2>
                 <div class="knowledge-cards" id="knowledgeCards"></div>
             </section>
+
+            <button class="more-details-floating-btn" id="moreDetailsBtn" title="查看深度风水解析">
+                <span class="btn-glow"></span>
+                <span class="btn-content">
+                    <span class="btn-icon">🏠</span>
+                    <span class="btn-text">更多详情</span>
+                </span>
+            </button>
         </main>
 
         <footer class="page-footer">
             <p>© 2024 天机 · 风水知识仅供了解</p>
         </footer>
     </div>
+
+    <section class="expanded-details" id="expandedDetails" style="display: none;">
+        <div class="expanded-header">
+            <h2>🏠 风水深度解析</h2>
+            <button class="close-expanded" id="closeExpanded">×</button>
+        </div>
+        <div class="expanded-content" id="expandedContent">
+        </div>
+    </section>
 
     <script src="../../js/fengshui.js"></script>
 </body>

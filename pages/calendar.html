@@ -6,6 +6,7 @@
     <title>黄历查询 - 天机</title>
     <link rel="stylesheet" href="../../css/page.css">
     <link rel="stylesheet" href="../../css/calendar.css">
+    <link rel="stylesheet" href="../../css/fortune.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☯</text></svg>">
 </head>
 <body>
@@ -27,6 +28,13 @@
                 </div>
                 <div class="today-quick">
                     <button class="btn" id="todayBtn">查看今日</button>
+                </div>
+            </section>
+
+            <section class="loading-section" id="loadingSection" style="display: none;">
+                <div class="loading-container">
+                    <div class="loading-icon">📜</div>
+                    <p class="loading-text">正在推算黄历...</p>
                 </div>
             </section>
 
@@ -81,12 +89,59 @@
                     <h3>今日生肖运势</h3>
                     <div class="zodiac-row" id="zodiacRow"></div>
                 </div>
+
+                <button class="more-details-btn" id="moreDetailsBtn">
+                    <span class="btn-text">更多详情</span>
+                    <span class="btn-icon">📖</span>
+                </button>
             </section>
 
-            <section class="loading-section" id="loadingSection" style="display: none;">
-                <div class="loading-container">
-                    <div class="loading-icon">📜</div>
-                    <p class="loading-text">正在推算黄历...</p>
+            <section class="expanded-details" id="expandedDetails" style="display: none;">
+                <div class="expanded-header">
+                    <h2>黄历深度解析</h2>
+                    <button class="close-expanded" id="closeExpanded">×</button>
+                </div>
+                
+                <div class="expanded-content">
+                    <div class="detail-section">
+                        <h3>📅 五行八字分析</h3>
+                        <div class="analysis-block" id="wuxingAnalysis"></div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>🏠 今日宜忌详解</h3>
+                        <div class="analysis-block" id="yiJiAnalysis"></div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>⏰ 时辰深度解读</h3>
+                        <div class="analysis-block" id="hourAnalysis"></div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>🧭 方位运势分析</h3>
+                        <div class="analysis-block" id="directionAnalysis"></div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>💪 今日养生建议</h3>
+                        <div class="analysis-block" id="healthAnalysis"></div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>💼 事业财运指导</h3>
+                        <div class="analysis-block" id="careerAnalysis"></div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>❤️ 情感人际提示</h3>
+                        <div class="analysis-block" id="loveAnalysis"></div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>🔮 今日吉凶总结</h3>
+                        <div class="analysis-block" id="summaryAnalysis"></div>
+                    </div>
                 </div>
             </section>
         </main>

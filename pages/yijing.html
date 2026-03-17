@@ -6,6 +6,7 @@
     <title>易经解读 - 天机</title>
     <link rel="stylesheet" href="../../css/page.css">
     <link rel="stylesheet" href="../../css/yijing.css">
+    <link rel="stylesheet" href="../../css/fortune.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☯</text></svg>">
 </head>
 <body>
@@ -50,6 +51,14 @@
                 <h2 class="section-title">六十四卦</h2>
                 <div class="hexagrams-grid" id="hexagramsGrid"></div>
             </section>
+
+            <button class="more-details-floating-btn" id="moreDetailsBtn" title="查看深度易经解读">
+                <span class="btn-glow"></span>
+                <span class="btn-content">
+                    <span class="btn-icon">☯</span>
+                    <span class="btn-text">更多详情</span>
+                </span>
+            </button>
         </main>
 
         <footer class="page-footer">
@@ -63,6 +72,15 @@
             <div class="modal-body" id="modalBody"></div>
         </div>
     </div>
+
+    <section class="expanded-details" id="expandedDetails" style="display: none;">
+        <div class="expanded-header">
+            <h2>🔮 易经深度解读</h2>
+            <button class="close-expanded" id="closeExpanded">×</button>
+        </div>
+        <div class="expanded-content" id="expandedContent">
+        </div>
+    </section>
 
     <script src="../../js/yijing.js"></script>
 </body>

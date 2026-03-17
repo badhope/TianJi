@@ -6,6 +6,7 @@
     <title>占卜预测 - 天机</title>
     <link rel="stylesheet" href="../../css/page.css">
     <link rel="stylesheet" href="../../css/yijing.css">
+    <link rel="stylesheet" href="../../css/fortune.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☯</text></svg>">
 </head>
 <body>
@@ -54,12 +55,29 @@
                     <button class="btn" id="anotherBtn">再测一次</button>
                 </div>
             </section>
+
+            <button class="more-details-floating-btn" id="moreDetailsBtn" title="查看深度占卜解读">
+                <span class="btn-glow"></span>
+                <span class="btn-content">
+                    <span class="btn-icon">🔮</span>
+                    <span class="btn-text">更多详情</span>
+                </span>
+            </button>
         </main>
 
         <footer class="page-footer">
             <p>© 2024 天机 · 占卜仅供娱乐参考</p>
         </footer>
     </div>
+
+    <section class="expanded-details" id="expandedDetails" style="display: none;">
+        <div class="expanded-header">
+            <h2>🔮 占卜深度解析</h2>
+            <button class="close-expanded" id="closeExpanded">×</button>
+        </div>
+        <div class="expanded-content" id="expandedContent">
+        </div>
+    </section>
 
     <script src="../../js/divination.js"></script>
 </body>

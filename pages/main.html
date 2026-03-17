@@ -6,8 +6,12 @@
     <title>天机 - 四大板块</title>
     <link rel="stylesheet" href="../css/main.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☯</text></svg>">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
+    <canvas id="bgParticlesCanvas" class="bg-particles"></canvas>
+    <canvas id="energyCanvas" class="energy-canvas"></canvas>
     <div class="main-container">
         <nav class="top-nav">
             <div class="nav-logo">天机</div>
@@ -39,6 +43,14 @@
                 <div class="bg-layer layer-2"></div>
                 <div class="bg-layer layer-3"></div>
             </div>
+        </div>
+
+        <div class="daily-quote" id="dailyQuote">
+            <div class="quote-content">
+                <p class="quote-text" id="quoteText">-loading...</p>
+                <p class="quote-source" id="quoteSource"></p>
+            </div>
+            <button class="quote-refresh" id="quoteRefresh" title="换一句">🔄</button>
         </div>
 
         <section class="four-elements" id="fourElements">

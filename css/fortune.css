@@ -475,6 +475,264 @@ body {
     margin-bottom: 15px;
 }
 
+.more-details-floating-btn {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    padding: 15px 25px;
+    background: linear-gradient(135deg, rgba(201, 162, 39, 0.15) 0%, rgba(139, 0, 0, 0.15) 100%);
+    border: 2px solid var(--primary-gold);
+    border-radius: 50px;
+    color: var(--primary-gold);
+    font-size: 1rem;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    z-index: 10;
+}
+
+.more-details-floating-btn .btn-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(201, 162, 39, 0.4) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+}
+
+.more-details-floating-btn:hover .btn-glow {
+    width: 200px;
+    height: 200px;
+}
+
+.more-details-floating-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(201, 162, 39, 0.5);
+}
+
+.more-details-floating-btn .btn-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.more-details-floating-btn .btn-icon {
+    font-size: 1.2rem;
+    animation: pulse-icon 2s ease-in-out infinite;
+}
+
+@keyframes pulse-icon {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.fortune-result {
+    position: relative;
+    overflow: visible;
+}
+
+.expanded-details {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 5, 10, 0.98);
+    z-index: 2000;
+    overflow-y: auto;
+    animation: expand-appear 0.5s ease;
+}
+
+@keyframes expand-appear {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.expanded-header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 40px;
+    background: linear-gradient(180deg, rgba(10, 10, 15, 0.95) 0%, transparent 100%);
+    border-bottom: 1px solid rgba(201, 162, 39, 0.2);
+    z-index: 10;
+}
+
+.expanded-header h2 {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 2rem;
+    background: linear-gradient(90deg, var(--primary-gold), #FFD700, var(--primary-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s linear infinite;
+    background-size: 200% auto;
+}
+
+@keyframes shimmer {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.close-expanded {
+    width: 50px;
+    height: 50px;
+    background: rgba(201, 162, 39, 0.1);
+    border: 1px solid var(--primary-gold);
+    border-radius: 50%;
+    color: var(--primary-gold);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-expanded:hover {
+    background: var(--primary-gold);
+    color: var(--dark-bg);
+    transform: rotate(90deg);
+}
+
+.expanded-content {
+    padding: 30px 40px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.expanded-content .detail-section {
+    background: linear-gradient(135deg, rgba(30, 30, 35, 0.9) 0%, rgba(20, 20, 25, 0.9) 100%);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(201, 162, 39, 0.15);
+    transition: all 0.3s ease;
+    animation: slide-up 0.5s ease forwards;
+    opacity: 0;
+}
+
+.expanded-content .detail-section:nth-child(1) { animation-delay: 0.1s; }
+.expanded-content .detail-section:nth-child(2) { animation-delay: 0.2s; }
+.expanded-content .detail-section:nth-child(3) { animation-delay: 0.3s; }
+.expanded-content .detail-section:nth-child(4) { animation-delay: 0.4s; }
+.expanded-content .detail-section:nth-child(5) { animation-delay: 0.5s; }
+.expanded-content .detail-section:nth-child(6) { animation-delay: 0.6s; }
+.expanded-content .detail-section:nth-child(7) { animation-delay: 0.7s; }
+.expanded-content .detail-section:nth-child(8) { animation-delay: 0.8s; }
+
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.expanded-content .detail-section:hover {
+    border-color: rgba(201, 162, 39, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.expanded-content .detail-section h3 {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 1.5rem;
+    color: var(--primary-gold);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.expanded-content .analysis-block {
+    color: var(--text-light);
+    line-height: 2;
+    font-size: 1rem;
+}
+
+.expanded-content .analysis-block p {
+    margin-bottom: 15px;
+    text-indent: 2em;
+}
+
+.expanded-content .analysis-block .highlight {
+    color: var(--primary-gold);
+    font-weight: bold;
+}
+
+.expanded-content .analysis-block .positive {
+    color: #4caf50;
+    font-weight: bold;
+}
+
+.expanded-content .analysis-block .negative {
+    color: #f44336;
+    font-weight: bold;
+}
+
+.expanded-content .analysis-block .section-title {
+    font-size: 1.1rem;
+    color: #FFD700;
+    margin: 20px 0 10px;
+    text-indent: 0;
+}
+
+.expanded-content .lucky-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.expanded-content .lucky-item {
+    background: rgba(201, 162, 39, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid rgba(201, 162, 39, 0.2);
+}
+
+.expanded-content .lucky-item .label {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+}
+
+.expanded-content .lucky-item .value {
+    color: var(--primary-gold);
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.expanded-content .warning-box {
+    background: rgba(244, 67, 54, 0.1);
+    border: 1px solid rgba(244, 67, 54, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.expanded-content .warning-box p {
+    color: #ff6b6b;
+    font-size: 0.9rem;
+    text-indent: 0;
+}
+
 @media (max-width: 768px) {
     .page-header {
         padding: 20px;

@@ -6,6 +6,7 @@
     <title>奇经八脉 - 天机</title>
     <link rel="stylesheet" href="../../css/page.css">
     <link rel="stylesheet" href="../../css/meridians.css">
+    <link rel="stylesheet" href="../../css/fortune.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☯</text></svg>">
 </head>
 <body>
@@ -43,12 +44,29 @@
                 <h2 class="section-title">修炼方法</h2>
                 <div class="practice-cards" id="practiceCards"></div>
             </section>
+
+            <button class="more-details-floating-btn" id="moreDetailsBtn" title="查看深度经脉解析">
+                <span class="btn-glow"></span>
+                <span class="btn-content">
+                    <span class="btn-icon">🌟</span>
+                    <span class="btn-text">更多详情</span>
+                </span>
+            </button>
         </main>
 
         <footer class="page-footer">
             <p>© 2024 天机 · 养生知识仅供了解</p>
         </footer>
     </div>
+
+    <section class="expanded-details" id="expandedDetails" style="display: none;">
+        <div class="expanded-header">
+            <h2>🌟 奇经八脉深度解析</h2>
+            <button class="close-expanded" id="closeExpanded">×</button>
+        </div>
+        <div class="expanded-content" id="expandedContent">
+        </div>
+    </section>
 
     <div class="modal" id="meridianModal">
         <div class="modal-content">
