@@ -12,6 +12,16 @@
     <img src="https://img.shields.io/badge/license-MIT-c9a227?style=for-the-badge" alt="License">
   </a>
   <img src="https://img.shields.io/badge/版本-3.0.0-c9a227?style=for-the-badge" alt="Version">
+  <img src="https://img.shields.io/badge/HTML5-5-orange?style=for-the-badge&logo=html5" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-3-blue?style=for-the-badge&logo=css3" alt="CSS3">
+  <img src="https://img.shields.io/badge/JavaScript-ES6+-yellow?style=for-the-badge&logo=javascript" alt="JavaScript">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/github/last-commit/badhope/TianJi/main?style=for-the-badge&color=c9a227" alt="Last Commit">
+  <img src="https://img.shields.io/github/issues/badhope/TianJi?style=for-the-badge&color=c9a227" alt="Issues">
+  <img src="https://img.shields.io/github/stars/badhope/TianJi?style=for-the-badge&color=c9a227" alt="Stars">
+  <img src="https://img.shields.io/github/forks/badhope/TianJi?style=for-the-badge&color=c9a227" alt="Forks">
 </p>
 
 ---
@@ -155,6 +165,153 @@ TianJi/
 
 ---
 
+## 📦 安装与使用
+
+### 环境要求
+
+- 现代浏览器（Chrome 80+, Firefox 75+, Safari 13+, Edge 80+）
+- 无需后端服务器，纯静态页面可直接运行
+
+### 本地运行
+
+```bash
+# 克隆项目
+git clone https://github.com/badhope/TianJi.git
+
+# 进入目录
+cd TianJi
+
+# 使用 Python 启动本地服务器
+python -m http.server 8000
+
+# 或使用 PHP
+php -S localhost:8000
+
+# 访问 http://localhost:8000
+```
+
+### 直接打开
+
+直接用浏览器打开 `index.html` 即可体验（部分功能如粒子效果需要本地服务器支持）
+
+---
+
+## 🔧 技术实现细节
+
+### 架构设计
+
+项目采用**模块化、组件化**设计思想：
+
+- **页面层**：28+ 个独立 HTML 页面，按功能模块划分
+- **样式层**：20+ 个 CSS 文件，包含设计系统、组件库、页面样式
+- **逻辑层**：30+ 个 JavaScript 模块，处理业务逻辑和交互
+
+### 核心模块
+
+```javascript
+// 组件系统
+├── js/utils/components.js    // UI组件库（加载提示、弹窗、回到顶部）
+├── js/utils/datetime.js     // 时间工具（日期格式化、农历计算）
+└── js/utils/common.js        // 通用工具函数
+
+// 特效系统
+└── js/effects/particles.js  // 粒子背景特效（Three.js）
+
+// 业务模块
+├── js/fortune.js            // 运势模块
+├── js/bazi.js               // 八字命理
+├── js/yijing.js             // 易经占卜
+└── ...
+```
+
+### 设计系统
+
+```css
+/* 色彩体系 */
+:root {
+    --primary-gold: #c9a227;
+    --primary-gold-light: #d4af37;
+    --primary-gold-dark: #8b6914;
+    --bg-dark: #0a0a0a;
+    --bg-card: #121212;
+    --text-primary: #f5f5f5;
+    --text-secondary: #e0e0e0;
+}
+```
+
+---
+
+## 👥 用户群体分析
+
+### 主要用户画像
+
+| 用户类型 | 需求特点 | 使用场景 |
+|----------|----------|----------|
+| 文化爱好者 | 了解传统文化 | 学习玄学知识、阅读典籍 |
+| 从业人员 | 职业辅助工具 | 命理师、风水师参考 |
+| 休闲用户 | 娱乐消遣 | 每日运势、占卜娱乐 |
+| 学生群体 | 学术研究 | 论文资料、民俗调研 |
+
+### 商业应用场景
+
+1. **教育培训**：传统文化课程辅助教材
+2. **咨询服务业**：命理、风水咨询服务工具
+3. **内容媒体**：玄学文化内容输出平台
+
+---
+
+## 🔮 未来扩展方向（规划中）
+
+### 功能扩展
+
+- [ ] 用户系统：登录注册、收藏同步、云端数据
+- [ ] 社区功能：用户分享、评论互动
+- [ ] 高级付费内容：深度分析报告
+- [ ] API 接口：开放数据接口供第三方调用
+- [ ] 多语言支持：英文、日文等国际版本
+
+### 技术升级
+
+- [ ] PWA 支持：离线访问、主屏幕安装
+- [ ] SSR 渲染：SEO 优化
+- [ ] TypeScript 重构：类型安全
+- [ ] 单元测试：代码可靠性
+
+### 小程序开发
+
+微信小程序/支付宝小程序版本规划中：
+- 基础功能移植
+- 扫码识别
+- 分享朋友圈
+
+### 后端集成
+
+- [ ] Node.js API 服务
+- [ ] 用户数据存储
+- [ ] 支付功能
+
+---
+
+## 🤝 贡献指南
+
+### 欢迎贡献
+
+我们欢迎任何形式的贡献：
+- 🐛 Bug 修复
+- ✨ 新功能开发
+- 📖 文档改进
+- 🎨 UI/UX 优化
+
+### 提交流程
+
+1. **Fork** 本仓库
+2. 创建特性分支：`git checkout -b feature/your-feature`
+3. 提交更改：`git commit -m 'Add some feature'`
+4. 推送分支：`git push origin feature/your-feature`
+5. 提交 **Pull Request**
+
+---
+
 ## 🚀 部署指南
 
 ### 方法一：GitHub Pages 自动部署
@@ -256,32 +413,6 @@ http-server -p 8000
 ## 📄 开源许可
 
 本项目基于 **MIT License** 开源。
-
----
-
-## 🔮 未来扩展方向
-
-### 功能扩展
-
-- [ ] 用户系统（登录、收藏同步）
-- [ ] 社区功能（用户分享、评论）
-- [ ] 高级付费内容
-- [ ] API 接口开放
-- [ ] 多语言支持
-
-### 技术升级
-
-- [ ] PWA 支持（离线访问、添加到主屏幕）
-- [ ] SSR 渲染（SEO 优化）
-- [ ] TypeScript 重构
-- [ ] 单元测试覆盖
-
-### 内容扩展
-
-- [ ] 更多玄学典籍
-- [ ] 视频教程内容
-- [ ] 音频播客内容
-- [ ] 互动游戏模块
 
 ---
 
