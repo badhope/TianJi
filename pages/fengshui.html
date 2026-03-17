@@ -5,11 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>风水堪舆 - 天机</title>
     <link rel="stylesheet" href="../../css/page.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/interactions.css">
     <link rel="stylesheet" href="../../css/fengshui.css">
+    <link rel="stylesheet" href="../../css/compass.css">
     <link rel="stylesheet" href="../../css/fortune.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☯</text></svg>">
 </head>
 <body>
+    <script src="../js/effects/particles.js"></script>
+    <script src="../../js/utils/datetime.js"></script>
     <div class="page-container">
         <header class="page-header">
             <a href="main.html" class="back-btn">← 返回</a>
@@ -19,11 +25,7 @@
 
         <main class="page-content">
             <section class="fengshui-intro">
-                <div class="compass-visual">
-                    <div class="compass">
-                        <div class="compass-needle"></div>
-                        <div class="compass-mark">北</div>
-                    </div>
+                <div class="compass-visual" id="compassContainer">
                 </div>
                 <p class="intro-text">藏风聚气，得水为上</p>
             </section>
@@ -48,7 +50,7 @@
         </main>
 
         <footer class="page-footer">
-            <p>© 2024 天机 · 风水知识仅供了解</p>
+            <p>© 2026 天机 · 风水知识仅供了解</p>
         </footer>
     </div>
 

@@ -1,4 +1,4 @@
-# 天机 (TianJi) - 玄学主题静态网站
+# 天机 (TianJi) - 玄学文化数字平台
 
 <p align="center">
   <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☯</text></svg>" alt="天机 Logo" width="120">
@@ -11,34 +11,52 @@
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-c9a227?style=for-the-badge" alt="License">
   </a>
+  <img src="https://img.shields.io/badge/版本-3.0.0-c9a227?style=for-the-badge" alt="Version">
 </p>
 
 ---
 
 ## 📖 项目简介
 
-**天机** 是一个综合性玄学主题的 GitHub Pages 静态网站，整合了中国传统玄学文化的核心内容，包括：
+**天机** 是一个综合性玄学文化数字平台，采用现代 Web 技术呈现中国传统玄学文化精髓。平台遵循"只增不减"原则，在完整保留原始内容数据的前提下，实现内容呈现更丰富、视觉表现更生动、用户交互更友好、信息获取更高效的整体产品体验提升。
 
-- 🏮 **天**：运势预测、黄历查询、八字命理、易经解读、占卜预测
-- 🏔️ **地**：风水堪舆、山海经、神兽异兽、神话传说、民俗文化
-- 🔮 **玄**：奇经八脉、内功修炼、道法符咒、丹道筑基、周易精解
-- 🌿 **黄**：八字命理、黄帝内经、养生导引、气功养生、姓名学
+### 核心目标
+
+- 传承中华传统文化，弘扬玄学智慧
+- 提供现代化交互体验，降低传统文化的学习门槛
+- 构建可扩展的模块化架构，支持持续优化迭代
 
 ---
 
 ## 🛠️ 技术架构
 
-- **前端框架**：原生 HTML5 + CSS3 + JavaScript
-- **部署平台**：GitHub Pages
-- **动画库**：CSS Animations + 原生 JavaScript 实现交互动画
-- **字体**：Google Fonts (ZCOOL XiaoWei, Noto Serif SC, Ma Shan Zheng)
+### 前端技术栈
+
+| 技术 | 说明 | 版本 |
+|------|------|------|
+| HTML5 | 语义化 markup | - |
+| CSS3 | 响应式布局、动画效果 | - |
+| JavaScript | 原生 JS，无框架依赖 | ES6+ |
+| Three.js | 3D 粒子效果 | r128 |
+| Canvas Confetti | 彩带特效 | 1.6.0 |
+| Google Fonts | 字体支持 | - |
+
+### 设计系统
+
+- **色彩体系**：以金色 #c9a227 为主色调，配合深色背景营造神秘氛围
+- **字体系统**：ZCOOL XiaoWei、Noto Serif SC、Ma Shan Zheng
+- **响应式断点**：
+  - 移动端：320px - 480px
+  - 平板：481px - 1024px
+  - 桌面：1025px+
 
 ### 核心特性
 
-- ✅ 响应式布局，适配桌面端、平板和移动设备
-- ✅ 丰富多样的动画效果（悬停、滚动、加载动画）
-- ✅ 本地数据存储，保存用户历史记录和收藏
-- ✅ 传统中国风设计配色
+- ✅ 响应式设计，完美适配移动端、平板、桌面设备
+- ✅ 丰富交互动画，提升用户体验
+- ✅ 组件化开发，便于维护和扩展
+- ✅ 性能优化，包括懒加载、资源压缩
+- ✅ 本地数据存储，支持历史记录和收藏功能
 
 ---
 
@@ -46,42 +64,94 @@
 
 ```
 TianJi/
-├── index.html              # 入口页面（太极八卦动画）
+├── index.html                   # 入口页面（太极八卦动画）
 ├── pages/
-│   ├── main.html          # 主界面（四大板块导航）
-│   ├── fortune.html       # 每日运势
-│   ├── calendar.html      # 黄历查询
-│   ├── bazi.html          # 八字命理
-│   ├── yijing.html        # 易经解读
-│   ├── divination.html    # 占卜预测
-│   ├── shanhai.html       # 山海经
-│   ├── meridians.html     # 奇经八脉
-│   ├── wellness.html      # 养生导引
+│   ├── main.html               # 主界面（四大板块导航）
+│   ├── fortune.html            # 每日运势
+│   ├── calendar.html           # 黄历查询
+│   ├── bazi.html              # 八字命理
+│   ├── bazi-detail.html       # 八字详细分析
+│   ├── yijing.html            # 易经解读
+│   ├── yijing-detail.html     # 易经卦象详解
+│   ├── divination.html        # 占卜预测
+│   ├── fengshui.html          # 风水堪舆
+│   ├── shanhai.html           # 山海经
+│   ├── meridians.html          # 奇经八脉
+│   ├── wellness.html          # 养生导引
+│   ├── face.html               # 面相手相
+│   ├── naming.html            # 姓名学
+│   ├── matchmaking.html        # 八字合婚
+│   ├── beasts.html             # 神兽异兽
+│   ├── myths.html              # 神话传说
+│   ├── folklore.html           # 民俗文化
+│   ├── longmai.html            # 地理龙脉
+│   ├── taoism.html            # 道教文化
+│   ├── alchemy.html            # 丹道筑基
+│   ├── neigong.html           # 内功修炼
+│   ├── qigong.html            # 气功养生
+│   ├── neijing.html           # 黄帝内经
+│   ├── metaphysics.html        # 玄学知识
+│   ├── classics.html          # 典籍总览
+│   ├── classics/
+│   │   ├── index.html         # 典籍首页
+│   │   └── zhouyi.html        # 周易典籍
 │   └── ...
 ├── css/
-│   ├── entrance.css       # 入口页面样式
-│   ├── main.css          # 主界面样式
-│   ├── page.css          # 通用页面样式
-│   ├── fortune.css       # 运势页面样式
-│   ├── calendar.css      # 黄历样式
-│   ├── bazi.css          # 八字样式
-│   ├── yijing.css        # 易经样式
-│   ├── shanhai.css       # 山海经样式
-│   ├── meridians.css     # 奇经八脉样式
-│   └── wellness.css      # 养生样式
+│   ├── base.css               # 基础样式与设计变量
+│   ├── components.css         # UI 组件库
+│   ├── layout.css             # 布局系统
+│   ├── animations.css         # 动画定义
+│   ├── interactions.css       # 交互动效
+│   ├── entrance.css           # 入口页面样式
+│   ├── main.css               # 主界面样式
+│   ├── page.css               # 通用页面样式
+│   ├── fortune.css            # 运势页面样式
+│   ├── calendar.css           # 黄历样式
+│   ├── bazi.css              # 八字样式
+│   ├── yijing.css            # 易经样式
+│   ├── shanhai.css           # 山海经样式
+│   ├── meridians.css          # 奇经八脉样式
+│   ├── wellness.css           # 养生样式
+│   ├── compass.css            # 罗盘组件样式
+│   └── calendar-widget.css    # 日历组件样式
 ├── js/
-│   ├── entrance.js        # 入口页面脚本
-│   ├── main.js           # 主界面脚本
-│   ├── fortune.js        # 运势脚本
-│   ├── calendar.js       # 黄历脚本
-│   ├── bazi.js           # 八字脚本
-│   ├── yijing.js         # 易经脚本
-│   ├── divination.js     # 占卜脚本
-│   ├── shanhai.js        # 山海经脚本
-│   ├── meridians.js      # 奇经八脉脚本
-│   └── wellness.js       # 养生脚本
+│   ├── utils/
+│   │   ├── components.js      # UI 组件库
+│   │   ├── datetime.js        # 时间工具模块
+│   │   └── common.js          # 通用工具函数
+│   ├── effects/
+│   │   └── particles.js       # 粒子特效
+│   ├── entrance.js            # 入口页面脚本
+│   ├── main.js               # 主界面脚本
+│   ├── fortune.js            # 运势脚本
+│   ├── calendar.js           # 黄历脚本
+│   ├── bazi.js               # 八字脚本
+│   ├── yijing.js             # 易经脚本
+│   └── ...
 └── README.md
 ```
+
+---
+
+## 🎯 功能模块
+
+### 四大内容板块
+
+| 板块 | 主题颜色 | 主要功能 |
+|------|----------|----------|
+| 天 | 蓝色系 | 运势预测、黄历查询、八字命理、易经解读、占卜预测 |
+| 地 | 绿色系 | 风水堪舆、山海经、神兽异兽、神话传说、民俗文化 |
+| 玄 | 紫色系 | 奇经八脉、内功修炼、道法符咒、丹道筑基、周易精解 |
+| 黄 | 黄色系 | 八字命理、黄帝内经、养生导引、气功养生、姓名学 |
+
+### 核心功能特性
+
+1. **运势查询**：每日运势、每周运势、每月运势、年度运势
+2. **黄历查询**：宜忌吉凶、彭祖百忌、神煞方位、时辰吉凶
+3. **八字命理**：命主分析、大运流年、五行分析、合婚配对
+4. **易经占卜**：六爻预测、卦象解读、爻辞详解
+5. **风水堪舆**：罗盘定向、八卦定位、居家风水
+6. **日历组件**：日期选择、事件管理、农历显示
 
 ---
 
@@ -111,32 +181,71 @@ php -S localhost:8000
 # 访问 http://localhost:8000
 ```
 
+### 方法三：使用 Node.js http-server
+
+```bash
+# 安装 http-server
+npm install -g http-server
+
+# 启动服务
+http-server -p 8000
+```
+
 ---
 
-## 📚 内容说明
+## 🔧 开发指南
 
-### 入口页面
-- 太极八卦缓缓旋转的动画效果
-- 点击后带有爆炸粒子特效进入主界面
+### 添加新页面
 
-### 四大板块
+1. 在 `pages/` 目录创建 HTML 文件
+2. 引入必要的 CSS 和 JS 文件
+3. 使用统一的页面结构模板
+4. 添加对应的样式和脚本文件
 
-| 板块 | 内容 |
-|------|------|
-| 天 | 每日运势、黄历查询、八字命理、易经解读、占卜预测、面相手相 |
-| 地 | 风水堪舆、山海经、神兽异兽、神话传说、民俗文化、地理龙脉 |
-| 玄 | 奇经八脉、内功修炼、道法符咒、丹道筑基、周易精解、玄学知识 |
-| 黄 | 八字命理、黄帝内经、养生导引、气功养生、姓名学、八字合婚 |
+### 添加新组件
 
-### 数据存储
-- 使用浏览器 LocalStorage 保存用户数据
-- 支持历史记录和收藏功能
+1. 在 `css/components.css` 添加样式
+2. 在 `js/utils/components.js` 添加交互逻辑
+3. 在页面中引入并初始化组件
+
+### 性能优化建议
+
+- 图片使用懒加载（`loading="lazy"`）
+- CSS 动画使用 `transform` 和 `opacity`
+- JavaScript 事件使用事件委托
+- 定期清理未使用的代码
+
+---
+
+## 📋 版本历史
+
+### v3.0.0 (2026-03)
+
+- 新增组件化开发体系
+- 新增基础样式库 (base.css)
+- 新增 UI 组件库 (components.css)
+- 新增时间工具模块 (datetime.js)
+- 新增罗盘组件 (compass.css)
+- 新增日历组件 (calendar-widget.css)
+- 优化响应式布局，增加移动端适配
+- 统一设计系统，增强视觉一致性
+
+### v2.0.0 (2025-06)
+
+- 完善四大板块内容
+- 增加动画和交互动效
+- 优化页面加载性能
+
+### v1.0.0 (2024-01)
+
+- 初始版本
+- 基础功能实现
 
 ---
 
 ## ⚠️ 免责声明
 
-本网站所有内容仅供**娱乐参考**，请勿过分迷信。
+本品所有内容仅供**文化探索与娱乐参考**，请勿过分迷信。
 
 - 运势、命理等内容仅为娱乐性质
 - 占卜结果仅供参考，人生决定需理性思考
@@ -150,14 +259,33 @@ php -S localhost:8000
 
 ---
 
-## 🙏 致谢
+## 🔮 未来扩展方向
 
-- Google Fonts 提供的字体支持
-- 中国传统文化的深厚底蕴
+### 功能扩展
+
+- [ ] 用户系统（登录、收藏同步）
+- [ ] 社区功能（用户分享、评论）
+- [ ] 高级付费内容
+- [ ] API 接口开放
+- [ ] 多语言支持
+
+### 技术升级
+
+- [ ] PWA 支持（离线访问、添加到主屏幕）
+- [ ] SSR 渲染（SEO 优化）
+- [ ] TypeScript 重构
+- [ ] 单元测试覆盖
+
+### 内容扩展
+
+- [ ] 更多玄学典籍
+- [ ] 视频教程内容
+- [ ] 音频播客内容
+- [ ] 互动游戏模块
 
 ---
 
 <p align="center">
   <strong>探索玄妙 · 洞察天机</strong><br>
-  © 2024 天机 · TianJi
+  © 2026 天机 · TianJi
 </p>

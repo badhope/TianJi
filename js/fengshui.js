@@ -38,6 +38,14 @@
     function init() {
         renderTools();
         renderKnowledge();
+        setupEventListeners();
+        initCompass();
+    }
+
+    function initCompass() {
+        if (window.Compass) {
+            window.Compass.init('compassContainer');
+        }
     }
 
     function renderTools() {
@@ -65,12 +73,6 @@
         document.addEventListener('DOMContentLoaded', init);
     } else {
         init();
-    }
-
-    function init() {
-        renderTools();
-        renderKnowledge();
-        setupEventListeners();
     }
 
     function setupEventListeners() {

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>民俗风情 - 天机</title>
+    <link rel="stylesheet" href="../css/page.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/interactions.css">
+    <link rel="stylesheet" href="../css/shanhai.css">
+    <link rel="stylesheet" href="../css/fortune.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏮</text></svg>">
+</head>
+<body>
+    <script src="../js/effects/particles.js"></script>
+    <div class="page-container">
+        <header class="page-header">
+            <a href="main.html" class="back-btn">← 返回</a>
+            <h1 class="page-title">🏮 民俗风情</h1>
+            <div class="header-decoration"></div>
+        </header>
+
+        <main class="page-content">
+            <section class="intro-section">
+                <p class="intro-text">了解传统节日习俗、民间禁忌与传统礼仪</p>
+            </section>
+
+            <section class="festivals-section">
+                <h2 class="section-title">🎉 传统节日</h2>
+                <div class="festivals-grid" id="festivalsGrid"></div>
+            </section>
+
+            <section class="taboos-section">
+                <h2 class="section-title">⚠️ 民间禁忌</h2>
+                <div class="taboos-list" id="taboosList"></div>
+            </section>
+
+            <section class="customs-section">
+                <h2 class="section-title">📿 传统礼仪</h2>
+                <div class="customs-grid" id="customsGrid"></div>
+            </section>
+
+            <button class="more-details-floating-btn" id="moreDetailsBtn" title="查看深度民俗解析">
+                <span class="btn-glow"></span>
+                <span class="btn-content">
+                    <span class="btn-icon">🏮</span>
+                    <span class="btn-text">更多详情</span>
+                </span>
+            </button>
+        </main>
+
+        <footer class="page-footer">
+            <p>© 2026 天机 · 民俗文化仅供了解</p>
+        </footer>
+    </div>
+
+    <section class="expanded-details" id="expandedDetails" style="display: none;">
+        <div class="expanded-header">
+            <h2>🏮 民俗深度解析</h2>
+            <button class="close-expanded" id="closeExpanded">×</button>
+        </div>
+        <div class="expanded-content" id="expandedContent">
+        </div>
+    </section>
+
+    <script src="../js/folklore.js"></script>
+</body>
+</html>

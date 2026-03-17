@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>神兽图鉴 - 天机</title>
+    <link rel="stylesheet" href="../css/page.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/interactions.css">
+    <link rel="stylesheet" href="../css/shanhai.css">
+    <link rel="stylesheet" href="../css/fortune.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐉</text></svg>">
+</head>
+<body>
+    <script src="../js/effects/particles.js"></script>
+    <div class="page-container">
+        <header class="page-header">
+            <a href="main.html" class="back-btn">← 返回</a>
+            <h1 class="page-title">🐉 神兽图鉴</h1>
+            <div class="header-decoration"></div>
+        </header>
+
+        <main class="page-content">
+            <section class="intro-section">
+                <p class="intro-text">探寻上古神兽，了解神兽象征意义与文化内涵</p>
+            </section>
+
+            <section class="beasts-category">
+                <h2 class="section-title">🐲 瑞兽</h2>
+                <div class="beasts-grid" id="ruishouGrid"></div>
+            </section>
+
+            <section class="beasts-category">
+                <h2 class="section-title">🦁 凶兽</h2>
+                <div class="beasts-grid" id="xiongshouGrid"></div>
+            </section>
+
+            <section class="beasts-category">
+                <h2 class="section-title">🦅 神鸟</h2>
+                <div class="beasts-grid" id="shenniaoGrid"></div>
+            </section>
+
+            <section class="beasts-category">
+                <h2 class="section-title">🐢 灵兽</h2>
+                <div class="beasts-grid" id="lingshouGrid"></div>
+            </section>
+
+            <button class="more-details-floating-btn" id="moreDetailsBtn" title="查看深度神兽解析">
+                <span class="btn-glow"></span>
+                <span class="btn-content">
+                    <span class="btn-icon">🐉</span>
+                    <span class="btn-text">更多详情</span>
+                </span>
+            </button>
+        </main>
+
+        <footer class="page-footer">
+            <p>© 2026 天机 · 神兽文化仅供了解</p>
+        </footer>
+    </div>
+
+    <section class="expanded-details" id="expandedDetails" style="display: none;">
+        <div class="expanded-header">
+            <h2>🐉 神兽深度解析</h2>
+            <button class="close-expanded" id="closeExpanded">×</button>
+        </div>
+        <div class="expanded-content" id="expandedContent">
+        </div>
+    </section>
+
+    <div class="modal" id="beastModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">×</button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="../js/beasts.js"></script>
+</body>
+</html>
