@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>壁纸中心 - 天机</title>
+    <link rel="stylesheet" href="../css/page.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/interactions.css">
+    <link rel="stylesheet" href="../css/wallpaper.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖼️</text></svg>">
+</head>
+<body>
+    <div class="page-container">
+        <header class="page-header fade-in">
+            <a href="main.html" class="back-btn">← 返回</a>
+            <h1 class="page-title">壁纸中心</h1>
+            <div class="header-decoration"></div>
+        </header>
+
+        <main class="page-content">
+            <section class="wallpaper-container">
+                <div class="wallpaper-header fade-in" style="--delay: 1">
+                    <h1>🖼️ 玄学壁纸</h1>
+                    <p>精选传统文化主题壁纸，为您的设备增添文化底蕴</p>
+                </div>
+
+                <div class="wallpaper-filters fade-in" style="--delay: 2">
+                    <button class="filter-btn active" data-category="all" onclick="WallpaperApp.filterByCategory('all')">全部</button>
+                    <button class="filter-btn" data-category="玄学" onclick="WallpaperApp.filterByCategory('玄学')">玄学</button>
+                    <button class="filter-btn" data-category="风水" onclick="WallpaperApp.filterByCategory('风水')">风水</button>
+                    <button class="filter-btn" data-category="命理" onclick="WallpaperApp.filterByCategory('命理')">命理</button>
+                    <button class="filter-btn" data-category="养生" onclick="WallpaperApp.filterByCategory('养生')">养生</button>
+                    <button class="filter-btn" data-category="道教" onclick="WallpaperApp.filterByCategory('道教')">道教</button>
+                    <button class="filter-btn" data-category="典籍" onclick="WallpaperApp.filterByCategory('典籍')">典籍</button>
+                    <button class="filter-btn" data-category="神话" onclick="WallpaperApp.filterByCategory('神话')">神话</button>
+                    <button class="filter-btn" data-category="相学" onclick="WallpaperApp.filterByCategory('相学')">相学</button>
+                    <button class="filter-btn" data-category="黄历" onclick="WallpaperApp.filterByCategory('黄历')">黄历</button>
+                    <button class="filter-btn" data-category="占卜" onclick="WallpaperApp.filterByCategory('占卜')">占卜</button>
+                    <button class="filter-btn" data-category="地理" onclick="WallpaperApp.filterByCategory('地理')">地理</button>
+                </div>
+
+                <div class="wallpaper-grid fade-in" style="--delay: 3" id="wallpaperGrid">
+                </div>
+
+                <div class="wallpaper-pagination fade-in" style="--delay: 4" id="wallpaperPagination">
+                </div>
+            </section>
+        </main>
+
+        <footer class="page-footer">
+            <p>© 2026天机龙脉文化，仅供了解</p>
+        </footer>
+    </div>
+
+    <div class="wallpaper-modal" id="wallpaperModal">
+        <div class="wallpaper-modal-content">
+            <button class="wallpaper-modal-close">×</button>
+            <div class="wallpaper-modal-preview"></div>
+            <div class="wallpaper-modal-info">
+                <h2 class="wallpaper-modal-title"></h2>
+                <p class="wallpaper-modal-desc"></p>
+                <div class="wallpaper-modal-actions">
+                    <button class="wallpaper-set-btn primary" data-action="set">设为壁纸</button>
+                    <button class="wallpaper-set-btn secondary" onclick="WallpaperApp.closePreview()">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/wallpaper.js"></script>
+</body>
+</html>

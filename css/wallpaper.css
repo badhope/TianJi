@@ -1,0 +1,355 @@
+.wallpaper-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.wallpaper-header {
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 30px;
+}
+
+.wallpaper-header h1 {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 3rem;
+    color: var(--primary-gold);
+    margin-bottom: 15px;
+    text-shadow: 0 0 30px var(--glow-gold);
+}
+
+.wallpaper-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.wallpaper-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 25px;
+    background: var(--dark-secondary);
+    border: 1px solid rgba(201, 162, 39, 0.2);
+    border-radius: 25px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary-gold);
+    color: var(--primary-gold);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, rgba(201, 162, 39, 0.2) 0%, rgba(201, 162, 39, 0.1) 100%);
+    border-color: var(--primary-gold);
+    color: var(--primary-gold);
+}
+
+.wallpaper-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.wallpaper-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    aspect-ratio: 9/16;
+    background: var(--dark-secondary);
+}
+
+.wallpaper-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.8) 100%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.wallpaper-card:hover::before {
+    opacity: 1;
+}
+
+.wallpaper-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.wallpaper-preview {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    transition: transform 0.4s ease;
+}
+
+.wallpaper-card:hover .wallpaper-preview {
+    transform: scale(1.05);
+}
+
+.wallpaper-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    z-index: 2;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.wallpaper-card:hover .wallpaper-info {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.wallpaper-title {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.wallpaper-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.wallpaper-tag {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.wallpaper-actions {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 3;
+    display: flex;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.wallpaper-card:hover .wallpaper-actions {
+    opacity: 1;
+}
+
+.wallpaper-action-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+.wallpaper-action-btn:hover {
+    transform: scale(1.1);
+}
+
+.wallpaper-action-btn.liked {
+    background: rgba(220, 53, 69, 0.8);
+}
+
+.wallpaper-action-btn.favorited {
+    background: rgba(201, 162, 39, 0.8);
+}
+
+.wallpaper-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.pagination-btn {
+    padding: 10px 20px;
+    background: var(--dark-secondary);
+    border: 1px solid rgba(201, 162, 39, 0.2);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    border-color: var(--primary-gold);
+    color: var(--primary-gold);
+}
+
+.pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagination-btn.active {
+    background: var(--primary-gold);
+    color: #000;
+    border-color: var(--primary-gold);
+}
+
+.wallpaper-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.wallpaper-modal.active {
+    display: flex;
+}
+
+.wallpaper-modal-content {
+    max-width: 600px;
+    width: 100%;
+    background: var(--dark-secondary);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.wallpaper-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.wallpaper-modal-close:hover {
+    background: rgba(220, 53, 69, 0.8);
+    transform: rotate(90deg);
+}
+
+.wallpaper-modal-preview {
+    width: 100%;
+    aspect-ratio: 9/16;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8rem;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.wallpaper-modal-info {
+    padding: 30px;
+}
+
+.wallpaper-modal-title {
+    font-size: 1.5rem;
+    color: var(--primary-gold);
+    margin-bottom: 15px;
+}
+
+.wallpaper-modal-desc {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.wallpaper-modal-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.wallpaper-set-btn {
+    flex: 1;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.wallpaper-set-btn.primary {
+    background: linear-gradient(135deg, var(--primary-gold) 0%, var(--primary-gold-dark) 100%);
+    color: #000;
+}
+
+.wallpaper-set-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(201, 162, 39, 0.4);
+}
+
+.wallpaper-set-btn.secondary {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+    border: 1px solid rgba(201, 162, 39, 0.3);
+}
+
+.wallpaper-set-btn.secondary:hover {
+    border-color: var(--primary-gold);
+    color: var(--primary-gold);
+}
+
+@media (max-width: 768px) {
+    .wallpaper-header h1 {
+        font-size: 2rem;
+    }
+    
+    .wallpaper-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .wallpaper-filters {
+        gap: 10px;
+    }
+    
+    .filter-btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+    
+    .wallpaper-modal {
+        padding: 20px;
+    }
+}
