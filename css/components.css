@@ -80,6 +80,14 @@
     gap: 10px;
 }
 
+.toast-message {
+    flex: 1;
+}
+
+.toast-icon {
+    font-size: 1.1rem;
+}
+
 .toast.success {
     border-color: rgba(34, 139, 34, 0.5);
 }

@@ -1,4 +1,21 @@
 (function() {
+    function showToast(message, type = 'info') {
+        let container = document.querySelector('.toast-container');
+        if (!container) {
+            container = document.createElement('div');
+            container.className = 'toast-container';
+            document.body.appendChild(container);
+        }
+        const toast = document.createElement('div');
+        toast.className = `toast ${type}`;
+        toast.innerHTML = `<span class="toast-icon">${type === 'success' ? '✓' : type === 'error' ? '✕' : type === 'warning' ? '⚠' : 'ℹ'}</span><span class="toast-message">${message}</span>`;
+        container.appendChild(toast);
+        setTimeout(() => {
+            toast.classList.add('hiding');
+            setTimeout(() => toast.remove(), 300);
+        }, 2500);
+    }
+
     const userPanel = document.getElementById('userPanel');
     const userToggle = document.getElementById('userToggle');
     const historyList = document.getElementById('historyList');
@@ -208,7 +225,7 @@
         const query = searchInput.value.trim();
         if (query) {
             console.log('Searching for:', query);
-            alert('搜索功能开发中: ' + query);
+            showToast('搜索功能开发中: ' + query, 'warning');
         }
     }
 

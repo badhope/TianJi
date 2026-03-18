@@ -1,4 +1,21 @@
 (function() {
+    function showToast(message, type = 'info') {
+        let container = document.querySelector('.toast-container');
+        if (!container) {
+            container = document.createElement('div');
+            container.className = 'toast-container';
+            document.body.appendChild(container);
+        }
+        const toast = document.createElement('div');
+        toast.className = `toast ${type}`;
+        toast.innerHTML = `<span class="toast-icon">${type === 'success' ? '✓' : type === 'error' ? '✕' : 'ℹ'}</span><span class="toast-message">${message}</span>`;
+        container.appendChild(toast);
+        setTimeout(() => {
+            toast.classList.add('hiding');
+            setTimeout(() => toast.remove(), 300);
+        }, 2500);
+    }
+
     const timelineData = [
         { era: '混沌时期', event: '混沌初开', description: '天地未分，混沌如鸡子', icon: '🌑' },
         { era: '盘古开天', event: '开天辟地', description: '盘古大神挥斧劈开天地', icon: '🪓' },
@@ -101,11 +118,11 @@
     }
 
     function showGodDetail(god) {
-        alert(`${god.name} - ${god.title}\n${god.description}\n神力：${god.power}`);
+        showToast(`${god.name} - ${god.title}\n${god.description}\n神力：${god.power}`, 'success');
     }
 
     function showHeroDetail(hero) {
-        alert(`${hero.name} - ${hero.achievement}\n${hero.description}`);
+        showToast(`${hero.name} - ${hero.achievement}\n${hero.description}`, 'success');
     }
 
     function showExpandedDetails() {

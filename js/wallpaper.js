@@ -1,4 +1,22 @@
-const WallpaperApp = {
+(function() {
+    function showToast(message, type = 'info') {
+        let container = document.querySelector('.wallpaper-toast-container');
+        if (!container) {
+            container = document.createElement('div');
+            container.className = 'wallpaper-toast-container';
+            document.body.appendChild(container);
+        }
+        const toast = document.createElement('div');
+        toast.className = `wallpaper-toast ${type}`;
+        toast.innerHTML = `<span class="toast-icon">${type === 'success' ? '✓' : type === 'error' ? '✕' : 'ℹ'}</span><span class="toast-message">${message}</span>`;
+        container.appendChild(toast);
+        setTimeout(() => {
+            toast.classList.add('hiding');
+            setTimeout(() => toast.remove(), 300);
+        }, 2500);
+    }
+
+    const WallpaperApp = {
     currentPage: 1,
     itemsPerPage: 12,
     currentCategory: 'all',
@@ -201,9 +219,9 @@ const WallpaperApp = {
         
         try {
             localStorage.setItem('userWallpaper', JSON.stringify(wallpaper));
-            alert('壁纸已设置为: ' + wallpaper.title);
+            showToast('壁纸已设置为: ' + wallpaper.title, 'success');
         } catch (e) {
-            alert('设置失败，请重试');
+            showToast('设置失败，请重试', 'error');
         }
     },
     

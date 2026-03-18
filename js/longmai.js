@@ -1,4 +1,21 @@
 (function() {
+    function showToast(message, type = 'info') {
+        let container = document.querySelector('.toast-container');
+        if (!container) {
+            container = document.createElement('div');
+            container.className = 'toast-container';
+            document.body.appendChild(container);
+        }
+        const toast = document.createElement('div');
+        toast.className = `toast ${type}`;
+        toast.innerHTML = `<span class="toast-icon">${type === 'success' ? '✓' : type === 'error' ? '✕' : 'ℹ'}</span><span class="toast-message">${message}</span>`;
+        container.appendChild(toast);
+        setTimeout(() => {
+            toast.classList.add('hiding');
+            setTimeout(() => toast.remove(), 300);
+        }, 2500);
+    }
+
     const dragonsData = [
         { 
             name: '北干龙', 
@@ -116,11 +133,11 @@
     }
 
     function showDragonDetail(dragon) {
-        alert(`${dragon.name}\n${dragon.description}\n经行省份：${dragon.provinces}\n著名山脉：${dragon.famous.join('、')}`);
+        showToast(`${dragon.name}\n${dragon.description}\n经行省份：${dragon.provinces}\n著名山脉：${dragon.famous.join('、')}`, 'success');
     }
 
     function showMountainDetail(mountain) {
-        alert(`${mountain.name} (${mountain.location})\n${mountain.rank}\n${mountain.description}\n风水：${mountain.fengshui}`);
+        showToast(`${mountain.name} (${mountain.location})\n${mountain.rank}\n${mountain.description}\n风水：${mountain.fengshui}`, 'success');
     }
 
     function showExpandedDetails() {

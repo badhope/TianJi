@@ -1,4 +1,21 @@
 (function() {
+    function showToast(message, type = 'info') {
+        let container = document.querySelector('.toast-container');
+        if (!container) {
+            container = document.createElement('div');
+            container.className = 'toast-container';
+            document.body.appendChild(container);
+        }
+        const toast = document.createElement('div');
+        toast.className = `toast ${type}`;
+        toast.innerHTML = `<span class="toast-icon">${type === 'success' ? '✓' : type === 'error' ? '✕' : type === 'warning' ? '⚠' : 'ℹ'}</span><span class="toast-message">${message}</span>`;
+        container.appendChild(toast);
+        setTimeout(() => {
+            toast.classList.add('hiding');
+            setTimeout(() => toast.remove(), 300);
+        }, 2500);
+    }
+
     const divinationTypes = {
         yijing: {
             name: '易经占卜',
@@ -151,9 +168,9 @@
             const trimmed = saved.slice(0, 30);
             localStorage.setItem('tianji_divinations', JSON.stringify(trimmed));
             
-            alert('占卜结果已保存！');
+            showToast('占卜结果已保存！', 'success');
         } catch (e) {
-            alert('保存失败');
+            showToast('保存失败', 'error');
         }
     }
 

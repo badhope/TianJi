@@ -48,54 +48,54 @@
         ],
         good: [
             '事业稳步发展，按计划推进即可。与同事协作顺利，团队氛围良好。',
-            '适合处理细节工作，您的细心会得到赏识。注意与上级保持良好沟通。',
-            '工作进展顺利，但需注意劳逸结合。适当放松能提高工作效率。'
+            '工作中有小小的突破，获得领导的表扬。适合继续深耕当前领域。',
+            '职场人际和谐，适合与他人合作项目。财运不错，可能会有意外收获。'
         ],
         average: [
-            '事业运平稳，没有太大起伏。做好本职工作即可，不宜有太大动作。',
-            '可能会遇到一些小阻碍，保持耐心应对。与人为善可化解不必要的矛盾。',
-            '今日适合学习和积累，为未来的发展打下基础。不宜急于求成。'
+            '事业运平稳，按部就班即可。不宜有过大的变动，保持现状是最佳选择。',
+            '工作中有小阻滞，需要耐心处理。与同事沟通要更加注意方式方法。',
+            '今日适合处理杂事和整理工作环境，大项目建议延后处理。'
         ],
         poor: [
-            '事业运低迷，宜静不宜动。避免做出重大决策，耐心等待时机。',
-            '工作中可能遇到挫折或误会，保持低调谨慎。与同事沟通需注意方式方法。',
-            '注意小人是非，避免锋芒过露。调整好心态，韬光养晦为上策。'
+            '事业运低迷，做事难以集中精神。建议处理简单事务，重要决策改日再定。',
+            '工作上可能有小人作祟，注意谨言慎行。与领导沟通要更加圆滑。',
+            '注意与同事的关系处理，避免发生冲突。财运不佳，不宜投资创业。'
         ]
     };
 
     const loveAdvices = {
         excellent: [
-            '今日爱情运极佳！单身者有望遇到理想对象，已有伴侣者感情甜蜜。',
-            '浪漫氛围浓厚，适合约会或向心爱的人表达心意。成功率很高哦！',
-            '与伴侣感情升温，彼此理解和支持。适合谈论未来规划。'
+            '今日爱情运极佳！单身者有望遇到心仪对象，已有伴侣者感情更加甜蜜。',
+            '桃花运旺盛，适合约会表白。两个人的关系会有质的飞跃。',
+            '与伴侣相处融洽，适合计划未来的事情。单身的你可能会收到告白。'
         ],
         good: [
-            '感情运势不错，与另一半相处融洽。适当制造小惊喜能增进感情。',
-            '人缘好，适合参加社交活动。单身者可能会遇到有缘人。',
-            '与伴侣沟通顺畅，关系更加亲密。桃花运不错，值得期待。'
+            '爱情运不错，有机会遇到心动的人。已有伴侣者适合约会增进感情。',
+            '与异性相处愉快，人际关系和谐。适合参加社交活动拓展圈子。',
+            '感情稳定发展，单身者可以主动一些。已有伴侣者适合制造小惊喜。'
         ],
         average: [
-            '感情运一般，保持现状即可。不宜有太大期待，顺其自然为佳。',
-            '可能与伴侣有些小摩擦，及时沟通可以化解。单行者暂无明显桃花。',
-            '适合独处思考，不宜急于追求或改变。给彼此一些空间会更好。'
+            '爱情运平稳，单身者暂无明显机会。建议耐心等待，不要过于主动。',
+            '感情生活中平淡是真，不需要有太大期待。维持现状即可。',
+            '与伴侣相处时注意沟通方式，避免因误会产生矛盾。'
         ],
         poor: [
-            '感情运低迷，容易产生误会或矛盾。需要多沟通，避免冷战。',
-            '单身者今日不宜表白，成功率较低。已有伴侣者需注意第三者介入。',
-            '情绪容易波动，建议控制好脾气，避免伤害重要的人。'
+            '爱情运低迷，单身者不宜主动表白。已有伴侣者注意避免争吵。',
+            '今日感情方面容易受伤，要学会保护自己。不要轻信他人的甜言蜜语。',
+            '桃花运不佳烂桃花多，单身者尤其要谨慎。已有伴侣者可能产生怀疑。'
         ]
     };
 
     const wealthAdvices = {
         excellent: [
-            '财运极佳！可能有意外之财或投资回报。适合把握机会，但也要见好就收。',
-            '今日收益丰厚，适合进行理财投资。但需注意风险控制，切勿贪心。',
-            '财源滚滚来，可能收到红包或礼物。花钱也会有意外收获。'
+            '今日财运极佳！正财偏财皆旺，适合投资理财。可能会有意外之财降临。',
+            '财运亨通，有贵人相助。适合开展新的投资理财计划。',
+            '财务状况极佳，可能会有奖金或额外收入。适合购置大件商品。'
         ],
         good: [
-            '财运不错，正财稳定，偏财有望。可以适当进行投资理财。',
-            '有赚钱机会，适合开展新业务或合作。保持积极心态即可。',
-            '财务状况良好，适合储蓄或购买大件物品。'
+            '财运不错，保持稳定即可。可以适当进行小额投资。',
+            '正财收入稳定，偏财有小惊喜。注意控制不必要的开支。',
+            '财务状况良好，有加薪的可能。适合储蓄和长期投资。'
         ],
         average: [
             '财运平稳，没有太大变化。维持现有理财策略即可。',
@@ -147,6 +147,35 @@
 
     let currentZodiac = null;
     let currentFortune = null;
+
+    const notification = {
+        container: null,
+        init() {
+            if (!this.container) {
+                this.container = document.createElement('div');
+                this.container.className = 'fortune-notification';
+                document.body.appendChild(this.container);
+            }
+        },
+        show(message, type = 'info') {
+            this.init();
+            const icons = { success: '✓', error: '✕', warning: '⚠', info: 'ℹ' };
+            const notification = document.createElement('div');
+            notification.className = `notification-item ${type}`;
+            notification.innerHTML = `
+                <span class="notification-icon">${icons[type] || icons.info}</span>
+                <span class="notification-message">${message}</span>
+            `;
+            this.container.appendChild(notification);
+            setTimeout(() => {
+                notification.classList.add('show');
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                    setTimeout(() => notification.remove(), 300);
+                }, 2500);
+            }, 10);
+        }
+    };
 
     function init() {
         displayTodayDate();
@@ -201,22 +230,22 @@
         if (closeExpanded) closeExpanded.addEventListener('click', hideExpandedDetails);
 
         const modalClose = document.getElementById('modalClose');
-        if (modalClose) modalClose.addEventListener('click', closeModal);
-
         const modal = document.getElementById('detailModal');
-        if (modal) modal.addEventListener('click', (e) => {
-            if (e.target === modal) closeModal();
-        });
+        if (modalClose && modal) {
+            modalClose.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+        }
     }
 
     function selectZodiac(zodiac) {
+        if (!zodiac || !zodiacData[zodiac]) return;
+        
         currentZodiac = zodiac;
         
-        document.querySelectorAll('.zodiac-item').forEach(btn => {
-            btn.classList.remove('active');
-            if (btn.dataset.zodiac === zodiac) {
-                btn.classList.add('active');
-            }
+        document.querySelectorAll('.zodiac-item').forEach(item => {
+            item.classList.toggle('active', item.dataset.zodiac === zodiac);
         });
 
         const loadingSection = document.getElementById('loadingSection');
@@ -224,90 +253,68 @@
         
         if (loadingSection) loadingSection.style.display = 'flex';
         if (fortuneResult) fortuneResult.style.display = 'none';
-
+        
         setTimeout(() => {
-            generateFortune(zodiac);
-        }, 1500);
+            const fortune = generateFortune(zodiac);
+            currentFortune = fortune;
+            
+            if (loadingSection) loadingSection.style.display = 'none';
+            if (fortuneResult) fortuneResult.style.display = 'block';
+            
+            displayFortune(fortune);
+        }, 800);
     }
 
     function generateFortune(zodiac) {
-        const hash = hashCode(zodiac + new Date().toDateString());
-        const rand = (n) => Math.abs(hash + Date.now()) % n;
+        const hash = hashCode(`${zodiac}_${Date.now()}`);
+        const levelRandom = (hash % 100) / 100;
+        let level;
+        if (levelRandom < 0.15) level = 'excellent';
+        else if (levelRandom < 0.45) level = 'good';
+        else if (levelRandom < 0.75) level = 'average';
+        else level = 'poor';
         
-        const overall = Math.floor(rand(40) + 60);
-        const career = Math.floor(rand(40) + 50);
-        const love = Math.floor(rand(40) + 55);
-        const wealth = Math.floor(rand(40) + 50);
-        const health = Math.floor(rand(30) + 70);
-
-        let fortuneLevel;
-        if (overall >= 85) fortuneLevel = 'excellent';
-        else if (overall >= 70) fortuneLevel = 'good';
-        else if (overall >= 55) fortuneLevel = 'average';
-        else fortuneLevel = 'poor';
-
-        const descriptions = fortuneDescriptions[fortuneLevel];
-        const description = descriptions[rand(descriptions.length)];
+        const descriptionList = fortuneDescriptions[level];
+        const description = descriptionList[hash % descriptionList.length];
         
-        const careerAdvice = careerAdvices[fortuneLevel][rand(careerAdvices[fortuneLevel].length)];
-        const loveAdvice = loveAdvices[fortuneLevel][rand(loveAdvices[fortuneLevel].length)];
-        const wealthAdvice = wealthAdvices[fortuneLevel][rand(wealthAdvices[fortuneLevel].length)];
-        const healthAdvice = healthAdvices[fortuneLevel][rand(healthAdvices[fortuneLevel].length)];
-
-        const wuxingData = {};
-        wuxingElements.forEach((el, i) => {
-            const mainWuxing = zodiacData[zodiac].wuxing;
-            if (el === mainWuxing) {
-                wuxingData[el] = '旺盛';
-            } else if ((mainWuxing === '木' && el === '水') || (mainWuxing === '火' && el === '木') || 
-                       (mainWuxing === '土' && el === '火') || (mainWuxing === '金' && el === '土') ||
-                       (mainWuxing === '水' && el === '金')) {
-                wuxingData[el] = '平和';
-            } else if ((mainWuxing === '木' && el === '金') || (mainWuxing === '火' && el === '水') || 
-                       (mainWuxing === '土' && el === '木') || (mainWuxing === '金' && el === '火') ||
-                       (mainWuxing === '水' && el === '土')) {
-                wuxingData[el] = '偏弱';
-            } else {
-                wuxingData[el] = '亏损';
-            }
-        });
-
-        const compatible = zodiacData[zodiac].compatible;
-        const avoid = zodiacData[zodiac].avoid;
-
-        const rand2 = (n) => Math.abs(hash + Date.now() + n) % n;
-
-        currentFortune = {
+        const careerList = careerAdvices[level];
+        const career = careerList[hash % careerList.length];
+        
+        const loveList = loveAdvices[level];
+        const love = loveList[hash % loveList.length];
+        
+        const wealthList = wealthAdvices[level];
+        const wealth = wealthList[hash % wealthList.length];
+        
+        const healthList = healthAdvices[level];
+        const health = healthList[hash % healthList.length];
+        
+        const wuxing = zodiacData[zodiac].wuxing;
+        const wuxingIndex = wuxingElements.indexOf(wuxing);
+        const statusIndex = Math.floor(hash % 4);
+        
+        const luckyColors = shuffleArray([...luckyItems.colors], hash).slice(0, 3);
+        const luckyNumbers = shuffleArray([...luckyItems.numbers], hash + 1).slice(0, 3);
+        const luckyDirections = shuffleArray([...luckyItems.directions], hash + 2).slice(0, 2);
+        const luckyTimes = shuffleArray([...luckyItems.times], hash + 3).slice(0, 2);
+        
+        return {
             zodiac,
-            date: new Date().toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' }),
-            lunar: getLunarDate(new Date()),
-            overall,
+            level,
+            description,
             career,
             love,
             wealth,
             health,
-            wuxing: wuxingData,
-            luckyColor: luckyItems.colors[rand2(luckyItems.colors.length)],
-            luckyNumber: luckyItems.numbers[rand2(luckyItems.numbers.length)],
-            luckyDirection: luckyItems.directions[rand2(luckyItems.directions.length)],
-            luckyTime: luckyItems.times[rand2(luckyItems.times.length)],
-            description,
-            careerAdvice,
-            loveAdvice,
-            wealthAdvice,
-            healthAdvice,
-            compatible,
-            avoid,
-            monthlyFortune: monthlyFortunes[rand2(monthlyFortunes.length)],
-            rank: rand2(12) + 1,
+            wuxing,
+            wuxingStatus: wuxingStatus[statusIndex],
+            wuxingIndex,
+            luckyColors,
+            luckyNumbers,
+            luckyDirections,
+            luckyTimes,
             timestamp: Date.now()
         };
-
-        displayFortune(currentFortune);
-        
-        if (window.addToHistory) {
-            window.addToHistory('每日运势', '☀️', 'fortune.html');
-        }
     }
 
     function hashCode(str) {
@@ -317,148 +324,186 @@
             hash = ((hash << 5) - hash) + char;
             hash = hash & hash;
         }
-        return hash;
+        return Math.abs(hash);
+    }
+
+    function shuffleArray(array, seed) {
+        const newArray = [...array];
+        for (let i = newArray.length - 1; i > 0; i--) {
+            const j = Math.floor(((seed * (i + 1)) % 100) / 100 * (i + 1));
+            [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+        }
+        return newArray;
     }
 
     function displayFortune(fortune) {
-        const loadingSection = document.getElementById('loadingSection');
-        const fortuneResult = document.getElementById('fortuneResult');
+        const zodiac = zodiacData[fortune.zodiac];
         
-        if (loadingSection) loadingSection.style.display = 'none';
-        if (fortuneResult) fortuneResult.style.display = 'block';
-
-        const data = zodiacData[fortune.zodiac];
+        const levelMap = {
+            excellent: { text: '极佳', class: 'level-excellent', stars: 5 },
+            good: { text: '良好', class: 'level-good', stars: 4 },
+            average: { text: '平顺', class: 'level-average', stars: 3 },
+            poor: { text: '欠佳', class: 'level-poor', stars: 2 }
+        };
+        const levelInfo = levelMap[fortune.level];
         
-        const resultZodiacIcon = document.getElementById('resultZodiacIcon');
-        const resultZodiacName = document.getElementById('resultZodiacName');
-        if (resultZodiacIcon) resultZodiacIcon.textContent = data.icon;
-        if (resultZodiacName) resultZodiacName.textContent = `${data.name}年`;
-
-        const resultDate = document.getElementById('resultDate');
-        const resultLunar = document.getElementById('resultLunar');
-        if (resultDate) resultDate.textContent = fortune.date;
-        if (resultLunar) resultLunar.textContent = fortune.lunar;
-
-        const rankValue = document.getElementById('rankValue');
-        if (rankValue) rankValue.textContent = `第${fortune.rank}名`;
-
-        animateScore('overall', fortune.overall);
-        animateScore('career', fortune.career);
-        animateScore('love', fortune.love);
-        animateScore('wealth', fortune.wealth);
-        animateScore('health', fortune.health);
-
-        const overallLevel = document.getElementById('overallLevel');
-        if (overallLevel) {
-            const levels = { excellent: '极佳', good: '良好', average: '一般', poor: '低迷' };
-            let level = '一般';
-            if (fortune.overall >= 85) level = '极佳';
-            else if (fortune.overall >= 70) level = '良好';
-            else if (fortune.overall >= 55) level = '一般';
-            else level = '低迷';
-            overallLevel.textContent = level;
-        }
-
-        const luckyColor = document.getElementById('luckyColor');
-        const luckyNumber = document.getElementById('luckyNumber');
-        const luckyDirection = document.getElementById('luckyDirection');
-        const luckyTime = document.getElementById('luckyTime');
-        
-        if (luckyColor) luckyColor.textContent = fortune.luckyColor;
-        if (luckyNumber) luckyNumber.textContent = fortune.luckyNumber;
-        if (luckyDirection) luckyDirection.textContent = fortune.luckyDirection;
-        if (luckyTime) luckyTime.textContent = fortune.luckyTime;
-
-        const fortuneDesc = document.getElementById('fortuneDesc');
-        if (fortuneDesc) fortuneDesc.textContent = fortune.description;
-
-        const careerAdvice = document.getElementById('careerAdvice');
-        const loveAdvice = document.getElementById('loveAdvice');
-        const wealthAdvice = document.getElementById('wealthAdvice');
-        const healthAdvice = document.getElementById('healthAdvice');
-        
-        if (careerAdvice) careerAdvice.textContent = fortune.careerAdvice;
-        if (loveAdvice) loveAdvice.textContent = fortune.loveAdvice;
-        if (wealthAdvice) wealthAdvice.textContent = fortune.wealthAdvice;
-        if (healthAdvice) healthAdvice.textContent = fortune.healthAdvice;
-
-        const wuxingKeys = ['wood', 'fire', 'earth', 'metal', 'water'];
-        const wuxingNames = ['木', '火', '土', '金', '水'];
-        wuxingKeys.forEach((key, i) => {
-            const el = document.getElementById(`element${key.charAt(0).toUpperCase() + key.slice(1)}`);
-            if (el) el.textContent = fortune.wuxing[wuxingNames[i]];
-        });
-
-        const bestMatch = document.getElementById('bestMatch');
-        const avoidMatch = document.getElementById('avoidMatch');
-        
-        if (bestMatch) {
-            bestMatch.innerHTML = fortune.compatible.map(z => {
-                const d = zodiacData[z.toLowerCase()];
-                return `<span class="match-item">${d.icon}${z}</span>`;
-            }).join('');
-        }
-        
-        if (avoidMatch) {
-            avoidMatch.innerHTML = fortune.avoid.map(z => {
-                const d = zodiacData[z.toLowerCase()];
-                return `<span class="match-item avoid">${d.icon}${z}</span>`;
-            }).join('');
-        }
-
-        const monthlyFortune = document.getElementById('monthlyFortune');
-        if (monthlyFortune) monthlyFortune.textContent = fortune.monthlyFortune;
-
         const overviewStars = document.getElementById('overviewStars');
         if (overviewStars) {
-            let starCount = Math.floor(fortune.overall / 20);
-            overviewStars.innerHTML = '★'.repeat(starCount) + '☆'.repeat(5 - starCount);
+            overviewStars.innerHTML = '★'.repeat(levelInfo.stars) + '☆'.repeat(5 - levelInfo.stars);
         }
+        
+        const overviewLevel = document.getElementById('overviewLevel');
+        if (overviewLevel) {
+            overviewLevel.textContent = `运势${levelInfo.text}`;
+            overviewLevel.className = `overview-level ${levelInfo.class}`;
+        }
+        
+        const overviewDesc = document.getElementById('overviewDesc');
+        if (overviewDesc) {
+            overviewDesc.textContent = fortune.description;
+        }
+        
+        const careerScoreEl = document.getElementById('careerScore');
+        const careerAnalysis = document.getElementById('careerAnalysis');
+        if (careerScoreEl && careerAnalysis) {
+            const levelMultiplier = { excellent: 90, good: 75, average: 55, poor: 35 };
+            const score = levelMultiplier[fortune.level] + Math.floor(Math.random() * 10);
+            careerScoreEl.innerHTML = `<span class="score-value">${score}</span><span class="score-unit">分</span>`;
+            careerAnalysis.textContent = fortune.career;
+        }
+        
+        const wealthScoreEl = document.getElementById('wealthScore');
+        const wealthAnalysis = document.getElementById('wealthAnalysis');
+        if (wealthScoreEl && wealthAnalysis) {
+            const levelMultiplier = { excellent: 88, good: 72, average: 52, poor: 30 };
+            const score = levelMultiplier[fortune.level] + Math.floor(Math.random() * 12);
+            wealthScoreEl.innerHTML = `<span class="score-value">${score}</span><span class="score-unit">分</span>`;
+            wealthAnalysis.textContent = fortune.wealth;
+        }
+        
+        const loveScoreEl = document.getElementById('loveScore');
+        const loveAnalysis = document.getElementById('loveAnalysis');
+        if (loveScoreEl && loveAnalysis) {
+            const levelMultiplier = { excellent: 92, good: 78, average: 58, poor: 38 };
+            const score = levelMultiplier[fortune.level] + Math.floor(Math.random() * 8);
+            loveScoreEl.innerHTML = `<span class="score-value">${score}</span><span class="score-unit">分</span>`;
+            loveAnalysis.textContent = fortune.love;
+        }
+        
+        const healthScoreEl = document.getElementById('healthScore');
+        const healthAnalysis = document.getElementById('healthAnalysis');
+        if (healthScoreEl && healthAnalysis) {
+            const levelMultiplier = { excellent: 95, good: 80, average: 62, poor: 42 };
+            const score = levelMultiplier[fortune.level] + Math.floor(Math.random() * 5);
+            healthScoreEl.innerHTML = `<span class="score-value">${score}</span><span class="score-unit">分</span>`;
+            healthAnalysis.textContent = fortune.health;
+        }
+        
+        const wuxingChart = document.getElementById('wuxingChart');
+        if (wuxingChart) {
+            const wuxingCounts = { 木: 0, 火: 0, 土: 0, 金: 0, 水: 0 };
+            wuxingCounts[zodiac.wuxing] = 3;
+            wuxingChart.innerHTML = Object.entries(wuxingCounts).map(([wx, count]) => `
+                <div class="wuxing-item">
+                    <div class="wuxing-bar" style="height: ${count * 20}%; background: var(--wuxing-${wx})"></div>
+                    <div class="wuxing-label">${wx}</div>
+                </div>
+            `).join('');
+        }
+        
+        const wuxingAnalysis = document.getElementById('wuxingAnalysis');
+        if (wuxingAnalysis) {
+            const dominant = [fortune.wuxing, 3];
+            const weak = wuxingElements.filter(e => e !== fortune.wuxing)[Math.floor(Math.random() * 4)];
+            wuxingAnalysis.innerHTML = `<p>您的八字中${dominant[0]}气最旺(${dominant[1]}个)，${weak}气较弱。${getWuxingBalanceAdvice(dominant[0], weak)}</p>`;
+        }
+        
+        const dayMasterEl = document.getElementById('dayMaster');
+        if (dayMasterEl) {
+            dayMasterEl.innerHTML = `
+                <div class="day-master-title">日主${zodiac.name}</div>
+                <div class="day-master-wuxing">五行属${zodiac.wuxing}</div>
+                <div class="day-master-advice">${getDayMasterAdvice(zodiac)}</div>
+            `;
+        }
+        
+        const compatibleZodiac = zodiac.compatible.map(z => {
+            const data = zodiacData[z];
+            return `<span class="compatible-item" style="background: ${data.color}20; border-color: ${data.color}">${data.icon} ${data.name}</span>`;
+        }).join('');
+        
+        const avoidZodiac = zodiac.avoid.map(z => {
+            const data = zodiacData[z];
+            return `<span class="avoid-item" style="background: rgba(139,0,0,0.1); border-color: rgba(139,0,0,0.3)">${data.icon} ${data.name}</span>`;
+        }).join('');
+        
+        const bestMatch = document.getElementById('bestMatch');
+        const avoidMatch = document.getElementById('avoidMatch');
+        if (bestMatch) bestMatch.innerHTML = fortune.compatible.map(z => {
+            const data = zodiacData[z];
+            return `<span class="match-zodiac" style="background: ${data.color}15; border: 1px solid ${data.color}40">${data.icon} ${data.name}</span>`;
+        }).join('');
+        if (avoidMatch) avoidMatch.innerHTML = zodiac.avoid.map(z => {
+            const data = zodiacData[z];
+            return `<span class="match-zodiac avoid" style="background: rgba(139,0,0,0.08); border: 1px solid rgba(139,0,0,0.2)">${data.icon} ${data.name}</span>`;
+        }).join('');
+        
+        const luckyColorsEl = document.getElementById('luckyColors');
+        if (luckyColorsEl) luckyColorsEl.textContent = fortune.luckyColors.join('、');
+        
+        const luckyNumbersEl = document.getElementById('luckyNumbers');
+        if (luckyNumbersEl) luckyNumbersEl.textContent = fortune.luckyNumbers.join('、');
+        
+        const luckyDirectionsEl = document.getElementById('luckyDirections');
+        if (luckyDirectionsEl) luckyDirectionsEl.textContent = fortune.luckyDirections.join('、');
+        
+        const luckyTimesEl = document.getElementById('luckyTimes');
+        if (luckyTimesEl) luckyTimesEl.textContent = fortune.luckyTimes.join('、');
+        
+        const zodiacIcon = document.getElementById('zodiacIcon');
+        if (zodiacIcon) zodiacIcon.textContent = zodiac.icon;
+        
+        const zodiacName = document.getElementById('zodiacName');
+        if (zodiacName) zodiacName.textContent = zodiac.name;
+        
+        const monthFortune = document.getElementById('monthFortune');
+        if (monthFortune) monthFortune.textContent = monthlyFortunes[hashCode(zodiac) % monthlyFortunes.length];
 
-        setTimeout(() => {
-            fortuneResult.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 100);
+        const fortuneResult = document.getElementById('fortuneResult');
+        if (fortuneResult) fortuneResult.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    function animateScore(type, value) {
-        const scoreEl = document.getElementById(`${type}Score`);
-        const valueEl = document.getElementById(`${type}Value`);
-        
-        if (!scoreEl || !valueEl) return;
-
-        let current = 0;
-        const duration = 1000;
-        const increment = value / (duration / 16);
-        
-        const animate = () => {
-            current += increment;
-            if (current >= value) {
-                current = value;
-                if (type === 'overall') {
-                    const circle = scoreEl;
-                    const circumference = 2 * Math.PI * 45;
-                    const offset = circumference - (current / 100) * circumference;
-                    circle.style.strokeDashoffset = offset;
-                } else {
-                    scoreEl.style.width = `${current}%`;
-                }
-                valueEl.textContent = Math.round(current);
-                return;
-            }
-            
-            if (type === 'overall') {
-                const circle = scoreEl;
-                const circumference = 2 * Math.PI * 45;
-                const offset = circumference - (current / 100) * circumference;
-                circle.style.strokeDashoffset = offset;
-            } else {
-                scoreEl.style.width = `${current}%`;
-            }
-            valueEl.textContent = Math.round(current);
-            requestAnimationFrame(animate);
+    function getWuxingBalanceAdvice(dominant, weak) {
+        const advices = {
+            '水木': '宜多接触木属性事物，如绿色植物、木质家具。',
+            '木火': '宜多晒太阳，接近火炉等温暖环境。',
+            '火土': '宜食用土属性食物，如山药、红薯等。',
+            '土金': '宜多接触金属物品，如金银饰品。',
+            '金水': '宜多接触水，如游泳、钓鱼等活动。',
+            '水火': '注意水火既济，避免极端情绪波动。',
+            '木土': '宜进行户外活动，接触大自然。',
+            '火金': '宜保持冷静，避免冲动决策。'
         };
-        
-        animate();
+        const key = `${dominant}${weak}`;
+        return advices[key] || '五行平衡，保持现有生活方式即可。';
+    }
+
+    function getDayMasterAdvice(zodiac) {
+        const advices = {
+            rat: '鼠年出生者聪明机敏，善于交际，财运不错。',
+            ox: '牛年出生者踏实稳重，有责任心，适合稳定发展。',
+            tiger: '虎年出生者勇敢果断，领导力强，事业发展迅速。',
+            rabbit: '兔年出生者温柔细腻，人缘好，感情顺利。',
+            dragon: '龙年出生者气宇轩昂，运势强劲，贵人运佳。',
+            snake: '蛇年出生者智慧深沉，直觉敏锐，财运平稳。',
+            horse: '马年出生者热情开朗，善于社交，桃花运旺。',
+            goat: '羊年出生者温柔善良，人缘极佳，财运中等。',
+            monkey: '猴年出生者聪明伶俐，财运不错，偏财运佳。',
+            rooster: '鸡年出生者细心认真，财运稳定，善于理财。',
+            dog: '狗年出生者忠诚可靠，人际关系好，运势平稳。',
+            pig: '猪年出生者诚实厚道，财运不错，桃花运佳。'
+        };
+        return advices[zodiac.zodiac] || '保持现有生活方式，稳步发展。';
     }
 
     function saveFortune() {
@@ -469,9 +514,9 @@
             saved.unshift(currentFortune);
             const trimmed = saved.slice(0, 20);
             localStorage.setItem('tianji_fortunes', JSON.stringify(trimmed));
-            alert('运势已保存！');
+            notification.show('运势已保存！', 'success');
         } catch (e) {
-            console.warn('Storage quota exceeded');
+            notification.show('保存失败，请重试', 'error');
         }
     }
 
@@ -488,34 +533,25 @@
         modalBody.innerHTML = `
             <div class="modal-fortune-detail">
                 <div class="modal-zodiac">
-                    <span class="large-icon">${data.icon}</span>
-                    <span>${data.name}年运势详解</span>
+                    <span class="modal-zodiac-icon">${data.icon}</span>
+                    <span class="modal-zodiac-name">${data.name}年出生</span>
                 </div>
-                <div class="modal-scores">
-                    <div class="modal-score-item">
-                        <span>综合运势</span>
-                        <strong>${currentFortune.overall}分</strong>
-                    </div>
-                    <div class="modal-score-item">
-                        <span>事业运势</span>
-                        <strong>${currentFortune.career}分</strong>
-                    </div>
-                    <div class="modal-score-item">
-                        <span>爱情运势</span>
-                        <strong>${currentFortune.love}分</strong>
-                    </div>
-                    <div class="modal-score-item">
-                        <span>财运运势</span>
-                        <strong>${currentFortune.wealth}分</strong>
-                    </div>
-                    <div class="modal-score-item">
-                        <span>健康运势</span>
-                        <strong>${currentFortune.health}分</strong>
-                    </div>
+                <div class="modal-section">
+                    <h4>五行分析</h4>
+                    <p>属${data.wuxing}，五行中${currentFortune.wuxingStatus}。${currentFortune.wuxing}是您的命定五行。</p>
                 </div>
-                <div class="modal-desc">
-                    <h4>📖 运势解读</h4>
-                    <p>${currentFortune.description}</p>
+                <div class="modal-section">
+                    <h4>流日运势</h4>
+                    <p>今日整体运势${currentFortune.level === 'excellent' ? '极佳' : currentFortune.level === 'good' ? '良好' : currentFortune.level === 'average' ? '平顺' : '欠佳'}。</p>
+                </div>
+                <div class="modal-section">
+                    <h4>穿衣指南</h4>
+                    <p>今日幸运色：${currentFortune.luckyColors[0]}、${currentFortune.luckyColors[1]}</p>
+                </div>
+                <div class="modal-section">
+                    <h4>开运物品</h4>
+                    <p>幸运数字：${currentFortune.luckyNumbers.join('、')}</p>
+                    <p>幸运方向：${currentFortune.luckyDirections[0]}、${currentFortune.luckyDirections[1]}</p>
                 </div>
             </div>
         `;
@@ -529,42 +565,75 @@
     }
 
     function showExpandedDetails() {
+        if (!currentFortune) return;
+        
         const expanded = document.getElementById('expandedDetails');
         const expandedContent = document.getElementById('expandedContent');
         
-        if (!expanded || !expandedContent || !currentFortune) return;
+        if (!expanded || !expandedContent) return;
 
-        const data = zodiacData[currentFortune.zodiac];
-
+        const zodiac = zodiacData[currentFortune.zodiac];
+        
         expandedContent.innerHTML = `
-            <div class="expanded-section fade-in">
-                <h3>🌟 完整运势分析</h3>
+            <div class="expanded-zodiac-header">
+                <span class="expanded-zodiac-icon">${zodiac.icon}</span>
+                <span class="expanded-zodiac-name">${zodiac.name}年运势详解</span>
+            </div>
+            
+            <div class="expanded-section">
+                <h3>📜 命理详解</h3>
                 <p>${currentFortune.description}</p>
             </div>
             
-            <div class="expanded-section fade-in" style="--delay: 1">
-                <h3>💼 事业发展</h3>
-                <p>${currentFortune.careerAdvice}</p>
+            <div class="expanded-section">
+                <h3>💼 事业运势</h3>
+                <p>${currentFortune.career}</p>
             </div>
             
-            <div class="expanded-section fade-in" style="--delay: 2">
+            <div class="expanded-section">
                 <h3>💕 感情运势</h3>
-                <p>${currentFortune.loveAdvice}</p>
+                <p>${currentFortune.love}</p>
             </div>
             
-            <div class="expanded-section fade-in" style="--delay: 3">
+            <div class="expanded-section">
                 <h3>💰 财富运势</h3>
-                <p>${currentFortune.wealthAdvice}</p>
+                <p>${currentFortune.wealth}</p>
             </div>
             
-            <div class="expanded-section fade-in" style="--delay: 4">
-                <h3>🏥 健康养生</h3>
-                <p>${currentFortune.healthAdvice}</p>
+            <div class="expanded-section">
+                <h3>🏥 健康运势</h3>
+                <p>${currentFortune.health}</p>
             </div>
             
-            <div class="expanded-section fade-in" style="--delay: 5">
-                <h3>📅 本月展望</h3>
-                <p>${currentFortune.monthlyFortune}</p>
+            <div class="lucky-items-grid">
+                <div class="lucky-item">
+                    <span class="lucky-label">幸运色彩</span>
+                    <span class="lucky-value">${currentFortune.luckyColors.join('、')}</span>
+                </div>
+                <div class="lucky-item">
+                    <span class="lucky-label">幸运数字</span>
+                    <span class="lucky-value">${currentFortune.luckyNumbers.join('、')}</span>
+                </div>
+                <div class="lucky-item">
+                    <span class="lucky-label">幸运方位</span>
+                    <span class="lucky-value">${currentFortune.luckyDirections.join('、')}</span>
+                </div>
+                <div class="lucky-item">
+                    <span class="lucky-label">吉时</span>
+                    <span class="lucky-value">${currentFortune.luckyTimes.join('、')}</span>
+                </div>
+            </div>
+            
+            <div class="compatibility-section">
+                <h3>🔗 生肖配对</h3>
+                <div class="compatibility-row">
+                    <span class="comp-label">最佳匹配：</span>
+                    <span class="comp-value">${zodiac.compatible.map(z => zodiacData[z].name).join('、')}</span>
+                </div>
+                <div class="compatibility-row">
+                    <span class="comp-label">需要注意：</span>
+                    <span class="comp-value avoid">${zodiac.avoid.map(z => zodiacData[z].name).join('、')}</span>
+                </div>
             </div>
         `;
         
