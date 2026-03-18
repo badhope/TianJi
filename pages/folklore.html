@@ -10,59 +10,190 @@
     <link rel="stylesheet" href="../css/interactions.css">
     <link rel="stylesheet" href="../css/shanhai.css">
     <link rel="stylesheet" href="../css/fortune.css">
+    <link rel="stylesheet" href="../css/folklore.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏮</text></svg>">
 </head>
 <body>
     <script src="../js/effects/particles.js"></script>
     <div class="page-container">
-        <header class="page-header fade-in">
+        <header class="page-header">
             <a href="main.html" class="back-btn">← 返回</a>
-            <h1 class="page-title">🏮 民俗风情</h1>
+            <h1 class="page-title">民俗风情</h1>
             <div class="header-decoration"></div>
         </header>
 
         <main class="page-content">
-            <section class="intro-section fade-in" style="--delay: 1">
-                <p class="intro-text">了解传统节日习俗、民间禁忌与传统礼仪</p>
+            <section class="folklore-hero fade-in" style="--delay: 1">
+                <div class="hero-content">
+                    <div class="hero-badge">传统文化</div>
+                    <div class="hero-title">民俗风情</div>
+                    <div class="hero-subtitle">了解传统节日习俗、民间禁忌与传统礼仪</div>
+                </div>
+                <div class="hero-visual">
+                    <div class="lanterns-visual">
+                        <div class="lantern lantern-1">🏮</div>
+                        <div class="lantern lantern-2">🏮</div>
+                        <div class="lantern lantern-3">🏮</div>
+                    </div>
+                </div>
             </section>
 
-            <section class="festivals-section fade-in" style="--delay: 2">
-                <h2 class="section-title">🎉 传统节日</h2>
-                <div class="festivals-grid" id="festivalsGrid"></div>
+            <section class="folklore-intro fade-in" style="--delay: 2">
+                <div class="intro-card">
+                    <div class="intro-header">
+                        <div class="intro-icon">📖</div>
+                        <h2 class="intro-title">民俗概述</h2>
+                    </div>
+                    <div class="intro-content">
+                        <p>民俗，即民间风俗，是人民群众在长期的社会生活中形成的生活文化。它涵盖节日庆典、婚丧嫁娶、信仰禁忌、生产劳作等各个方面。</p>
+                        <p>中国民俗文化源远流长，是中华文明的重要组成部分。了解和传承民俗文化，对于弘扬民族文化、增强民族自信具有重要意义。</p>
+                    </div>
+                </div>
             </section>
 
-            <section class="taboos-section fade-in" style="--delay: 3">
-                <h2 class="section-title">⚠️ 民间禁忌</h2>
-                <div class="taboos-list" id="taboosList"></div>
+            <section class="festivals-section fade-in" style="--delay: 3">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="title-icon">🎉</span>
+                        传统节日
+                    </h2>
+                    <p class="section-desc">中华民族传统节日</p>
+                </div>
+                <div class="festivals-grid">
+                    <div class="festival-card" data-festival="chunjie">
+                        <div class="festival-date">正月初一</div>
+                        <div class="festival-icon">🧧</div>
+                        <div class="festival-name">春节</div>
+                        <div class="festival-desc">辞旧迎新，团圆喜庆</div>
+                    </div>
+                    <div class="festival-card" data-festival="yuanxiao">
+                        <div class="festival-date">正月十五</div>
+                        <div class="festival-icon">🏮</div>
+                        <div class="festival-name">元宵节</div>
+                        <div class="festival-desc">赏灯观月，猜谜吃元宵</div>
+                    </div>
+                    <div class="festival-card" data-festival="qingming">
+                        <div class="festival-date">清明节</div>
+                        <div class="festival-icon">🌿</div>
+                        <div class="festival-name">清明节</div>
+                        <div class="festival-desc">踏青祭祖，缅怀先人</div>
+                    </div>
+                    <div class="festival-card" data-festival="duanwu">
+                        <div class="festival-date">五月初五</div>
+                        <div class="festival-icon">🐉</div>
+                        <div class="festival-name">端午节</div>
+                        <div class="festival-desc">赛龙舟，包粽子</div>
+                    </div>
+                    <div class="festival-card" data-festival="qixi">
+                        <div class="festival-date">七月初七</div>
+                        <div class="festival-icon">💕</div>
+                        <div class="festival-name">七夕节</div>
+                        <div class="festival-desc">牛郎织女，相会鹊桥</div>
+                    </div>
+                    <div class="festival-card" data-festival="midautumn">
+                        <div class="festival-date">八月十五</div>
+                        <div class="festival-icon">🌙</div>
+                        <div class="festival-name">中秋节</div>
+                        <div class="festival-desc">赏月团圆，吃月饼</div>
+                    </div>
+                </div>
+                <div class="festival-detail" id="festivalDetail"></div>
             </section>
 
-            <section class="customs-section fade-in" style="--delay: 4">
-                <h2 class="section-title">📿 传统礼仪</h2>
-                <div class="customs-grid" id="customsGrid"></div>
+            <section class="taboos-section fade-in" style="--delay: 4">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="title-icon">⚠️</span>
+                        民间禁忌
+                    </h2>
+                    <p class="section-desc">传统民间信仰与禁忌</p>
+                </div>
+                <div class="taboos-categories">
+                    <button class="category-btn active" data-category="life">生活禁忌</button>
+                    <button class="category-btn" data-category="festival">节日禁忌</button>
+                    <button class="category-btn" data-category="wedding">婚嫁禁忌</button>
+                    <button class="category-btn" data-category="funeral">丧葬禁忌</button>
+                </div>
+                <div class="taboos-grid" id="taboosGrid"></div>
             </section>
 
-            <button class="more-details-floating-btn" id="moreDetailsBtn" title="查看深度民俗解析">
-                <span class="btn-glow"></span>
-                <span class="btn-content">
-                    <span class="btn-icon">🏮</span>
-                    <span class="btn-text">更多详情</span>
-                </span>
-            </button>
+            <section class="customs-section fade-in" style="--delay: 5">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="title-icon">📿</span>
+                        传统礼仪
+                    </h2>
+                    <p class="section-desc">中华传统礼仪文化</p>
+                </div>
+                <div class="customs-grid">
+                    <div class="custom-card" data-custom="greeting">
+                        <div class="custom-icon">🤝</div>
+                        <div class="custom-name">见面礼仪</div>
+                        <div class="custom-desc">作揖、抱拳、鞠躬</div>
+                    </div>
+                    <div class="custom-card" data-custom="dining">
+                        <div class="custom-icon">🍵</div>
+                        <div class="custom-name">餐桌礼仪</div>
+                        <div class="custom-desc">敬酒、布菜、座次</div>
+                    </div>
+                    <div class="custom-card" data-custom="gift">
+                        <div class="custom-icon">🎁</div>
+                        <div class="custom-name">送礼礼仪</div>
+                        <div class="custom-desc">送礼禁忌与讲究</div>
+                    </div>
+                    <div class="custom-card" data-custom="worship">
+                        <div class="custom-icon">🙏</div>
+                        <div class="custom-name">祭祀礼仪</div>
+                        <div class="custom-desc">祭祖、祭神规矩</div>
+                    </div>
+                </div>
+                <div class="custom-detail" id="customDetail"></div>
+            </section>
+
+            <section class="proverbs-section fade-in" style="--delay: 6">
+                <div class="proverbs-card">
+                    <div class="proverbs-header">
+                        <div class="proverbs-icon">💬</div>
+                        <h2 class="proverbs-title">民俗谚语</h2>
+                    </div>
+                    <div class="proverbs-list">
+                        <div class="proverb-item">
+                            <span class="proverb-icon">📌</span>
+                            <div class="proverb-content">
+                                <p>入乡随俗</p>
+                                <span>到了一个地方，就要顺从当地的习俗</span>
+                            </div>
+                        </div>
+                        <div class="proverb-item">
+                            <span class="proverb-icon">📌</span>
+                            <div class="proverb-content">
+                                <p>十里不同风，百里不同俗</p>
+                                <span>各地风俗习惯各不相同</span>
+                            </div>
+                        </div>
+                        <div class="proverb-item">
+                            <span class="proverb-icon">📌</span>
+                            <div class="proverb-content">
+                                <p>礼多人不怪</p>
+                                <span>礼节周到不会引起反感</span>
+                            </div>
+                        </div>
+                        <div class="proverb-item">
+                            <span class="proverb-icon">📌</span>
+                            <div class="proverb-content">
+                                <p>不破不立</p>
+                                <span>打破旧习才能建立新规</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
 
         <footer class="page-footer">
             <p>© 2026 天机 · 民俗文化仅供了解</p>
         </footer>
     </div>
-
-    <section class="expanded-details" id="expandedDetails" style="display: none;">
-        <div class="expanded-header">
-            <h2>🏮 民俗深度解析</h2>
-            <button class="close-expanded" id="closeExpanded">×</button>
-        </div>
-        <div class="expanded-content" id="expandedContent">
-        </div>
-    </section>
 
     <script src="../js/folklore.js"></script>
 </body>

@@ -1,174 +1,200 @@
 (function() {
-    const theoryData = [
-        { title: '形音义', icon: '🔤', description: '名字的形（字形）、音（读音）、义（含义）三者俱佳为上等', key: '形美音美意美' },
-        { title: '五行配置', icon: '🔄', description: '根据八字五行缺失来配置名字的五行', key: '补足缺失' },
-        { title: '数理', icon: '🔢', description: '姓名笔画数对应的数理暗示', key: '81数' },
-        { title: '生肖', icon: '🐀', description: '结合生肖喜好选择偏旁部首', key: '相生相助' }
-    ];
+    const theoryDetails = {
+        xingshi: {
+            title: '姓氏',
+            content: '姓氏代表先天因缘，是家族血脉的传承。中国姓氏历史悠久，大多世代相传，不可更改。姓氏承载着家族的基因信息和命运密码，对个人的命运有一定影响。不同姓氏的笔画数、五行属性也是姓名学分析的重要内容。'
+        },
+        mingzi: {
+            title: '名字',
+            content: '名字是父母赐予的礼物，是后天可以改变的因素。一个好名字可以弥补先天的不足，对命运产生积极影响。名字不仅是一个代号，更承载着父母的期望与祝福。好名字应该音韵优美、寓意深远、五行相补。'
+        },
+        zihua: {
+            title: '字画',
+            content: '每个汉字都有固定的笔画数，这些笔画数对应着不同的五行属性和数理吉凶。姓名学将81个数字分为大吉、平顺、凶数三种类型。好的名字应该选择大吉或平顺的数理，同时要根据八字五行来配置合适的笔画数。'
+        }
+    };
 
-    const strokesData = [
-        { number: 1, meaning: '宇宙起源，万物之始', evaluation: '大吉' },
-        { number: 2, meaning: '混沌未开，阴阳相生', evaluation: '中吉' },
-        { number: 3, meaning: '三才配置，寓意进取', evaluation: '吉' },
-        { number: 4, meaning: '四正稳固，基础牢固', evaluation: '中平' },
-        { number: 5, meaning: '五福临门，运气极佳', evaluation: '大吉' },
-        { number: 6, meaning: '六六大顺，万事如意', evaluation: '吉' },
-        { number: 7, meaning: '七星星耀，智慧超群', evaluation: '半吉' },
-        { number: 8, meaning: '八卦运筹，财源广进', evaluation: '吉' },
-        { number: 9, meaning: '九九归一，成就非凡', evaluation: '半吉' },
-        { number: 10, meaning: '十全十美，完美无缺', evaluation: '凶' }
-    ];
+    const strokesData = {
+        ji: [
+            { number: 1, meaning: '宇宙起源，万物之始', name: '太极' },
+            { number: 3, meaning: '三才配置，寓意进取', name: '进取' },
+            { number: 5, meaning: '五福临门，运气极佳', name: '福运' },
+            { number: 8, meaning: '八卦运筹，财源广进', name: '财富' },
+            { number: 13, meaning: '天才得助，智能兼备', name: '英才' },
+            { number: 15, meaning: '福寿圆满，涵养德行', name: '福寿' },
+            { number: 16, meaning: '厚重载德，安富尊荣', name: '厚重' },
+            { number: 21, meaning: '明月中天，权威显达', name: '权威' },
+            { number: 23, meaning: '旭日东升，壮志凌云', name: '壮志' },
+            { number: 25, meaning: '资性英敏，智勇双全', name: '英敏' }
+        ],
+        ping: [
+            { number: 2, meaning: '混沌未开，阴阳相生', name: '中庸' },
+            { number: 4, meaning: '四正稳固，基础牢固', name: '稳健' },
+            { number: 6, meaning: '六六大顺，万事如意', name: '和顺' },
+            { number: 7, meaning: '七星星耀，智慧超群', name: '智慧' },
+            { number: 10, meaning: '十全十美，完美无缺', name: '完美' },
+            { number: 12, meaning: '意志薄弱，突破困难', name: '突破' },
+            { number: 14, meaning: '沦落天涯，愁困一生', name: '沦落' },
+            { number: 17, meaning: '权威刚强，突破万难', name: '刚强' },
+            { number: 18, meaning: '有志竟成，博得名利', name: '有志' },
+            { number: 20, meaning: '智能超群，完善兴业', name: '兴业' }
+        ],
+        xiong: [
+            { number: 9, meaning: '九九归一，成就非凡', name: '考验' },
+            { number: 11, meaning: '旱苗逢雨，枯木逢春', name: '重生' },
+            { number: 19, meaning: '多难荣达，疾患绵绵', name: '多难' },
+            { number: 22, meaning: '秋草逢霜，薄弱无力', name: '薄弱' },
+            { number: 24, meaning: '锦绣前程，智慧丰盈', name: '锦绣' },
+            { number: 26, meaning: '变怪奇异，疑难杂症', name: '变怪' },
+            { number: 27, meaning: '欲望无止，抑制自我', name: '欲望' },
+            { number: 28, meaning: '遭难之数，骨肉离散', name: '遭难' },
+            { number: 29, meaning: '智谋兼备，功名成就', name: '智谋' },
+            { number: 30, meaning: '一成一败，浮沉不定', name: '浮沉' }
+        ]
+    };
 
-    const elementsData = [
-        { element: '木生火', description: '木性名字配火性名字，木火通明', suitable: '木弱火旺者' },
-        { element: '火生土', description: '火性名字配土性名字，火土相生', suitable: '火弱土弱者' },
-        { element: '土生金', description: '土性名字配金属名字，土金相生', suitable: '土弱金弱者' },
-        { element: '金生水', description: '金属名字配水性名字，金水相生', suitable: '金弱水弱者' },
-        { element: '水生木', description: '水性名字配木性名字，水木相生', suitable: '水弱木弱者' },
-        { element: '木克土', description: '木性名字克土性名字，注意配置', suitable: '木旺土弱者' }
-    ];
+    const elementDetails = {
+        wood: {
+            title: '木属性',
+            content: '木代表生发、成长、仁慈。木性名字适合命理中木偏弱的人，可以带来生机与活力。木属性汉字多与植物、木材相关，如林、森、桐、柏等。',
+            good: '东、南、东南方位',
+            color: '绿色、青色'
+        },
+        fire: {
+            title: '火属性',
+            content: '火代表热烈、激情、礼仪。火性名字适合命理中火偏弱的人，可以带来热情与动力。火属性汉字多与火焰、光亮相关，如炎、灿、辉、耀等。',
+            good: '南、东、东北方位',
+            color: '红色、紫色'
+        },
+        earth: {
+            title: '土属性',
+            content: '土代表厚重、诚信、稳重。土性名字适合命理中土偏弱的人，可以带来稳定与信任。土属性汉字多与土地、山石相关，如山、峰、磊、垚等。',
+            good: '东北、西南、西北方位',
+            color: '黄色、棕色'
+        },
+        metal: {
+            title: '金属性',
+            content: '金代表刚健、决断、义气。金属名字适合命理中金偏弱的人，可以带来果断与正义。金属汉字多与金属、兵器相关，如金、钢、锋、铭等。',
+            good: '西、东南方位',
+            color: '白色、金色'
+        },
+        water: {
+            title: '水属性',
+            content: '水代表智慧、变通、流动性。水性名字适合命理中水偏弱的人，可以带来智慧与灵活。水属性汉字多与水、雨相关，如水、雨、涛、澜等。',
+            good: '北、西北方位',
+            color: '蓝色、黑色'
+        }
+    };
 
     function init() {
-        renderTheory();
-        renderStrokes();
-        renderElements();
-        setupEventListeners();
+        setupTheoryCards();
+        setupStrokesCategories();
+        setupElementCards();
+        initAnimations();
     }
 
-    function renderTheory() {
-        const grid = document.getElementById('theoryGrid');
-        if (!grid) return;
+    function setupTheoryCards() {
+        const cards = document.querySelectorAll('.theory-card');
+        const detailContainer = document.getElementById('theoryDetail');
         
-        grid.innerHTML = theoryData.map((item, index) => `
-            <div class="theory-card" data-index="${index}">
-                <div class="theory-icon">${item.icon}</div>
-                <h3>${item.title}</h3>
-                <p>${item.description}</p>
-                <span class="theory-key">${item.key}</span>
-            </div>
-        `).join('');
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                const theory = card.dataset.theory;
+                const detail = theoryDetails[theory];
+                
+                if (detailContainer && detail) {
+                    detailContainer.innerHTML = `
+                        <div class="detail-content">
+                            <h4 style="color: var(--primary-gold); margin-bottom: 15px; font-size: 1.3rem;">${detail.title}</h4>
+                            <p style="color: var(--text-light); line-height: 1.8; font-size: 0.95rem;">${detail.content}</p>
+                        </div>
+                    `;
+                    
+                    cards.forEach(c => c.style.borderColor = 'rgba(201, 162, 39, 0.2)');
+                    card.style.borderColor = 'var(--primary-gold)';
+                }
+            });
+        });
     }
 
-    function renderStrokes() {
+    function setupStrokesCategories() {
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const strokesGrid = document.getElementById('strokesGrid');
+        
+        renderStrokes('ji');
+        
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const category = btn.dataset.category;
+                
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                renderStrokes(category);
+            });
+        });
+    }
+
+    function renderStrokes(category) {
         const grid = document.getElementById('strokesGrid');
         if (!grid) return;
         
-        grid.innerHTML = strokesData.map((item, index) => `
-            <div class="stroke-card" data-index="${index}">
+        const data = strokesData[category];
+        grid.innerHTML = data.map(item => `
+            <div class="stroke-card ${category}">
                 <div class="stroke-number">${item.number}</div>
-                <p>${item.meaning}</p>
-                <span class="stroke-evaluation">${item.evaluation}</span>
+                <div class="stroke-name">${item.name}</div>
+                <div class="stroke-meaning">${item.meaning}</div>
             </div>
         `).join('');
     }
 
-    function renderElements() {
-        const list = document.getElementById('elementsList');
-        if (!list) return;
+    function setupElementCards() {
+        const cards = document.querySelectorAll('.element-card');
+        const detailContainer = document.getElementById('elementDetail');
         
-        list.innerHTML = elementsData.map((item, index) => `
-            <div class="element-item" style="--delay: ${index}">
-                <h3>${item.element}</h3>
-                <p>${item.description}</p>
-                <span class="element-suitable">适宜：${item.suitable}</span>
-            </div>
-        `).join('');
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                const element = card.dataset.element;
+                const detail = elementDetails[element];
+                
+                if (detailContainer && detail) {
+                    detailContainer.innerHTML = `
+                        <div class="detail-content">
+                            <h4 style="color: var(--primary-gold); margin-bottom: 15px; font-size: 1.3rem;">${detail.title}</h4>
+                            <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 15px; font-size: 0.95rem;">${detail.content}</p>
+                            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                                <span style="padding: 5px 12px; background: rgba(201, 162, 39, 0.1); border-radius: 15px; font-size: 0.85rem; color: var(--primary-gold);">吉祥方位：${detail.good}</span>
+                                <span style="padding: 5px 12px; background: rgba(201, 162, 39, 0.1); border-radius: 15px; font-size: 0.85rem; color: var(--primary-gold);">吉祥色彩：${detail.color}</span>
+                            </div>
+                        </div>
+                    `;
+                    
+                    cards.forEach(c => c.style.borderColor = 'rgba(201, 162, 39, 0.2)');
+                    card.style.borderColor = 'var(--primary-gold)';
+                    
+                    detailContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            });
+        });
     }
 
-    function setupEventListeners() {
-        const moreDetailsBtn = document.getElementById('moreDetailsBtn');
-        if (moreDetailsBtn) {
-            moreDetailsBtn.addEventListener('click', showExpandedDetails);
-        }
-
-        const closeExpanded = document.getElementById('closeExpanded');
-        if (closeExpanded) {
-            closeExpanded.addEventListener('click', hideExpandedDetails);
-        }
+    function initAnimations() {
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const delay = entry.target.style.getPropertyValue('--delay') || '0';
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, parseFloat(delay) * 200);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        fadeElements.forEach(el => observer.observe(el));
     }
 
-    function showExpandedDetails() {
-        const expandedDetails = document.getElementById('expandedDetails');
-        const expandedContent = document.getElementById('expandedContent');
-        
-        if (!expandedDetails || !expandedContent) return;
-
-        expandedContent.innerHTML = `
-            <div class="detail-section">
-                <h3>✍️ 姓名学概述</h3>
-                <div class="analysis-block">
-                    <p><span class="highlight">姓名学</span>是中华传统文化的的重要组成部分，通过分析名字的形、音、义、数理、五行等来推断对命运的影响。</p>
-                    <p class="section-title">姓名的重要性</p>
-                    <p>1. <span class="highlight">伴随一生</span>：名字是跟随一生的符号</p>
-                    <p>2. <span class="highlight">能量传递</span>：名字蕴含着无形的信息能量</p>
-                    <p>3. <span class="highlight">心理暗示</span>：好名字带来积极心理暗示</p>
-                    <p>4. <span class="highlight">社会印象</span>：影响他人对你的第一印象</p>
-                </div>
-            </div>
-
-            <div class="detail-section">
-                <h3>🔢 数理分析</h3>
-                <div class="analysis-block">
-                    <p>姓名学中，81个数理各有其吉凶含义。</p>
-                    <p class="section-title">天格（姓氏笔画+1）</p>
-                    <p>代表早年运势，与祖先有关。</p>
-                    <p class="section-title">人格（姓+名第一字）</p>
-                    <p>代表中年运势，主导命运。</p>
-                    <p class="section-title">地格（名第一字+名第二字）</p>
-                    <p>代表早年运势，与子女有关。</p>
-                    <p class="section-title">总格（总笔画数）</p>
-                    <p>代表晚年运势，一生总运。</p>
-                </div>
-            </div>
-
-            <div class="detail-section">
-                <h3>⚠️ 起名建议</h3>
-                <div class="analysis-block">
-                    <p>1. <span class="highlight">音韵和谐</span>：名字读起来朗朗上口</p>
-                    <p>2. <span class="highlight">寓意美好</span>：名字含义积极向上</p>
-                    <p>3. <span class="highlight">五行补益</span>：根据八字五行配置</p>
-                    <p>4. <span class="highlight">数理吉祥</span>：避开凶险数理</p>
-                    <p>5. <span class="highlight">生肖相合</span>：结合生肖选择偏旁</p>
-                    <p>6. <span class="highlight">避免重名</span>：减少重名率</p>
-                </div>
-            </div>
-        `;
-        
-        expandedDetails.style.display = 'block';
-        document.body.style.overflow = 'hidden';
-        
-        setTimeout(() => {
-            if (expandedDetails) {
-                expandedDetails.animate([
-                    { opacity: 0, transform: 'translateY(30px)' },
-                    { opacity: 1, transform: 'translateY(0)' }
-                ], {
-                    duration: 500,
-                    easing: 'ease-out'
-                });
-            }
-        }, 10);
-    }
-
-    function hideExpandedDetails() {
-        const expandedDetails = document.getElementById('expandedDetails');
-        if (!expandedDetails) return;
-        
-        expandedDetails.animate([
-            { opacity: 1, transform: 'translateY(0)' },
-            { opacity: 0, transform: 'translateY(30px)' }
-        ], {
-            duration: 400,
-            easing: 'ease-in'
-        }).onfinish = () => {
-            expandedDetails.style.display = 'none';
-            document.body.style.overflow = '';
-        };
-    }
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-    } else {
-        init();
-    }
+    document.addEventListener('DOMContentLoaded', init);
 })();

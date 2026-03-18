@@ -10,59 +10,207 @@
     <link rel="stylesheet" href="../css/interactions.css">
     <link rel="stylesheet" href="../css/bazi.css">
     <link rel="stylesheet" href="../css/fortune.css">
+    <link rel="stylesheet" href="../css/naming.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✍️</text></svg>">
 </head>
 <body>
     <script src="../js/effects/particles.js"></script>
     <div class="page-container">
-        <header class="page-header fade-in">
+        <header class="page-header">
             <a href="main.html" class="back-btn">← 返回</a>
-            <h1 class="page-title">✍️ 姓名学</h1>
+            <h1 class="page-title">姓名学</h1>
             <div class="header-decoration"></div>
         </header>
 
         <main class="page-content">
-            <section class="intro-section fade-in" style="--delay: 1">
-                <p class="intro-text">了解姓名学原理，解读名字中的奥秘</p>
+            <section class="naming-hero fade-in" style="--delay: 1">
+                <div class="hero-content">
+                    <div class="hero-badge">姓名奥秘</div>
+                    <div class="hero-title">起名改名</div>
+                    <div class="hero-subtitle">名正则言顺，了解姓名学原理，解读名字中的奥秘</div>
+                </div>
+                <div class="hero-visual">
+                    <div class="name-visual">
+                        <div class="strokes-circle">
+                            <div class="inner-circle">
+                                <span class="stroke-count">姓名</span>
+                            </div>
+                            <div class="stroke-marks">
+                                <span class="mark" style="--i:0">一</span>
+                                <span class="mark" style="--i:1">二</span>
+                                <span class="mark" style="--i:2">三</span>
+                                <span class="mark" style="--i:3">四</span>
+                                <span class="mark" style="--i:4">五</span>
+                                <span class="mark" style="--i:5">六</span>
+                                <span class="mark" style="--i:6">七</span>
+                                <span class="mark" style="--i:7">八</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
-            <section class="theory-section fade-in" style="--delay: 2">
-                <h2 class="section-title">📚 姓名学基础</h2>
-                <div class="theory-grid" id="theoryGrid"></div>
+            <section class="naming-intro fade-in" style="--delay: 2">
+                <div class="intro-card">
+                    <div class="intro-header">
+                        <div class="intro-icon">📖</div>
+                        <h2 class="intro-title">姓名学概述</h2>
+                    </div>
+                    <div class="intro-content">
+                        <p>姓名学是中华民族的传统学问，承载着父母对子女的期望与祝福。一个好的名字，不仅要好听好记，更要符合易理五行，与个人的命理相契合。</p>
+                        <p>姓名由姓氏和名字组成，姓氏代表先天因缘，名字代表后天努力。姓名学的核心在于通过字的笔画数理、五行属性来推断对人命运的影响。</p>
+                    </div>
+                </div>
             </section>
 
-            <section class="strokes-section fade-in" style="--delay: 3">
-                <h2 class="section-title">🔢 数理吉凶</h2>
+            <section class="theory-section fade-in" style="--delay: 3">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="title-icon">📚</span>
+                        姓名学基础
+                    </h2>
+                    <p class="section-desc">姓名学的三大要素</p>
+                </div>
+                <div class="theory-grid">
+                    <div class="theory-card" data-theory="xingshi">
+                        <div class="theory-icon">🏠</div>
+                        <div class="theory-name">姓氏</div>
+                        <div class="theory-desc">家族传承，不可更改</div>
+                        <div class="theory-detail">姓氏代表先天因缘，继承家族血脉，是不可更改的先天因素。</div>
+                    </div>
+                    <div class="theory-card" data-theory="mingzi">
+                        <div class="theory-icon">✍️</div>
+                        <div class="theory-name">名字</div>
+                        <div class="theory-desc">父母赐予，后天补益</div>
+                        <div class="theory-detail">名字是父母给予的礼物，可以弥补先天不足，影响一生运势。</div>
+                    </div>
+                    <div class="theory-card" data-theory="zihua">
+                        <div class="theory-icon">🖌️</div>
+                        <div class="theory-name">字画</div>
+                        <div class="theory-desc">数理五行，命运密码</div>
+                        <div class="theory-detail">每个汉字都有固定的笔画数，对应不同的五行属性和数理吉凶。</div>
+                    </div>
+                </div>
+                <div class="theory-detail-box" id="theoryDetail"></div>
+            </section>
+
+            <section class="strokes-section fade-in" style="--delay: 4">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="title-icon">🔢</span>
+                        数理吉凶
+                    </h2>
+                    <p class="section-desc">81数理对应命运详解</p>
+                </div>
+                <div class="strokes-categories">
+                    <button class="category-btn active" data-category="ji">大吉数理</button>
+                    <button class="category-btn" data-category="ping">平顺数理</button>
+                    <button class="category-btn" data-category="xiong">凶数理</button>
+                </div>
                 <div class="strokes-grid" id="strokesGrid"></div>
             </section>
 
-            <section class="elements-section fade-in" style="--delay: 4">
-                <h2 class="section-title">🔥 五行配置</h2>
-                <div class="elements-list" id="elementsList"></div>
+            <section class="elements-section fade-in" style="--delay: 5">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="title-icon">🔥</span>
+                        五行配置
+                    </h2>
+                    <p class="section-desc">名字五行与命理配合</p>
+                </div>
+                <div class="elements-grid">
+                    <div class="element-card" data-element="wood">
+                        <div class="element-icon">🌲</div>
+                        <div class="element-name">木</div>
+                        <div class="element-strokes">笔画：3,4,8,9,10,14,15,19,20,28</div>
+                        <div class="element-desc">代表生发、成长、仁慈</div>
+                    </div>
+                    <div class="element-card" data-element="fire">
+                        <div class="element-icon">🔥</div>
+                        <div class="element-name">火</div>
+                        <div class="element-strokes">笔画：2,3,4,12,14,15,24,26,27,28</div>
+                        <div class="element-desc">代表热烈、激情、礼仪</div>
+                    </div>
+                    <div class="element-card" data-element="earth">
+                        <div class="element-icon">🏔️</div>
+                        <div class="element-name">土</div>
+                        <div class="element-strokes">笔画：2,5,6,7,8,10,12,14,15,16,20</div>
+                        <div class="element-desc">代表厚重、诚信、稳重</div>
+                    </div>
+                    <div class="element-card" data-element="metal">
+                        <div class="element-icon">⚔️</div>
+                        <div class="element-name">金</div>
+                        <div class="element-strokes">笔画：2,4,6,7,8,9,10,14,15,16,21,22</div>
+                        <div class="element-desc">代表刚健、决断、义气</div>
+                    </div>
+                    <div class="element-card" data-element="water">
+                        <div class="element-icon">🌊</div>
+                        <div class="element-name">水</div>
+                        <div class="element-strokes">笔画：1,2,6,7,11,12,13,14,19,20</div>
+                        <div class="element-desc">代表智慧、变通、流动性</div>
+                    </div>
+                </div>
+                <div class="element-detail" id="elementDetail"></div>
             </section>
 
-            <button class="more-details-floating-btn" id="moreDetailsBtn" title="查看深度姓名学解析">
-                <span class="btn-glow"></span>
-                <span class="btn-content">
-                    <span class="btn-icon">✍️</span>
-                    <span class="btn-text">更多详情</span>
-                </span>
-            </button>
+            <section class="tips-section fade-in" style="--delay: 6">
+                <div class="tips-card">
+                    <div class="tips-header">
+                        <div class="tips-icon">💡</div>
+                        <h2 class="tips-title">起名要点</h2>
+                    </div>
+                    <div class="tips-list">
+                        <div class="tip-item">
+                            <span class="tip-number">01</span>
+                            <div class="tip-content">
+                                <h3>音韵和谐</h3>
+                                <p>名字读起来要朗朗上口，避免谐音歧义，注意平仄搭配。</p>
+                            </div>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-number">02</span>
+                            <div class="tip-content">
+                                <h3>寓意深远</h3>
+                                <p>选择寓意美好、积极向上的字，寄托父母的期望与祝福。</p>
+                            </div>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-number">03</span>
+                            <div class="tip-content">
+                                <h3>五行补益</h3>
+                                <p>根据生辰八字，弥补五行缺失，使名字成为助力而非阻力。</p>
+                            </div>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-number">04</span>
+                            <div class="tip-content">
+                                <h3>数理吉祥</h3>
+                                <p>注意名字的笔画数吉凶，选择81数理中的大吉或平顺之数。</p>
+                            </div>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-number">05</span>
+                            <div class="tip-content">
+                                <h3>避免重名</h3>
+                                <p>尽量选择独特新颖的名字，避免过于常见的字词组合。</p>
+                            </div>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-number">06</span>
+                            <div class="tip-content">
+                                <h3>结合姓氏</h3>
+                                <p>姓与名要搭配和谐，整体意境要统一，避免冲突。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
 
         <footer class="page-footer">
             <p>© 2026 天机 · 姓名学仅供了解</p>
         </footer>
     </div>
-
-    <section class="expanded-details" id="expandedDetails" style="display: none;">
-        <div class="expanded-header">
-            <h2>✍️ 姓名学深度解析</h2>
-            <button class="close-expanded" id="closeExpanded">×</button>
-        </div>
-        <div class="expanded-content" id="expandedContent">
-        </div>
-    </section>
 
     <script src="../js/naming.js"></script>
 </body>
