@@ -1,53 +1,52 @@
 import { defineCollection, z } from 'astro:content';
 
+const baseSchema = z.object({
+  title: z.string(),
+  subtitle: z.string().optional(),
+  description: z.string(),
+  section: z.string(),
+  topic: z.string().optional(),
+  tags: z.array(z.string()).default([]),
+  era: z.string().optional(),
+  featured: z.boolean().default(false),
+  order: z.number().optional(),
+  updatedAt: z.string().optional(),
+  quote: z.string().optional(),
+  quoteSource: z.string().optional(),
+});
+
 const archiveCollection = defineCollection({
   type: 'content',
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
+  schema: baseSchema.extend({
     category: z.enum(['era', 'cultivation', 'theory']),
-    order: z.number().optional(),
-    featured: z.boolean().optional(),
   }),
 });
 
 const medicineCollection = defineCollection({
   type: 'content',
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
+  schema: baseSchema.extend({
     category: z.enum(['classic', 'theory', 'practice']),
-    order: z.number().optional(),
   }),
 });
 
 const mythCollection = defineCollection({
   type: 'content',
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
+  schema: baseSchema.extend({
     category: z.enum(['beast', 'deity', 'place', 'event']),
-    order: z.number().optional(),
   }),
 });
 
 const dharmaCollection = defineCollection({
   type: 'content',
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
+  schema: baseSchema.extend({
     tradition: z.enum(['buddhism', 'daoism', 'both']),
-    order: z.number().optional(),
   }),
 });
 
 const realmsCollection = defineCollection({
   type: 'content',
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
+  schema: baseSchema.extend({
     realmType: z.enum(['qi', 'body', 'spirit', 'combined']),
-    order: z.number().optional(),
   }),
 });
 
@@ -57,4 +56,14 @@ export const collections = {
   myth: mythCollection,
   dharma: dharmaCollection,
   realms: realmsCollection,
+};
+
+export type SectionColor = 'gold' | 'jade' | 'ochre' | 'amethyst' | 'sapphire';
+
+export const sectionColors: Record<string, SectionColor> = {
+  '档案馆': 'gold',
+  '典籍': 'jade',
+  '神话': 'amethyst',
+  '法门': 'sapphire',
+  '境界': 'ochre',
 };

@@ -4,37 +4,58 @@ interface Props {
   description: string;
   href: string;
   category: string;
-  color?: string;
+  color?: 'gold' | 'jade' | 'ochre' | 'amethyst' | 'sapphire';
 }
 
 const { title, description, href, category, color = 'gold' } = Astro.props;
 
-const colorStyles = {
-  gold: 'border-gold-600/30 hover:border-gold-500/60 text-gold-400',
-  jade: 'border-jade-600/30 hover:border-jade-500/60 text-jade-400',
-  ochre: 'border-ochre-600/30 hover:border-ochre-500/60 text-ochre-400',
-  amethyst: 'border-amethyst-600/30 hover:border-amethyst-500/60 text-amethyst-400',
-  sapphire: 'border-sapphire-600/30 hover:border-sapphire-500/60 text-sapphire-400',
-}[color] || 'border-gold-600/30 hover:border-gold-500/60 text-gold-400';
+const colorMap = {
+  gold: {
+    border: 'border-[#c9a227]/30 hover:border-[#d4af37]/60',
+    text: 'text-[#d4af37]',
+    bg: 'group-hover:bg-[#c9a227]/[0.03]',
+  },
+  jade: {
+    border: 'border-[#2d8a8a]/30 hover:border-[#5ababa]/60',
+    text: 'text-[#5ababa]',
+    bg: 'group-hover:bg-[#2d8a8a]/[0.03]',
+  },
+  ochre: {
+    border: 'border-[#8a4a2d]/30 hover:border-[#ba7a5a]/60',
+    text: 'text-[#ba7a5a]',
+    bg: 'group-hover:bg-[#8a4a2d]/[0.03]',
+  },
+  amethyst: {
+    border: 'border-[#6b4a8a]/30 hover:border-[#a878b8]/60',
+    text: 'text-[#a878b8]',
+    bg: 'group-hover:bg-[#6b4a8a]/[0.03]',
+  },
+  sapphire: {
+    border: 'border-[#2d4a6b]/30 hover:border-[#6b9ad4]/60',
+    text: 'text-[#6b9ad4]',
+    bg: 'group-hover:bg-[#2d4a6b]/[0.03]',
+  },
+};
+
+const colors = colorMap[color] || colorMap.gold;
 ---
 
 <a
   href={href}
-  class="group block p-5 rounded-lg bg-ink-900/50 border transition-all duration-300 hover:scale-[1.02]"
-  data-color={color}
+  class={`group block p-5 rounded-lg bg-[#0d0d0d]/50 border ${colors.border} ${colors.bg} transition-all duration-300 active:scale-[0.99]`}
 >
   <div class="flex items-start justify-between mb-3">
-    <span class={`text-xs uppercase tracking-widest ${colorStyles}`}>
+    <span class={`text-xs uppercase tracking-widest ${colors.text}`}>
       {category}
     </span>
-    <svg class="w-4 h-4 text-ink-500 group-hover:text-gold-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7V17" />
+    <svg class={`w-4 h-4 text-[#555555] group-hover:${colors.text} group-hover:translate-x-1 group-hover:-translate-y-1 transition-all`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M17 7H7M17 7V17" />
     </svg>
   </div>
-  <h3 class="text-lg font-display text-gold-200 group-hover:text-gold-100 transition-colors mb-2">
+  <h3 class={`text-lg font-display ${colors.text} group-hover:text-[#e8d48b] transition-colors mb-2`}>
     {title}
   </h3>
-  <p class="text-sm text-ink-400 group-hover:text-ink-300 transition-colors leading-relaxed">
+  <p class="text-sm text-[#888888] group-hover:text-[#a0a0a0] transition-colors leading-relaxed">
     {description}
   </p>
 </a>

@@ -11,7 +11,7 @@ const parentPath = '/' + currentPath.split('/').filter(Boolean)[0];
 ---
 
 <nav class="sticky top-20 py-4">
-  <div class="text-sm text-ink-500 mb-4">章节导航</div>
+  <div class="text-sm text-[#666666] mb-4">章节导航</div>
   <ul class="space-y-2">
     {NAV_ITEMS.map((item) => {
       const isActive = parentPath === item.href;
@@ -21,8 +21,8 @@ const parentPath = '/' + currentPath.split('/').filter(Boolean)[0];
             href={item.href}
             class={`block py-1.5 px-3 rounded transition-all ${
               isActive
-                ? 'text-gold-400 bg-gold-900/20 border-l-2 border-gold-500'
-                : 'text-ink-400 hover:text-gold-300 hover:bg-ink-800/30'
+                ? 'text-[#d4af37] bg-[#c9a227]/[0.08] border-l-2 border-[#d4af37]'
+                : 'text-[#888888] hover:text-[#c9a227] hover:bg-[#1a1a1a]/50'
             }`}
           >
             {item.label}
