@@ -1,0 +1,41 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import ArchiveCard from '@components/widgets/ArchiveCard.astro';
+
+const entries = [
+  {
+    title: '黄帝内经与修行身体',
+    description: '从医学经典探索古人对人体能量系统的理解',
+    href: '/medicine/huangdi-neijing',
+    category: '经典解读',
+  },
+];
+---
+
+<PageLayout
+  title="医药"
+  description="身心修炼的古老智慧，医道同源的千年传承"
+  section="医药"
+  sectionColor="jade"
+  entries={entries}
+>
+  <div class="mt-8 prose-lingxu">
+    <p>
+      中国传统医学与修行之道有着深刻的内在联系。古人认为，人体是一个小宇宙，
+      与天地大宇宙相应。通过调整呼吸、饮食、起居，可以调和身心，乃至开启内在潜能。
+    </p>
+
+    <h2>医道同源</h2>
+    <p>
+      《黄帝内经》作为中医理论的奠基之作，其中不仅包含治病救人的医术，
+      更蕴含着深奥的生命哲学与修炼智慧。书中所述的"真人"、"至人"境界，
+      正是修行者追求的目标。
+    </p>
+
+    <h2>气血与经络</h2>
+    <p>
+      中医理论中的气血运行、经络系统，与修行中讲的"炁"与"脉轮"有着异曲同工之妙。
+      理解中医，是理解修行身体观的一把钥匙。
+    </p>
+  </div>
+</PageLayout>

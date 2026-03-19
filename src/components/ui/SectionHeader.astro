@@ -1,0 +1,33 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  section?: string;
+  color?: string;
+}
+
+const { title, description, section, color = 'gold' } = Astro.props;
+
+const colorClasses = {
+  gold: 'text-gold-400 border-gold-600/30',
+  jade: 'text-jade-400 border-jade-600/30',
+  ochre: 'text-ochre-400 border-ochre-600/30',
+  amethyst: 'text-amethyst-400 border-amethyst-600/30',
+  sapphire: 'text-sapphire-400 border-sapphire-600/30',
+}[color] || 'text-gold-400 border-gold-600/30';
+---
+
+<header class="text-center mb-16">
+  {section && (
+    <span class={`inline-block px-3 py-1 text-xs font-medium tracking-widest uppercase border rounded-full mb-6 ${colorClasses}`}>
+      {section}
+    </span>
+  )}
+  <h1 class="text-4xl sm:text-5xl font-display text-gold-200 mb-6 tracking-wide">
+    {title}
+  </h1>
+  <p class="text-lg text-ink-400 max-w-2xl mx-auto leading-relaxed">
+    {description}
+  </p>
+  <div class="gold-line mt-8 max-w-xs mx-auto"></div>
+</header>

@@ -1,0 +1,50 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import ArchiveCard from '@components/widgets/ArchiveCard.astro';
+
+const entries = [
+  {
+    title: '佛道述略',
+    description: '佛教东渐与道教兴起的修行传承脉络',
+    href: '/dharma/buddhism-and-daoism',
+    category: '法脉传承',
+  },
+];
+---
+
+<PageLayout
+  title="法脉"
+  description="佛道两家的修行传承，宗教与修行的交汇"
+  section="法脉"
+  sectionColor="amethyst"
+  entries={entries}
+>
+  <div class="mt-8 prose-lingxu">
+    <p>
+      佛教与道教是中国修行文化的两大支柱。佛教自印度东渐，在中土生根发芽；
+      道教根植于本土，汲取方术、巫术与老庄哲学而成。两者既有冲突，又有融合，
+      共同塑造了中国独特的修行传统。
+    </p>
+
+    <h2>佛教的传入与本土化</h2>
+    <p>
+      佛教于东汉末年正式传入中国，历经数百年与本土文化的碰撞与融合，
+      最终形成了禅宗、密宗等独特流派。佛教带来的轮回观、涅槃说，
+      深刻影响了中国人对身心与宇宙的理解。
+    </p>
+
+    <h2>道教的形成与演变</h2>
+    <p>
+      道教以老子为教主，奉《道德经》为圣典，同时吸收了古代巫术、方术、
+      神仙传说等元素。道教追求长生久视，其修炼方法包括内丹、外丹、符箓、辟谷等，
+      形成了一套独特的身心修炼体系。
+    </p>
+
+    <h2>佛道交融</h2>
+    <p>
+      在历史长河中，佛道两家既有互相批评，也有相互吸收。
+      禅宗吸收了道家的自然观，心学借鉴了佛教的唯识论。
+      这种交融使得中国修行文化更加丰富多彩。
+    </p>
+  </div>
+</PageLayout>

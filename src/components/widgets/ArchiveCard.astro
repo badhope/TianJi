@@ -1,0 +1,40 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  href: string;
+  category: string;
+  color?: string;
+}
+
+const { title, description, href, category, color = 'gold' } = Astro.props;
+
+const colorStyles = {
+  gold: 'border-gold-600/30 hover:border-gold-500/60 text-gold-400',
+  jade: 'border-jade-600/30 hover:border-jade-500/60 text-jade-400',
+  ochre: 'border-ochre-600/30 hover:border-ochre-500/60 text-ochre-400',
+  amethyst: 'border-amethyst-600/30 hover:border-amethyst-500/60 text-amethyst-400',
+  sapphire: 'border-sapphire-600/30 hover:border-sapphire-500/60 text-sapphire-400',
+}[color] || 'border-gold-600/30 hover:border-gold-500/60 text-gold-400';
+---
+
+<a
+  href={href}
+  class="group block p-5 rounded-lg bg-ink-900/50 border transition-all duration-300 hover:scale-[1.02]"
+  data-color={color}
+>
+  <div class="flex items-start justify-between mb-3">
+    <span class={`text-xs uppercase tracking-widest ${colorStyles}`}>
+      {category}
+    </span>
+    <svg class="w-4 h-4 text-ink-500 group-hover:text-gold-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7V17" />
+    </svg>
+  </div>
+  <h3 class="text-lg font-display text-gold-200 group-hover:text-gold-100 transition-colors mb-2">
+    {title}
+  </h3>
+  <p class="text-sm text-ink-400 group-hover:text-ink-300 transition-colors leading-relaxed">
+    {description}
+  </p>
+</a>

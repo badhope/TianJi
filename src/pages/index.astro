@@ -1,0 +1,208 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { NAV_ITEMS } from '@data/navigation';
+import Timeline from '@components/ui/Timeline.astro';
+import SectionHeader from '@components/ui/SectionHeader.astro';
+import Card from '@components/ui/Card.astro';
+import ParticleField from '@components/interactive/ParticleField.astro';
+---
+
+<BaseLayout title="灵墟 - 末法时代·失落修行文明档案馆">
+  <ParticleField />
+
+  <section class="relative min-h-screen flex items-center justify-center px-4">
+    <div class="absolute inset-0 bg-gradient-to-b from-ink-950 via-ink-950/95 to-ink-950"></div>
+
+    <div class="relative z-10 text-center max-w-4xl mx-auto">
+      <div class="mb-8 animate-fade-in">
+        <div class="inline-flex items-center justify-center w-20 h-20 rounded-full border border-gold-600/30 mb-8">
+          <svg class="w-10 h-10 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+          </svg>
+        </div>
+      </div>
+
+      <h1 class="text-5xl sm:text-6xl md:text-7xl font-display text-gold-200 mb-6 tracking-wider animate-slide-up">
+        灵墟
+      </h1>
+
+      <p class="text-xl sm:text-2xl text-gold-400/80 font-light tracking-widest mb-4 animate-slide-up" style="animation-delay: 0.1s">
+        末法时代
+      </p>
+
+      <p class="text-lg text-ink-400 mb-12 animate-slide-up" style="animation-delay: 0.2s">
+        失落修行文明档案馆
+      </p>
+
+      <div class="gold-line max-w-xs mx-auto mb-12 animate-fade-in" style="animation-delay: 0.3s"></div>
+
+      <p class="text-ink-400 max-w-2xl mx-auto leading-relaxed mb-12 animate-slide-up" style="animation-delay: 0.4s">
+        天地灵气衰竭，法脉传承断绝。<br/>
+        唯有典籍文字，传其余绪。<br/>
+        此处乃禁毁档案，慎入。
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-4 animate-slide-up" style="animation-delay: 0.5s">
+        <a
+          href="/archive"
+          class="px-8 py-3 rounded-lg border border-gold-600/50 text-gold-400 hover:bg-gold-900/20 hover:border-gold-500/70 transition-all"
+        >
+          进入档案馆
+        </a>
+        <a
+          href="#intro"
+          class="px-8 py-3 rounded-lg border border-ink-700 text-ink-400 hover:text-ink-200 hover:border-ink-600 transition-all"
+        >
+          了解更多
+        </a>
+      </div>
+    </div>
+
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
+      <svg class="w-6 h-6 text-gold-600/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </div>
+  </section>
+
+  <section id="intro" class="py-24 px-4 sm:px-6 lg:px-8 relative">
+    <div class="max-w-6xl mx-auto">
+      <SectionHeader
+        title="项目缘起"
+        description="在末法的黄昏，追寻失落的修行文明"
+        section="关于"
+      />
+
+      <div class="mt-12 prose-lingxu max-w-3xl mx-auto">
+        <p>
+          灵墟，取"灵炁墟烬"之意，，是一个关于中国修行文明的数字档案馆。
+          我们试图在典籍、宗教、民俗、传说与小说之间，勾勒出一个曾经真实存在过的修行世界。
+        </p>
+
+        <h2>末法时代的来临</h2>
+        <p>
+          据古籍记载，天地灵气曾充沛于世。上古真人可乘天地之正，御六气之辩。
+          修行者能够以肉身通神，以精魄游太虚。然而，随着末法时代的降临，灵炁衰竭，
+          上古真法渐失其传，留存于世的唯有残缺的典籍与口耳相传的传说。
+        </p>
+
+        <h2>档案的重建</h2>
+        <p>
+          灵墟致力于收集、整理、研究散落于各处的修行文明碎片：
+          从《黄帝内经》探索身体与能量的奥秘，从《山海经》追溯神怪异兽的真相，
+          从佛道典籍中梳理法脉传承的脉络，从志怪小说中还原修行境界的演化。
+        </p>
+
+        <blockquote>
+          "夫道者，覆天载地，廓四方，柝八极，高不可际，深不可测。"
+          ——《庄子·大宗师》
+        </blockquote>
+
+        <p>
+          这不是游戏攻略，也不是玄幻小说设定集。
+          这是一个严肃的、关于真实历史与文化中被遗忘之物的档案项目。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 px-4 sm:px-6 lg:px-8 bg-ink-950/50 relative">
+    <div class="max-w-6xl mx-auto">
+      <SectionHeader
+        title="六大时代"
+        description="从鸿蒙开辟到末法降临，修行文明的兴衰轮回"
+        section="时间线"
+      />
+
+      <div class="mt-16">
+        <Timeline />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 px-4 sm:px-6 lg:px-8 relative">
+    <div class="max-w-6xl mx-auto">
+      <SectionHeader
+        title="探索板块"
+        description="五大领域，涵盖修行文明的各个面向"
+        section="导航"
+      />
+
+      <div class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {NAV_ITEMS.map((item, index) => (
+          <a
+            href={item.href}
+            class="section-card group block"
+            style={`animation-delay: ${index * 0.1}s`}
+          >
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-display text-gold-300 group-hover:text-gold-200 transition-colors">
+                {item.label}
+              </h3>
+              <svg class="w-5 h-5 text-gold-600/50 group-hover:text-gold-400 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </div>
+            <p class="text-ink-400 group-hover:text-ink-300 transition-colors">
+              {item.description}
+            </p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 px-4 sm:px-6 lg:px-8 bg-ink-950/50 relative">
+    <div class="max-w-6xl mx-auto">
+      <SectionHeader
+        title="档案精选"
+        description="来自各板块的核心文献"
+        section="推荐阅读"
+      />
+
+      <div class="mt-16 grid gap-6 md:grid-cols-2">
+        <a href="/archive/end-of-dharma-age" class="section-card group block">
+          <span class="text-xs uppercase tracking-widest text-gold-500/70">档案馆</span>
+          <h3 class="text-xl font-display text-gold-300 mt-2 group-hover:text-gold-200">末法时代的真相</h3>
+          <p class="text-ink-400 mt-3 group-hover:text-ink-300">
+            探讨末法时代的起源、特征及其对修行文明的深远影响
+          </p>
+        </a>
+
+        <a href="/medicine/huangdi-neijing" class="section-card group block">
+          <span class="text-xs uppercase tracking-widest text-jade-500/70">医药</span>
+          <h3 class="text-xl font-display text-jade-300 mt-2 group-hover:text-jade-200">黄帝内经与修行身体</h3>
+          <p class="text-ink-400 mt-3 group-hover:text-ink-300">
+            从医学经典探索古人对人体能量系统的理解
+          </p>
+        </a>
+
+        <a href="/myth/shanhai-overview" class="section-card group block">
+          <span class="text-xs uppercase tracking-widest text-ochre-500/70">神话</span>
+          <h3 class="text-xl font-display text-ochre-300 mt-2 group-hover:text-ochre-200">山海经：失落的地理</h3>
+          <p class="text-ink-400 mt-3 group-hover:text-ink-300">
+            将山海经重新诠释为失落时代的地理档案
+          </p>
+        </a>
+
+        <a href="/dharma/buddhism-and-daoism" class="section-card group block">
+          <span class="text-xs uppercase tracking-widest text-amethyst-500/70">法脉</span>
+          <h3 class="text-xl font-display text-amethyst-300 mt-2 group-hover:text-amethyst-200">佛道述略</h3>
+          <p class="text-ink-400 mt-3 group-hover:text-ink-300">
+            佛教东渐与道教兴起的修行传承脉络
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 px-4 text-center relative">
+    <div class="max-w-2xl mx-auto">
+      <div class="gold-line mb-8"></div>
+      <p class="text-ink-500">
+        灵墟 · 末法时代失落修行文明档案馆<br/>
+        <span class="text-sm">愿见者得度，闻者觉悟</span>
+      </p>
+    </div>
+  </section>
+</BaseLayout>

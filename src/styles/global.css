@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;300;400;500;600;700&family=ZCOOL+XiaoWei&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Noto Serif SC', serif;
+  }
+
+  body {
+    @apply bg-ink-950 text-ink-100 antialiased;
+    background-image:
+      radial-gradient(ellipse at 20% 0%, rgba(201, 162, 39, 0.03) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 100%, rgba(107, 74, 138, 0.03) 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    @apply bg-gold-500/30 text-gold-100;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-ink-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gold-700/50 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gold-600/70;
+  }
+}
+
+@layer components {
+  .prose-lingxu {
+    @apply text-ink-200 leading-relaxed;
+  }
+
+  .prose-lingxu h2 {
+    @apply text-2xl font-display text-gold-400 mt-12 mb-4;
+  }
+
+  .prose-lingxu h3 {
+    @apply text-xl font-display text-gold-300 mt-8 mb-3;
+  }
+
+  .prose-lingxu p {
+    @apply mb-6 text-ink-300;
+  }
+
+  .prose-lingxu strong {
+    @apply text-gold-200 font-semibold;
+  }
+
+  .prose-lingxu em {
+    @apply text-amber-200/80;
+  }
+
+  .prose-lingxu blockquote {
+    @apply border-l-2 border-gold-600/50 pl-6 py-2 my-8 italic text-ink-400;
+    background: linear-gradient(90deg, rgba(201, 162, 39, 0.05) 0%, transparent 100%);
+  }
+
+  .prose-lingxu ul {
+    @apply list-disc list-inside my-4 space-y-2 text-ink-300;
+  }
+
+  .prose-lingxu ol {
+    @apply list-decimal list-inside my-4 space-y-2 text-ink-300;
+  }
+
+  .prose-lingxu li {
+    @apply pl-2;
+  }
+
+  .prose-lingxu hr {
+    @apply border-ink-700/50 my-12;
+  }
+
+  .section-card {
+    @apply relative overflow-hidden rounded-lg p-6 transition-all duration-500;
+    @apply bg-ink-900/50 border border-ink-700/30;
+    @apply hover:border-gold-600/40 hover:shadow-lg hover:shadow-gold-900/10;
+  }
+
+  .section-card::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+    background: linear-gradient(135deg, rgba(201, 162, 39, 0.1) 0%, transparent 50%);
+  }
+
+  .section-card:hover::before {
+    @apply opacity-100;
+  }
+
+  .gold-line {
+    @apply h-px w-full;
+    background: linear-gradient(90deg, transparent 0%, theme('colors.gold.500') 50%, transparent 100%);
+  }
+
+  .mist-layer {
+    @apply pointer-events-none fixed inset-0 z-10;
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(201, 162, 39, 0.02) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 80%, rgba(107, 74, 138, 0.02) 0%, transparent 50%);
+    animation: mistFloat 20s ease-in-out infinite;
+  }
+
+  @keyframes mistFloat {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(10px, -10px) scale(1.02); }
+    66% { transform: translate(-5px, 5px) scale(0.98); }
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, theme('colors.gold.400'), theme('colors.gold.600'), theme('colors.gold.300'));
+  }
+
+  .mask-fade-b {
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+}

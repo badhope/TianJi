@@ -1,0 +1,29 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import SectionHeader from '@components/ui/SectionHeader.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  section: string;
+  sectionColor: string;
+}
+
+const { title, description, section, sectionColor } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <SectionHeader
+        title={title}
+        description={description}
+        section={section}
+        color={sectionColor}
+      />
+      <div class="mt-12 prose-lingxu">
+        <slot />
+      </div>
+    </div>
+  </article>
+</BaseLayout>

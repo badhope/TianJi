@@ -1,0 +1,31 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import ArchiveCard from '@components/widgets/ArchiveCard.astro';
+
+const entries = [
+  {
+    title: '末法时代的真相',
+    description: '探讨末法时代的起源、特征及其对修行文明的深远影响',
+    href: '/archive/end-of-dharma-age',
+    category: '文明演变',
+  },
+];
+---
+
+<PageLayout
+  title="档案馆"
+  description="末法时代的文明碎片，典籍与传说的交汇之处"
+  section="档案馆"
+  sectionColor="gold"
+  entries={entries}
+>
+  <div class="mt-8 grid gap-6 md:grid-cols-2">
+    <ArchiveCard
+      title="末法时代的真相"
+      description="探讨末法时代的起源、特征及其对修行文明的深远影响。从历史、宗教、文化多角度审视这一文明转折点。"
+      href="/archive/end-of-dharma-age"
+      category="文明演变"
+      color="gold"
+    />
+  </div>
+</PageLayout>

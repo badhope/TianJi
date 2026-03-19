@@ -1,0 +1,77 @@
+---
+import { NAV_ITEMS } from '@data/navigation';
+
+const pathname = Astro.url.pathname;
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-ink-950/80 border-b border-ink-800/50">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="/" class="flex items-center space-x-3 group">
+        <div class="w-8 h-8 rounded-full border border-gold-600/50 flex items-center justify-center group-hover:border-gold-400 transition-colors">
+          <svg class="w-5 h-5 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+          </svg>
+        </div>
+        <span class="font-display text-xl text-gold-400 tracking-wider">灵墟</span>
+      </a>
+
+      <div class="hidden md:flex items-center space-x-8">
+        {NAV_ITEMS.map((item) => {
+          const isActive = pathname.startsWith(item.href);
+          return (
+            <a
+              href={item.href}
+              class={`text-sm font-medium transition-colors ${
+                isActive
+                  ? 'text-gold-400'
+                  : 'text-ink-400 hover:text-gold-300'
+              }`}
+            >
+              {item.label}
+            </a>
+          );
+        })}
+      </div>
+
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden p-2 text-ink-400 hover:text-gold-300 transition-colors"
+        aria-label="菜单"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <div class="flex flex-col space-y-2">
+        {NAV_ITEMS.map((item) => {
+          const isActive = pathname.startsWith(item.href);
+          return (
+            <a
+              href={item.href}
+              class={`px-3 py-2 rounded text-sm font-medium transition-colors ${
+                isActive
+                  ? 'text-gold-400 bg-gold-900/20'
+                  : 'text-ink-400 hover:text-gold-300 hover:bg-ink-800/50'
+              }`}
+            >
+              {item.label}
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+</script>

@@ -1,0 +1,66 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  href?: string;
+  variant?: 'default' | 'featured';
+  color?: string;
+}
+
+const { title, description, href, variant = 'default', color = 'gold' } = Astro.props;
+
+const colorStyles = {
+  gold: {
+    border: 'border-gold-600/30',
+    hover: 'hover:border-gold-500/60',
+    text: 'text-gold-400',
+    bg: 'hover:bg-gold-900/10',
+  },
+  jade: {
+    border: 'border-jade-600/30',
+    hover: 'hover:border-jade-500/60',
+    text: 'text-jade-400',
+    bg: 'hover:bg-jade-900/10',
+  },
+  ochre: {
+    border: 'border-ochre-600/30',
+    hover: 'hover:border-ochre-500/60',
+    text: 'text-ochre-400',
+    bg: 'hover:bg-ochre-900/10',
+  },
+  amethyst: {
+    border: 'border-amethyst-600/30',
+    hover: 'hover:border-amethyst-500/60',
+    text: 'text-amethyst-400',
+    bg: 'hover:bg-amethyst-900/10',
+  },
+  sapphire: {
+    border: 'border-sapphire-600/30',
+    hover: 'hover:border-sapphire-500/60',
+    text: 'text-sapphire-400',
+    bg: 'hover:bg-sapphire-900/10',
+  },
+}[color] || {
+  border: 'border-gold-600/30',
+  hover: 'hover:border-gold-500/60',
+  text: 'text-gold-400',
+  bg: 'hover:bg-gold-900/10',
+};
+
+const Tag = href ? 'a' : 'div';
+---
+
+<Tag
+  href={href}
+  class={`section-card group ${href ? 'block' : ''} ${colorStyles.border} ${colorStyles.hover} ${colorStyles.bg}`}
+>
+  <h3 class={`text-xl font-display ${colorStyles.text} group-hover:translate-x-1 transition-transform`}>
+    {title}
+  </h3>
+  {description && (
+    <p class="mt-3 text-ink-400 group-hover:text-ink-300 transition-colors">
+      {description}
+    </p>
+  )}
+  <slot />
+</Tag>

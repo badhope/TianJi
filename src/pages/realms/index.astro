@@ -1,0 +1,41 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import ArchiveCard from '@components/widgets/ArchiveCard.astro';
+
+const entries = [
+  {
+    title: '修行境界体系',
+    description: '从炼气到化神：修行境界的演化历程',
+    href: '/realms/cultivation-realm-system',
+    category: '境界体系',
+  },
+];
+---
+
+<PageLayout
+  title="境界"
+  description="从炼气到化神的阶梯，修行者的进阶之路"
+  section="境界"
+  sectionColor="sapphire"
+  entries={entries}
+>
+  <div class="mt-8 prose-lingxu">
+    <p>
+      修行境界体系是中国修行文化的核心组成部分。从最早的"炼精化气"到后来的"金丹大道"，
+      从"筑基"到"飞升"，这套体系经历了漫长的演化过程。
+    </p>
+
+    <h2>境界的起源</h2>
+    <p>
+      早期道教典籍中，修行被描述为与天地合一的过程。《庄子》中描述的"神人"、
+      "真人"，是早期对高境界修行者的想象。后来，这些想象逐渐系统化，
+      形成了今天我们所见到的境界体系。
+    </p>
+
+    <h2>体系的多样性</h2>
+    <p>
+      不同的流派对境界的划分各有不同。道教有道家的境界，佛门有佛门的果位，
+      民间信仰有民间的一套说法。这些体系既有共通之处，也有各自的侧重点。
+    </p>
+  </div>
+</PageLayout>

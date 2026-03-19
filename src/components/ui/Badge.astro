@@ -1,0 +1,30 @@
+---
+interface Props {
+  variant?: 'solid' | 'outline';
+  color?: string;
+}
+
+const { variant = 'outline', color = 'gold' } = Astro.props;
+
+const styles = {
+  gold: variant === 'solid'
+    ? 'bg-gold-600/20 text-gold-300 border-gold-600/30'
+    : 'bg-transparent text-gold-400 border-gold-600/40 hover:bg-gold-900/20',
+  jade: variant === 'solid'
+    ? 'bg-jade-600/20 text-jade-300 border-jade-600/30'
+    : 'bg-transparent text-jade-400 border-jade-600/40 hover:bg-jade-900/20',
+  ochre: variant === 'solid'
+    ? 'bg-ochre-600/20 text-ochre-300 border-ochre-600/30'
+    : 'bg-transparent text-ochre-400 border-ochre-600/40 hover:bg-ochre-900/20',
+  amethyst: variant === 'solid'
+    ? 'bg-amethyst-600/20 text-amethyst-300 border-amethyst-600/30'
+    : 'bg-transparent text-amethyst-400 border-amethyst-600/40 hover:bg-amethyst-900/20',
+  sapphire: variant === 'solid'
+    ? 'bg-sapphire-600/20 text-sapphire-300 border-sapphire-600/30'
+    : 'bg-transparent text-sapphire-400 border-sapphire-600/40 hover:bg-sapphire-900/20',
+}[color] || '';
+---
+
+<span class={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium tracking-wide border ${styles}`}>
+  <slot />
+</span>

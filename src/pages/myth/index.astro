@@ -1,0 +1,41 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import ArchiveCard from '@components/widgets/ArchiveCard.astro';
+
+const entries = [
+  {
+    title: '山海经：失落的地理',
+    description: '将山海经重新诠释为失落时代的地理档案',
+    href: '/myth/shanhai-overview',
+    category: '典籍解读',
+  },
+];
+---
+
+<PageLayout
+  title="神话"
+  description="失落时代的神怪记载，山川人物的隐秘真相"
+  section="神话"
+  sectionColor="ochre"
+  entries={entries}
+>
+  <div class="mt-8 prose-lingxu">
+    <p>
+      《山海经》是中国最古老的神话地理文献，记载了大量神祇、异兽、山川、海外国度。
+      这些记载长期以来被视为荒诞不经的幻想，但若换一个视角，它们或许是失落文明的语言。
+    </p>
+
+    <h2>神话与历史</h2>
+    <p>
+      上古时代，人神同居，修行者众多。那时的"神兽"或许是被驯化的异类文明，
+      "神人"或许是修为高深的修行者。将这些记载当作历史来读，而非单纯的幻想，
+      我们或许能窥见另一个世界的真实面貌。
+    </p>
+
+    <h2>地理与异界</h2>
+    <p>
+      山海经的地理描述与现代地理多有出入。但如果将其视为"异界"的投影，
+      那些难以对应的地方，或许正是通往另一个维度的入口。
+    </p>
+  </div>
+</PageLayout>
