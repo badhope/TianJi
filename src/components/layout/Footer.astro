@@ -1,5 +1,8 @@
 ---
 import { SITE_CONFIG } from '@lib/constants';
+import { NAV_ITEMS } from '@data/navigation';
+
+const basePath = import.meta.env.BASE_URL || SITE_CONFIG.base;
 ---
 
 <footer class="relative z-20 border-t border-[#1a1a1a] bg-[#050505]/90 backdrop-blur-sm">
@@ -24,18 +27,18 @@ import { SITE_CONFIG } from '@lib/constants';
       <div>
         <h4 class="text-[#c9a227]/80 text-sm font-medium tracking-wider mb-6">探索</h4>
         <ul class="space-y-3">
-          <li><a href="/archive" class="text-[#555555] hover:text-[#d4af37] transition-colors text-sm">档案馆</a></li>
-          <li><a href="/medicine" class="text-[#555555] hover:text-[#d4af37] transition-colors text-sm">医药</a></li>
-          <li><a href="/myth" class="text-[#555555] hover:text-[#d4af37] transition-colors text-sm">神话</a></li>
-          <li><a href="/dharma" class="text-[#555555] hover:text-[#d4af37] transition-colors text-sm">法脉</a></li>
-          <li><a href="/realms" class="text-[#555555] hover:text-[#d4af37] transition-colors text-sm">境界</a></li>
+          <li><a href={`${basePath}/archive`} class="text-[#555555] hover:text-[#d4af37] transition-colors text-sm">档案馆</a></li>
+          <li><a href={`${basePath}/medicine`} class="text-[#555555] hover:text-[#d4af37] transition-colors text-sm">医药</a></li>
+          <li><a href={`${basePath}/myth`} class="text-[#555555] hover:text-[#d4af37] transition-colors text-sm">神话</a></li>
+          <li><a href={`${basePath}/dharma`} class="text-[#555555] hover:text-[#d4af37] transition-colors text-sm">法脉</a></li>
+          <li><a href={`${basePath}/realms`} class="text-[#555555] hover:text-[#d4af37] transition-colors text-sm">境界</a></li>
         </ul>
       </div>
 
       <div>
         <h4 class="text-[#c9a227]/80 text-sm font-medium tracking-wider mb-6">关于</h4>
         <ul class="space-y-3">
-          <li><a href="/about" class="text-[#555555] hover:text-[#d4af37] transition-colors text-sm">项目缘起</a></li>
+          <li><a href={`${basePath}/about`} class="text-[#555555] hover:text-[#d4af37] transition-colors text-sm">项目缘起</a></li>
         </ul>
         <div class="mt-8 pt-6 border-t border-[#1a1a1a]">
           <div class="flex items-center gap-2 text-xs text-[#444444]">

@@ -3,26 +3,29 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArchiveCard from '@components/widgets/ArchiveCard.astro';
 import ScrollReveal from '@components/interactive/ScrollReveal.astro';
 import Timeline from '@components/ui/Timeline.astro';
+import { SITE_CONFIG } from '@lib/constants';
+
+const basePath = import.meta.env.BASE_URL || SITE_CONFIG.base;
 
 const featuredArticles = [
   {
     title: '末法纪总论',
     description: '阐释末法纪的形成原因、三重含义及其对修行文明的深远影响',
-    href: '/archive/end-of-dharma-age',
+    href: `${basePath}/archive/end-of-dharma-age`,
     category: '核心卷宗',
     color: 'gold' as const,
   },
   {
     title: '六纪时代划分',
     description: '从太初纪到末法纪，系统梳理修行文明的六大时代分期',
-    href: '/archive/six-eras',
+    href: `${basePath}/archive/six-eras`,
     category: '时代分期',
     color: 'gold' as const,
   },
   {
     title: '灵气衰退与法脉隐遁',
     description: '探讨灵炁衰竭的规律与修行传承断裂的历史进程',
-    href: '/archive/decline-of-qi',
+    href: `${basePath}/archive/decline-of-qi`,
     category: '文明演变',
     color: 'gold' as const,
   },
@@ -85,7 +88,7 @@ const remnantCategories = [
 
       <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
         <nav class="flex items-center gap-2 text-sm mb-8" aria-label="面包屑导航">
-          <a href="/" class="text-[#666666] hover:text-[#c9a227] transition-colors">首页</a>
+          <a href={basePath} class="text-[#666666] hover:text-[#c9a227] transition-colors">首页</a>
           <span class="text-[#444444]">/</span>
           <span class="text-[#888888]">末法档案</span>
         </nav>
@@ -119,7 +122,7 @@ const remnantCategories = [
 
         <div class="flex flex-wrap gap-4">
           <a
-            href="/archive/end-of-dharma-age"
+            href={`${basePath}/archive/end-of-dharma-age`}
             class="group inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#c9a227]/[0.08] border border-[#c9a227]/30 text-[#d4af37] hover:bg-[#c9a227]/[0.12] hover:border-[#c9a227]/50 transition-all"
           >
             <span>查阅主卷</span>
@@ -246,21 +249,21 @@ const remnantCategories = [
           </p>
           <div class="space-y-4">
             <a
-              href="/medicine"
+              href={`${basePath}/medicine`}
               class="group block p-5 rounded-lg bg-[#2d8a8a]/[0.04] border border-[#2d8a8a]/20 hover:border-[#5ababa]/40 transition-all"
             >
               <h3 class="text-lg font-display text-[#5ababa] mb-1">身体修持与现实残痕</h3>
               <p class="text-sm text-[#888888]">从《黄帝内经》探索身体与能量的奥秘 → 性命医道</p>
             </a>
             <a
-              href="/dharma"
+              href={`${basePath}/dharma`}
               class="group block p-5 rounded-lg bg-[#2d4a6b]/[0.04] border border-[#2d4a6b]/20 hover:border-[#6b9ad4]/40 transition-all"
             >
               <h3 class="text-lg font-display text-[#6b9ad4] mb-1">佛道思想与法衰逻辑</h3>
               <p class="text-sm text-[#888888]">梳理佛教东渐与道教兴起的修行传承 → 佛道法脉</p>
             </a>
             <a
-              href="/realms"
+              href={`${basePath}/realms`}
               class="group block p-5 rounded-lg bg-[#8a4a2d]/[0.04] border border-[#8a4a2d]/20 hover:border-[#ba7a5a]/40 transition-all"
             >
               <h3 class="text-lg font-display text-[#ba7a5a] mb-1">文学重构与境界体系</h3>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import { sectionColors, type SectionColor } from '@content/config';
+import { SITE_CONFIG } from '@lib/constants';
 
 interface Props {
   title: string;
@@ -33,6 +34,8 @@ const {
   updatedAt,
   relatedArticles = [],
 } = Astro.props;
+
+const basePath = import.meta.env.BASE_URL || SITE_CONFIG.base;
 
 const colorClasses: Record<SectionColor, { border: string; text: string; bg: string; badge: string }> = {
   gold: {
@@ -68,7 +71,7 @@ const colorClasses: Record<SectionColor, { border: string; text: string; bg: str
 };
 
 const colors = colorClasses[sectionColor];
-const sectionHref = `/${section.toLowerCase()}`;
+const sectionHref = `${basePath}/${section.toLowerCase()}`;
 ---
 
 <BaseLayout title={title} description={description}>
@@ -79,7 +82,7 @@ const sectionHref = `/${section.toLowerCase()}`;
 
       <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
         <nav class="flex items-center gap-2 text-sm mb-8" aria-label="面包屑导航">
-          <a href="/" class="text-[#666666] hover:text-[#c9a227] transition-colors">首页</a>
+          <a href={basePath} class="text-[#666666] hover:text-[#c9a227] transition-colors">首页</a>
           <span class="text-[#444444]">/</span>
           <a href={sectionHref} class="text-[#666666] hover:text-[#c9a227] transition-colors">{section}</a>
           <span class="text-[#444444]">/</span>

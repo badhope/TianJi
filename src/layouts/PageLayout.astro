@@ -1,6 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import { type SectionColor } from '@content/config';
+import { SITE_CONFIG } from '@lib/constants';
 
 interface Props {
   title: string;
@@ -17,6 +18,8 @@ const {
   sectionColor = 'gold',
   heroImage,
 } = Astro.props;
+
+const basePath = import.meta.env.BASE_URL || SITE_CONFIG.base;
 
 const colorClasses: Record<SectionColor, { border: string; text: string; bg: string; badge: string; gradient: string }> = {
   gold: {
@@ -70,7 +73,7 @@ const sectionHref = `/${section.toLowerCase()}`;
 
       <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
         <nav class="flex items-center gap-2 text-sm mb-8" aria-label="面包屑导航">
-          <a href="/" class="text-[#666666] hover:text-[#c9a227] transition-colors">首页</a>
+          <a href={basePath} class="text-[#666666] hover:text-[#c9a227] transition-colors">首页</a>
           <span class="text-[#444444]">/</span>
           <span class="text-[#888888]">{section}</span>
         </nav>
