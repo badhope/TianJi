@@ -6,25 +6,32 @@ interface Props {
 
 const { variant = 'outline', color = 'gold' } = Astro.props;
 
-const styles = {
-  gold: variant === 'solid'
-    ? 'bg-gold-600/20 text-gold-300 border-gold-600/30'
-    : 'bg-transparent text-gold-400 border-gold-600/40 hover:bg-gold-900/20',
-  jade: variant === 'solid'
-    ? 'bg-jade-600/20 text-jade-300 border-jade-600/30'
-    : 'bg-transparent text-jade-400 border-jade-600/40 hover:bg-jade-900/20',
-  ochre: variant === 'solid'
-    ? 'bg-ochre-600/20 text-ochre-300 border-ochre-600/30'
-    : 'bg-transparent text-ochre-400 border-ochre-600/40 hover:bg-ochre-900/20',
-  amethyst: variant === 'solid'
-    ? 'bg-amethyst-600/20 text-amethyst-300 border-amethyst-600/30'
-    : 'bg-transparent text-amethyst-400 border-amethyst-600/40 hover:bg-amethyst-900/20',
-  sapphire: variant === 'solid'
-    ? 'bg-sapphire-600/20 text-sapphire-300 border-sapphire-600/30'
-    : 'bg-transparent text-sapphire-400 border-sapphire-600/40 hover:bg-sapphire-900/20',
-}[color] || '';
+const colorMap: Record<string, Record<string, string>> = {
+  gold: {
+    solid: 'bg-[#c9a227]/20 text-[#e8c76b] border-[#c9a227]/40',
+    outline: 'bg-transparent text-[#c9a227] border-[#c9a227]/40 hover:bg-[#c9a227]/10',
+  },
+  jade: {
+    solid: 'bg-[#2d8a8a]/20 text-[#5ababa] border-[#2d8a8a]/40',
+    outline: 'bg-transparent text-[#5ababa] border-[#2d8a8a]/40 hover:bg-[#2d8a8a]/10',
+  },
+  ochre: {
+    solid: 'bg-[#8a4a2d]/20 text-[#ba7a5a] border-[#8a4a2d]/40',
+    outline: 'bg-transparent text-[#ba7a5a] border-[#8a4a2d]/40 hover:bg-[#8a4a2d]/10',
+  },
+  amethyst: {
+    solid: 'bg-[#6b4a8a]/20 text-[#a878b8] border-[#6b4a8a]/40',
+    outline: 'bg-transparent text-[#a878b8] border-[#6b4a8a]/40 hover:bg-[#6b4a8a]/10',
+  },
+  sapphire: {
+    solid: 'bg-[#2d4a6b]/20 text-[#6b9ad4] border-[#2d4a6b]/40',
+    outline: 'bg-transparent text-[#6b9ad4] border-[#2d4a6b]/40 hover:bg-[#2d4a6b]/10',
+  },
+};
+
+const styles = colorMap[color]?.[variant] || colorMap.gold.outline;
 ---
 
-<span class={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium tracking-wide border ${styles}`}>
+<span class={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium tracking-wide border ${styles}`}>
   <slot />
 </span>
