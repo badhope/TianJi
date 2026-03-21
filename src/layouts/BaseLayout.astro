@@ -5,6 +5,8 @@ import Header from '@components/layout/Header.astro';
 import Footer from '@components/layout/Footer.astro';
 import MotionController from '@components/interactive/MotionController.astro';
 import ParticleField from '@components/interactive/ParticleField.astro';
+import MouseEffects from '@components/interactive/MouseEffects.astro';
+import DynamicBackground from '@components/interactive/DynamicBackground.astro';
 import { SITE_CONFIG } from '@lib/constants';
 
 interface Props {
@@ -33,6 +35,8 @@ const basePath = import.meta.env.BASE_URL || SITE_CONFIG.base;
   <body class="min-h-screen flex flex-col">
     <div class="mist-layer"></div>
     <ParticleField />
+    <MouseEffects />
+    <DynamicBackground />
     <Header />
     <main class="flex-1 relative z-20">
       <slot />

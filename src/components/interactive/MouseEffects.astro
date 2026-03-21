@@ -1,0 +1,147 @@
+---
+
+export interface Props {
+  enableParticles?: boolean;
+  particleCount?: number;
+}
+
+const {
+  enableParticles = true,
+  particleCount = 12
+} = Astro.props;
+---
+
+<div id="cursor-glow" class="cursor-glow"></div>
+<div id="cursor-trail" class="pointer-events-none fixed inset-0 z-[9998]"></div>
+
+<script define:vars={{ enableParticles, particleCount }}>
+  class MouseTrail {
+    private container: HTMLElement;
+    private particles: HTMLElement[] = [];
+    private maxParticles: number;
+    private isMobile: boolean;
+    private performanceMode: 'high' | 'medium' | 'low';
+    private hue: number = 38;
+
+    constructor() {
+      this.container = document.getElementById('cursor-trail');
+      this.maxParticles = enableParticles ? Math.min(particleCount, 15) : 0;
+      this.isMobile = window.innerWidth < 768;
+      this.performanceMode = this.detectPerformance();
+      this.init();
+    }
+
+    private detectPerformance(): 'high' | 'medium' | 'low' {
+      if (this.isMobile) return 'low';
+      const dpr = window.devicePixelRatio || 1;
+      if (dpr >= 2) return 'high';
+      return 'medium';
+    }
+
+    private init() {
+      if (this.isMobile || !this.maxParticles) return;
+
+      for (let i = 0; i < this.maxParticles; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'trail-particle';
+        particle.style.cssText = `
+          position: absolute;
+          width: ${4 + Math.random() * 4}px;
+          height: ${4 + Math.random() * 4}px;
+          background: radial-gradient(circle, rgba(201, 162, 39, 0.8) 0%, rgba(201, 162, 39, 0) 70%);
+          border-radius: 50%;
+          pointer-events: none;
+          opacity: 0;
+          transform: scale(0);
+          will-change: transform, opacity;
+          transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+        `;
+        this.container.appendChild(particle);
+        this.particles.push(particle);
+      }
+
+      document.addEventListener('mousemove', this.handleMouseMove.bind(this), { passive: true });
+    }
+
+    private positions: { x: number; y: number; active: boolean }[] = [];
+
+    private handleMouseMove(e: MouseEvent) {
+      const { clientX, clientY } = e;
+
+      this.positions.unshift({ x: clientX, y: clientY, active: true });
+
+      if (this.positions.length > this.maxParticles) {
+        this.positions.pop();
+      }
+
+      this.particles.forEach((particle, i) => {
+        const pos = this.positions[i];
+        if (!pos) {
+          particle.style.opacity = '0';
+          particle.style.transform = 'scale(0)';
+          return;
+        }
+
+        const delay = i * 25;
+        setTimeout(() => {
+          particle.style.left = `${pos.x}px`;
+          particle.style.top = `${pos.y}px`;
+          particle.style.opacity = String(0.6 - i * 0.04);
+          particle.style.transform = `scale(${1 - i * 0.06})`;
+        }, delay);
+      });
+    }
+  }
+
+  class CursorGlow {
+    private el: HTMLElement;
+    private glow: HTMLElement;
+    private isMobile: boolean;
+
+    constructor() {
+      this.el = document.getElementById('cursor-glow');
+      this.glow = document.createElement('div');
+      this.glow.className = 'cursor-glow-inner';
+      this.glow.style.cssText = `
+        position: fixed;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(201, 162, 39, 0.08) 0%, transparent 70%);
+        border-radius: 50%;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        transition: opacity 0.3s ease-out;
+        will-change: left, top;
+      `;
+      this.el.appendChild(this.glow);
+      this.isMobile = window.innerWidth < 768;
+
+      if (!this.isMobile) {
+        document.addEventListener('mousemove', this.handleMouseMove.bind(this), { passive: true });
+      }
+    }
+
+    private handleMouseMove(e: MouseEvent) {
+      requestAnimationFrame(() => {
+        this.glow.style.left = `${e.clientX}px`;
+        this.glow.style.top = `${e.clientY}px`;
+      });
+    }
+  }
+
+  document.addEventListener('astro:page-load', () => {
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      new MouseTrail();
+      new CursorGlow();
+    }
+  });
+</script>
+
+<style>
+  .cursor-glow {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9997;
+  }
+</style>
