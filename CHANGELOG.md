@@ -16,12 +16,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Portal component** - Ritualized entry gateway with seal/gate unlock sequence
 - **PortalParticles component** - Transit particle effects
 - **motion.css** - Site-wide motion foundation with CSS variables and keyframes
+- **Bilingual README** - English primary + Chinese (README.zh-CN.md)
 
 ### Improved
 - Mobile navigation drawer toggle behavior
 - Touch target sizes for accessibility
 - Reduced motion support across all animations
 - Article content structure with proper section headings
+- **BaseLayout motion integration** - MotionController and ParticleField now properly loaded
+- **motion.css integration** - Now correctly imported in BaseLayout (critical fix)
+- README documentation - Comprehensive English + Chinese documentation
+
+### Fixed
+- **Critical**: motion.css was not imported in BaseLayout - all motion classes were non-functional
+- **Critical**: MotionController was defined but never instantiated in BaseLayout
+- **Critical**: ParticleField was not included in BaseLayout
 
 ### Documentation
 - Updated handoff.md to reflect V1.1.0 status
