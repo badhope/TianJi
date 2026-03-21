@@ -1,102 +1,400 @@
-# 灵墟 LingXu
+# LingXu · 灵墟
 
-**失落修行文明的数字档案馆**
+**A Digital Archive of Lost Cultivation Civilizations**
 
-*法门虽隐，真机未亡。*
+*The gates have been sealed. The archives remain.*
 
-[![Version](https://img.shields.io/badge/version-v1.1.0-gold)](CHANGELOG.md)
-[![Build](https://img.shields.io/badge/build-29%20pages-blue)](https://github.com/badhope/LingXu)
-[![Framework](https://img.shields.io/badge/framework-Astro-purple)](https://astro.build)
-
----
-
-## 这个档案馆关于什么
-
-在中国历史的某个阶段，修行曾是一种真实存在的生活方式。
-
-真人可以御风而行，修士可以蜕体飞升，大德可以了悟生死。那些时代留下了《黄帝内经》《山海经》《道藏》《大藏经》这样的浩瀚典籍，也留下了无数至今仍在流传的传说、仪式和民俗。
-
-然后，灵气衰竭了。
-
-**末法纪**降临。修行文明整体退隐，只剩残痕余绪流传于世。
-
-灵墟档案馆尝试用现代的数字形式，重建这个失落文明的轨迹——不是玄幻小说，而是对真实历史文化脉络的追溯与想象。
+[![Version](https://img.shields.io/badge/version-v1.0.0-gold)](CHANGELOG.md)
+[![Pages](https://img.shields.io/badge/pages-33-gold)](https://badhope.github.io/LingXu)
+[![Framework](https://img.shields.io/badge/framework-Astro-ff5d01)](https://astro.build)
+[![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
 ---
 
-## 探索路径
+## 🎯 Project Overview
+
+LingXu is an immersive digital archive exploring the rise, flourishing, and eventual decline of China's ancient cultivation civilization—a real historical and cultural phenomenon where practitioners sought transcendence through meditative practices, breathwork, alchemy, and spiritual refinement.
+
+This is **not** a fantasy or xianxia website. It is a meticulously researched digital humanities project that reconstructs the trajectory of this lost civilization using modern web technology.
+
+### The Central Narrative
+
+At some point in Chinese history, cultivation was a lived reality. Practitioners could achieve extraordinary abilities through disciplined practice. Then, the spiritual energy (灵气) declined. The **End of Dharma Age** (末法纪) descended. The cultivation civilization retreated into obscurity, leaving only fragments in ancient texts, folklore, and surviving practices.
+
+**LingXu attempts to digitally reconstruct the arc of this lost civilization**—not as fiction, but as a trace/imagination of real historical and cultural脉络.
+
+---
+
+## 🌟 Key Features
+
+- **Immersive Entry Portal** — A ritualized gateway experience that transitions visitors from ordinary reality into the archive world
+- **Five Archival Modules** — Archive, Medicine, Myth, Dharma, Realms
+- **Motion System** — Five-layer animation architecture supporting atmosphere, transitions, and readability
+- **Responsive Design** — Mobile-first with reduced-motion support
+- **User Preferences** — Language, font size, animation controls
+
+---
+
+## 🏗️ Technical Architecture
+
+### Core Stack
+
+| Technology | Purpose | Version |
+|------------|---------|---------|
+| [Astro](https://astro.build) | Static site framework | ^4.x |
+| [Tailwind CSS](https://tailwindcss.com) | Utility-first styling | ^3.x |
+| [MDX](https://mdxjs.com) | Content authoring | ^3.x |
+| [TypeScript](https://typescriptlang.org) | Type safety | ^5.x |
+
+### Project Structure
 
 ```
-叩启封印 → 进入档案主殿
-                ↓
-    ┌─────────────────────────────────┐
-    │  档案馆  · 历史纪元与文明轨迹    │
-    ├─────────────────────────────────┤
-    │  典籍    · 医典经典与身体修炼    │
-    ├─────────────────────────────────┤
-    │  神话    · 神怪传说与山海地理    │
-    ├─────────────────────────────────┤
-    │  法门    · 佛道传承与修行法门    │
-    ├─────────────────────────────────┤
-    │  境界    · 修炼境界体系与路径    │
-    └─────────────────────────────────┘
+lingxu/
+├── public/                    # Static assets
+├── src/
+│   ├── components/            # Astro components
+│   │   ├── interactive/       # Motion, scroll effects
+│   │   ├── layout/            # Header, Footer
+│   │   ├── portal/            # Entry portal system
+│   │   ├── ui/               # Reusable UI components
+│   │   └── widgets/           # Card components
+│   ├── content/               # Astro content collections
+│   ├── data/                  # Navigation, timeline data
+│   ├── layouts/               # Page templates
+│   │   ├── BaseLayout.astro   # Root layout
+│   │   ├── PageLayout.astro   # Standard page layout
+│   │   └── ArticleLayout.astro # Article content layout
+│   ├── lib/                   # Utilities, constants
+│   ├── pages/                 # File-based routing
+│   │   ├── archive/           # Archive module
+│   │   ├── dharma/            # Dharma module
+│   │   ├── medicine/          # Medicine module
+│   │   ├── myth/              # Myth module
+│   │   └── realms/            # Cultivation realms module
+│   └── styles/                # Global styles
+├── astro.config.mjs           # Astro configuration
+├── tailwind.config.mjs        # Tailwind configuration
+└── tsconfig.json             # TypeScript configuration
 ```
 
 ---
 
-## 核心概念
+## 📐 Design System
 
-| 概念 | 说明 |
-|------|------|
-| **末法纪** | 当前时代，天地灵机衰竭，修行难以成就 |
-| **六纪** | 文明纪年：太初纪 → 神人纪 → 人皇纪 → 法脉纪 → 隐退纪 → 末法纪 |
-| **法脉** | 修行知识通过师徒/血脉传承的系统 |
-| **残痕** | 修行文明在现代留下的各种痕迹 |
+### Color Palette
 
----
+| Name | Hex | Usage |
+|------|-----|-------|
+| Gold | `#c9a227` / `#d4af37` | Primary accent, archive theme |
+| Ochre | `#8a4a2d` / `#ba7a5a` | Realm module theme |
+| Jade | `#2d8a4a` / `#5aba7a` | Medicine module theme |
+| Sapphire | `#2d4a6b` / `#6b9ad4` | Dharma module theme |
+| Amethyst | `#6b2d8a` / `#ad5aba` | Myth module theme |
+| Background | `#080808` / `#050505` | Dark backgrounds |
 
-## 精选内容
+### Typography
 
-- [六纪时代划分](/archive/six-eras) — 从混沌到衰亡，文明如何走过这六个时代
-- [末法纪总论](/archive/end-of-dharma-age) — 为什么修行文明会在当代走向消亡
-- [黄帝内经与修行身体](/medicine/huangdi-neijing) — 古老医学经典中隐藏的修炼身体观
-- [山海经：失落的地理](/myth/shanhai-overview) — 那本记载了山川神灵与奇异生物的奇书
-- [修行境界体系](/realms/cultivation-realm-system) — 从凡人到飞升，境界如何划分
+- **Display**: Noto Serif SC (Chinese headings)
+- **Body**: System font stack with serif fallback
+- **Monospace**: JetBrains Mono (code blocks)
 
----
+### Spatial System
 
-## 技术架构
-
-本项目使用以下技术构建：
-
-| 技术 | 用途 |
-|------|------|
-| [Astro](https://astro.build) | 静态站点框架 |
-| [Tailwind CSS](https://tailwindcss.com) | 样式系统 |
-| [MDX](https://mdxjs.com) | 内容编写 |
-| [GitHub Pages](https://pages.github.com) | 部署 |
-
-项目结构清晰，代码开源，欢迎贡献。
-
-完整的技术文档请参阅 [handoff.md](docs/handoff.md)。
+- Base unit: 4px
+- Content max-width: 1280px
+- Section spacing: 64px (mobile: 48px)
+- Component gap: 24px
 
 ---
 
-## 本地运行
+## 🎬 Motion System
+
+LingXu implements a **five-layer motion architecture**:
+
+### Layer 1: Portal (Entry Experience)
+- Sealed gate state
+- Unlock sequence animation
+- Transit/crossing effect with particle system
+- Archive arrival reveal
+- Total duration: 2-3 seconds
+
+### Layer 2: Atmospheric (Ambient Effects)
+- Floating particles
+- Mist effects
+- Background gradients
+- Subtle continuous animations
+
+### Layer 3: Page Transitions
+- Fade transitions between pages
+- Content reveal on navigation
+
+### Layer 4: Component Interaction
+- Hover states on cards and buttons
+- Click feedback (scale, glow)
+- Toggle switches
+- Focus states
+
+### Layer 5: Reading (Scroll-based)
+- ScrollReveal: Elements fade/slide into view
+- Staggered delays for lists
+- prefers-reduced-motion support
+
+### Animation Specifications
+
+```css
+:root {
+  --motion-duration-fast: 150ms;
+  --motion-duration-normal: 300ms;
+  --motion-duration-slow: 500ms;
+  --motion-duration-reveal: 600ms;
+  --motion-ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --motion-ease-out: cubic-bezier(0, 0, 0.2, 1);
+}
+```
+
+---
+
+## 📂 Content Model
+
+### Article Schema
+
+```typescript
+interface Article {
+  title: string;           // Article title
+  subtitle?: string;       // Subtitle/tagline
+  description: string;      // Meta description (150-200 chars)
+  section: string;          // Module name
+  sectionColor: Color;      // Theme color
+  tags: string[];           // Content tags
+  era: string;              // Historical era reference
+  quote?: string;           // Featured quote
+  quoteSource?: string;     // Quote attribution
+  updatedAt?: string;       // Last update date
+  featured?: boolean;       // Featured content flag
+  order?: number;           // Sort order
+  related?: RelatedLink[];   // Related article references
+}
+```
+
+### Navigation Structure
+
+```
+Archive (档案馆)      → /archive
+Medicine (典籍)      → /medicine
+Myth (神话)          → /myth
+Dharma (法门)        → /dharma
+Realms (境界)        → /realms
+About (缘起)         → /about
+```
+
+### Historical Timeline (Six Eras)
+
+1. **混沌纪** (Chaos Era) — Primordial beginnings
+2. **太初纪** (Primeval Era) — Early cultivation emergence
+3. **神人纪** (Divine-Human Era) — Peak of immortal practitioners
+4. **人皇纪** (Human Sovereign Era) — Institutionalization
+5. **隐退纪** (Retreat Era) — Gradual decline
+6. **末法纪** (End of Dharma Era) — Current/post-cultivation age
+
+---
+
+## 🔒 Frozen Decisions
+
+These architectural decisions are **immutable** and should not be changed without major version bump:
+
+### Architecture
+- [x] Astro framework (static site generation)
+- [x] Tailwind CSS for styling (no CSS-in-JS)
+- [x] MDX for content authoring
+- [x] TypeScript for type safety
+- [x] File-based routing (Astro conventions)
+
+### Design
+- [x] Dark theme with gold accents
+- [x] Serif display font for Chinese text
+- [x] Five distinct module color themes
+- [x] Mobile-first responsive design
+
+### Motion
+- [x] Five-layer motion architecture
+- [x] Portal entry as required first experience
+- [x] CSS-based animations (no JS animation libraries)
+- [x] prefers-reduced-motion support mandatory
+
+### Content
+- [x] Chinese as primary language
+- [x] English as secondary (future)
+- [x] Six-era historical framework
+- [x] Archive module as primary entry after portal
+
+---
+
+## 🔓 Flexible Areas
+
+These areas are **open for modification** without version bump:
+
+### Content
+- Individual article content and depth
+- Tag taxonomy and organization
+- Related article linking strategy
+- New article creation within existing modules
+
+### Design
+- Color saturation adjustments within theme
+- Spacing refinements
+- Typography scale adjustments
+- Card/component styling variations
+
+### Motion
+- Animation duration fine-tuning
+- Easing curve adjustments
+- Stagger delay values
+- Hover effect intensity
+
+### Technical
+- Component internal implementation
+- Data structure organization
+- Asset optimization strategies
+- Build tool configuration
+
+---
+
+## 🚀 Roadmap
+
+### v1.0.x — Current (Foundation)
+- [x] Project infrastructure
+- [x] Entry portal system
+- [x] All module routes (skeleton)
+- [x] Content schema defined
+- [x] Navigation system
+- [x] Motion foundations
+- [x] Mobile responsiveness
+- [x] User preferences (settings panel)
+
+### v1.1.x — Content Expansion
+- [ ] Archive module: 10+ articles
+- [ ] Medicine module: 8+ articles
+- [ ] Myth module: 8+ articles
+- [ ] Dharma module: 8+ articles
+- [ ] Realms module: 8+ articles
+
+### v1.2.x — English Localization
+- [ ] English content translations
+- [ ] i18n routing system
+- [ ] Language switcher implementation
+- [ ] EN-specific SEO metadata
+
+### v1.3.x — Enhanced Interactivity
+- [ ] Full-text search
+- [ ] Advanced filtering/tags
+- [ ] Bookmark/favorites system
+- [ ] Reading progress indicator
+
+### v2.0.x — Major Features
+- [ ] Interactive cultivation timeline
+- [ ] 3D archive visualization
+- [ ] Community annotations
+- [ ] API for external consumption
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions from developers, researchers, and enthusiasts.
+
+### Development Setup
 
 ```bash
+# Clone the repository
 git clone https://github.com/badhope/LingXu.git
 cd LingXu
+
+# Install dependencies
 npm install
+
+# Start development server
 npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+### Code Style
+
+- Use Astro component conventions
+- Follow Tailwind CSS best practices
+- TypeScript strict mode enabled
+- Prettier for code formatting
+- Semantic HTML and accessibility
+
+### Content Guidelines
+
+- Follow the Article schema
+- Maintain historical accuracy
+- Use canonical Chinese terms with translations
+- Provide proper source citations
+- Include related article links
+
+### Commit Convention
+
+```
+feat: new article or feature
+fix: bug correction
+docs: documentation changes
+style: formatting, styling
+refactor: code reorganization
+perf: performance improvements
 ```
 
 ---
 
-## 贡献者
+## 📋 Handoff Documentation
 
-详见 [贡献指南](docs/handoff.md)。
+For detailed architecture, content model, and contributor guidelines, see:
+
+- [Handoff Documentation](docs/handoff.md) — Complete technical handoff
+- [Frozen Decisions](docs/handoff.md#frozen-decisions) — Immutable architectural decisions
+- [Flexible Areas](docs/handoff.md#flexible-areas) — Open modification areas
+- [Content Model](docs/handoff.md#content-model) — Article schema and structure
 
 ---
 
-> *"天地灵气衰竭，法脉传承断绝。唯有典籍文字，传其余绪。"*
+## 🗺️ Module Overview
+
+| Module | Chinese | Description | Theme Color |
+|--------|---------|-------------|------------|
+| Archive | 档案馆 | Historical eras,文明轨迹 | Gold |
+| Medicine | 典籍 | Medical classics, body cultivation | Jade |
+| Myth | 神话 | Legends, geography, creatures | Amethyst |
+| Dharma | 法门 | Buddhist/Daoist lineages | Sapphire |
+| Realms | 境界 | Cultivation levels and paths | Ochre |
+
+---
+
+## 📜 License
+
+This project is open source under the [MIT License](LICENSE).
+
+---
+
+## 🙏 Acknowledgments
+
+- Ancient text preservation efforts
+- Digital humanities research community
+- Astro framework and its contributors
+- Open source ecosystem
+
+---
+
+> *"The path of cultivation is long. The archive remains."*
+>
+> *— LingXu Project*
+
+---
+
+**Live Archive**: https://badhope.github.io/LingXu/
+**Repository**: https://github.com/badhope/LingXu
