@@ -121,46 +121,57 @@
 
   .motion-fade-in {
     animation: fadeIn var(--motion-duration-slow) var(--motion-ease-out) forwards;
+    will-change: opacity;
   }
 
   .motion-fade-up {
     animation: fadeUp var(--motion-duration-reveal) var(--motion-ease-out) forwards;
+    will-change: opacity, transform;
   }
 
   .motion-fade-down {
     animation: fadeDown var(--motion-duration-reveal) var(--motion-ease-out) forwards;
+    will-change: opacity, transform;
   }
 
   .motion-scale-in {
     animation: scaleIn var(--motion-duration-normal) var(--motion-ease-out) forwards;
+    will-change: opacity, transform;
   }
 
   .motion-slide-in-right {
     animation: slideInRight var(--motion-duration-slow) var(--motion-ease-out) forwards;
+    will-change: opacity, transform;
   }
 
   .motion-slide-in-left {
     animation: slideInLeft var(--motion-duration-slow) var(--motion-ease-out) forwards;
+    will-change: opacity, transform;
   }
 
   .motion-glow-pulse {
     animation: glowPulse 3s ease-in-out infinite;
+    will-change: box-shadow;
   }
 
   .motion-glow-pulse-intense {
     animation: glowPulseIntense 2s ease-in-out infinite;
+    will-change: box-shadow;
   }
 
   .motion-border-glow {
     animation: borderGlow 2s ease-in-out infinite;
+    will-change: border-color;
   }
 
   .motion-float {
     animation: floatRise 4s ease-in-out infinite;
+    will-change: transform;
   }
 
   .motion-breathe {
     animation: breathe 4s ease-in-out infinite;
+    will-change: opacity, transform;
   }
 
   .motion-shimmer {
@@ -193,6 +204,7 @@
     transform: translateY(20px);
     transition: opacity var(--motion-duration-reveal) var(--motion-ease-out),
                 transform var(--motion-duration-reveal) var(--motion-ease-out);
+    will-change: opacity, transform;
   }
 
   .reveal-on-scroll.revealed {

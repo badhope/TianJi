@@ -1,4 +1,5 @@
 ---
+
 ---
 
 <canvas id="particle-canvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
@@ -12,6 +13,9 @@
   canvas.width = width;
   canvas.height = height;
 
+  const isMobile = width < 640;
+  const particleCount = Math.floor((width * height) / (isMobile ? 20000 : 15000));
+
   interface Particle {
     x: number;
     y: number;
@@ -24,9 +28,9 @@
   }
 
   const particles: Particle[] = [];
-  const particleCount = Math.floor((width * height) / 15000);
+  const maxParticles = Math.min(particleCount, isMobile ? 40 : 80);
 
-  for (let i = 0; i < particleCount; i++) {
+  for (let i = 0; i < maxParticles; i++) {
     particles.push({
       x: Math.random() * width,
       y: Math.random() * height,
@@ -39,7 +43,17 @@
     });
   }
 
-  function animate() {
+  let lastTime = 0;
+  const targetFPS = 60;
+  const frameInterval = 1000 / targetFPS;
+
+  function animate(currentTime: number = 0) {
+    requestAnimationFrame(animate);
+
+    const elapsed = currentTime - lastTime;
+    if (elapsed < frameInterval) return;
+    lastTime = currentTime - (elapsed % frameInterval);
+
     ctx.clearRect(0, 0, width, height);
 
     particles.forEach((p) => {
@@ -60,16 +74,18 @@
       ctx.fillStyle = `rgba(201, 162, 39, ${currentOpacity})`;
       ctx.fill();
     });
-
-    requestAnimationFrame(animate);
   }
 
   animate();
 
+  let resizeTimeout: ReturnType<typeof setTimeout>;
   window.addEventListener('resize', () => {
-    width = window.innerWidth;
-    height = window.innerHeight;
-    canvas.width = width;
-    canvas.height = height;
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+    }, 100);
   });
 </script>

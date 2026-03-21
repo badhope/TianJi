@@ -1,4 +1,4 @@
-// Portal animation system
+// Portal animation system - optimized for 2-3s total duration
 const overlay = document.getElementById('portal-overlay');
 const homepageWrapper = document.getElementById('homepage-wrapper');
 const enterBtn = document.getElementById('enter-btn');
@@ -21,17 +21,17 @@ let isMobile = window.innerWidth < 640;
 let hasVisited = sessionStorage.getItem('lingxu-visited');
 
 const mobileTimings = {
-  unlock: 1200,
-  transit: 1000,
-  arrival: 800,
-  reveal: 600
+  unlock: 800,
+  transit: 600,
+  arrival: 500,
+  reveal: 400
 };
 
 const desktopTimings = {
-  unlock: 2000,
-  transit: 1800,
-  arrival: 1200,
-  reveal: 800
+  unlock: 1000,
+  transit: 800,
+  arrival: 600,
+  reveal: 500
 };
 
 function getTimings() {
@@ -46,8 +46,8 @@ function initPortal() {
 
   requestAnimationFrame(() => {
     overlay?.classList.add('portal-ready');
-    fadeIn(portalTitleGroup, 300);
-    fadeIn(portalCta, 600);
+    fadeIn(portalTitleGroup, 200);
+    fadeIn(portalCta, 400);
   });
 }
 
@@ -55,31 +55,31 @@ function fadeIn(element: Element | null, delay: number = 0) {
   if (!element) return;
   setTimeout(() => {
     (element as HTMLElement).style.opacity = '1';
-    (element as HTMLElement).style.transition = 'opacity 0.8s ease';
+    (element as HTMLElement).style.transition = 'opacity 0.5s ease-out';
   }, delay);
 }
 
-function fadeOut(element: Element | null, delay: number = 0, duration: number = 800) {
+function fadeOut(element: Element | null, delay: number = 0, duration: number = 400) {
   if (!element) return;
   setTimeout(() => {
     (element as HTMLElement).style.opacity = '0';
-    (element as HTMLElement).style.transition = `opacity ${duration}ms ease`;
+    (element as HTMLElement).style.transition = `opacity ${duration}ms ease-out`;
   }, delay);
 }
 
 function animateSequence() {
   const timings = getTimings();
 
-  fadeOut(portalCta, 0, 300);
-  fadeOut(portalText, 0, 400);
+  fadeOut(portalCta, 0, 200);
+  fadeOut(portalText, 0, 200);
 
-  fadeIn(sealRings, 200);
-  fadeIn(sealSymbols, 500);
-  fadeIn(gateCoreInner, 700);
+  fadeIn(sealRings, 100);
+  fadeIn(sealSymbols, 250);
+  fadeIn(gateCoreInner, 400);
 
   setTimeout(() => {
     unlockSeal(timings.unlock);
-  }, 900);
+  }, 600);
 }
 
 function unlockSeal(duration: number) {
@@ -96,13 +96,13 @@ function unlockSeal(duration: number) {
   }, duration * 0.5);
 
   setTimeout(() => {
-    fadeOut(sealActivateLines, 0, 250);
-    fadeOut(sealRings, 0, 350);
-    fadeOut(sealSymbols, 0, 350);
+    fadeOut(sealActivateLines, 0, 200);
+    fadeOut(sealRings, 0, 200);
+    fadeOut(sealSymbols, 0, 200);
 
     setTimeout(() => {
       startTransit(duration);
-    }, 450);
+    }, 250);
   }, duration);
 }
 
@@ -123,7 +123,7 @@ function startTransit(duration: number) {
     setTimeout(() => {
       showArrival();
     }, duration);
-  }, 300);
+  }, 200);
 }
 
 function showArrival() {
@@ -144,7 +144,7 @@ function showArrival() {
 
 function revealHomepage() {
   if (overlay) {
-    overlay.style.transition = 'opacity 0.8s ease';
+    overlay.style.transition = 'opacity 0.6s ease-out';
     overlay.style.opacity = '0';
 
     setTimeout(() => {
@@ -154,20 +154,20 @@ function revealHomepage() {
         homepageWrapper.querySelector('slot')?.parentElement?.classList.add('visible');
       }
       sessionStorage.setItem('lingxu-visited', 'true');
-    }, 800);
+    }, 600);
   }
 }
 
 function skipToHomepage() {
   if (overlay) {
-    overlay.style.transition = 'opacity 0.4s ease';
+    overlay.style.transition = 'opacity 0.3s ease-out';
     overlay.style.opacity = '0';
     setTimeout(() => {
       overlay!.classList.add('hidden');
       if (homepageWrapper) {
         homepageWrapper.classList.remove('hidden');
       }
-    }, 400);
+    }, 300);
   }
 }
 
@@ -185,7 +185,7 @@ gateCoreGroup?.addEventListener('touchstart', () => {
 gateCoreGroup?.addEventListener('touchend', () => {
   setTimeout(() => {
     gateCoreGroup.classList.remove('touch-active');
-  }, 200);
+  }, 150);
 }, { passive: true });
 
 window.addEventListener('resize', () => {
@@ -199,17 +199,20 @@ window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',
   }
 });
 
-initPortal();
-
-// Particle system
+// Canvas particle system with performance optimization
 const canvas = document.getElementById('portal-particle-canvas') as HTMLCanvasElement;
 if (canvas) {
   const ctx = canvas.getContext('2d');
 
-  let pWidth = window.innerWidth;
-  let pHeight = window.innerHeight;
-  canvas.width = pWidth;
-  canvas.height = pHeight;
+  let width = window.innerWidth;
+  let height = window.innerHeight;
+  canvas.width = width;
+  canvas.height = height;
+
+  const isMobilePerf = width < 640;
+  const maxParticles = isMobilePerf ? 50 : 100;
+  const centerX = width / 2;
+  const centerY = height / 2;
 
   interface PortalParticle {
     x: number;
@@ -222,13 +225,10 @@ if (canvas) {
   }
 
   const particles: PortalParticle[] = [];
-  const particleCount = Math.floor((pWidth * pHeight) / 12000);
-  const centerX = pWidth / 2;
-  const centerY = pHeight / 2;
 
   function createParticle(): PortalParticle {
     const angle = Math.random() * Math.PI * 2;
-    const distance = Math.random() * Math.max(pWidth, pHeight) * 0.4;
+    const distance = Math.random() * Math.max(width, height) * 0.4;
     return {
       x: centerX + Math.cos(angle) * distance,
       y: centerY + Math.sin(angle) * distance,
@@ -240,63 +240,75 @@ if (canvas) {
     };
   }
 
-  function hexToRgba(hex: string, alpha: number): string {
-    const r = parseInt(hex.slice(1, 3), 16);
-    const g = parseInt(hex.slice(3, 5), 16);
-    const b = parseInt(hex.slice(5, 7), 16);
-    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+  function hexToRgb(hex: string): string {
+    const g = parseInt(hex.slice(1, 3), 16);
+    const p = parseInt(hex.slice(3, 5), 16);
+    const h = parseInt(hex.slice(5, 7), 16);
+    return `${g}, ${p}, ${h}`;
   }
 
-  function animateParticles() {
-    if (!ctx || prefersReducedMotion) return;
+  let lastTime = 0;
+  const targetFPS = 60;
+  const frameInterval = 1000 / targetFPS;
 
-    ctx.clearRect(0, 0, pWidth, pHeight);
+  function animate(currentTime: number = 0) {
+    requestAnimationFrame(animate);
 
-    if (particles.length < particleCount) {
-      for (let i = particles.length; i < particleCount; i++) {
-        particles.push(createParticle());
-      }
+    const elapsed = currentTime - lastTime;
+
+    if (elapsed < frameInterval) return;
+
+    lastTime = currentTime - (elapsed % frameInterval);
+
+    if (!ctx) return;
+
+    ctx.clearRect(0, 0, width, height);
+
+    while (particles.length < maxParticles) {
+      particles.push(createParticle());
     }
 
-    particles.forEach((p, index) => {
+    for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
+
       const dx = centerX - p.x;
       const dy = centerY - p.y;
-      const distance = Math.sqrt(dx * dx + dy * dy);
+      const dist = Math.sqrt(dx * dx + dy * dy);
 
-      if (distance > 5) {
-        p.x += (dx / distance) * p.speed;
-        p.y += (dy / distance) * p.speed;
+      if (dist > 5) {
+        p.x += (dx / dist) * p.speed;
+        p.y += (dy / dist) * p.speed;
         p.z -= 1.5;
       } else {
-        particles[index] = createParticle();
+        particles[i] = createParticle();
+        continue;
       }
 
       if (p.z <= 0) {
-        particles[index] = createParticle();
+        particles[i] = createParticle();
+        continue;
       }
 
-      const screenSize = p.size * (p.z / 100);
-      const alpha = p.opacity * Math.min(1, p.z / 50);
+      const scale = p.size * (p.z / 100);
+      const opacity = p.opacity * Math.min(1, p.z / 50);
 
-      const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, screenSize * 3);
-      gradient.addColorStop(0, hexToRgba(p.color, alpha));
-      gradient.addColorStop(1, hexToRgba(p.color, 0));
+      const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, scale * 3);
+      gradient.addColorStop(0, `rgba(${hexToRgb(p.color)}, ${opacity})`);
+      gradient.addColorStop(1, `rgba(${hexToRgb(p.color)}, 0)`);
 
       ctx.beginPath();
-      ctx.arc(p.x, p.y, Math.max(0.5, screenSize * 2), 0, Math.PI * 2);
+      ctx.arc(p.x, p.y, Math.max(0.5, scale * 2), 0, Math.PI * 2);
       ctx.fillStyle = gradient;
       ctx.fill();
-    });
-
-    requestAnimationFrame(animateParticles);
+    }
   }
 
-  window.addEventListener('resize', () => {
-    pWidth = window.innerWidth;
-    pHeight = window.innerHeight;
-    canvas.width = pWidth;
-    canvas.height = pHeight;
-  });
+  animate();
 
-  animateParticles();
+  window.addEventListener('resize', () => {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+  });
 }
