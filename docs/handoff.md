@@ -1,8 +1,8 @@
 # Handoff Documentation
 
-**Version**: 1.0.0
+**Version**: 1.1.0
 **Last Updated**: 2026-03-21
-**Status**: Framework Complete, Handoff Ready
+**Status**: Framework Complete, Handoff Ready, V1.1.0
 
 ---
 
@@ -25,13 +25,16 @@ LingXu (灵墟) is an immersive digital archive documenting China's historical c
 | Component | Status | Notes |
 |-----------|--------|-------|
 | Route Skeleton | ✅ Complete | 28 pages built |
-| Template System | ✅ Complete | BaseLayout, PageLayout, ArticleLayout, 404 |
+| Template System | ✅ Complete | BaseLayout, PageLayout, ArticleLayout, 404, 500 |
+| Component Exports | ✅ Complete | src/components/index.ts barrel |
+| ESLint/Prettier | ✅ Complete | Configuration files added |
+| CHANGELOG | ✅ Complete | CHANGELOG.md created |
 | Content Schema | ✅ Complete | 5 collections with base+collection-specific fields |
 | Navigation | ✅ Complete | 5 sections with mobile support |
 | Design Tokens | ✅ Complete | Section colors, typography, spacing |
-| Motion Foundation | ✅ Complete | CSS animations, particle effects |
-| Mobile Structure | ✅ Complete | Responsive, touch-friendly |
-| Documentation | ⚠️ 90% | Missing motion-principles, handoff |
+| Motion Foundation | ✅ Complete | CSS animations, particle effects, MotionController |
+| Mobile Structure | ✅ Complete | Responsive, touch-friendly, reduced-motion |
+| Documentation | ✅ Complete | All docs in place |
 | Build System | ✅ Complete | Astro + Tailwind + MDX |
 
 ### 2.2 Content Status
@@ -49,10 +52,10 @@ LingXu (灵墟) is an immersive digital archive documenting China's historical c
 
 These are recommended improvements but do not block handoff:
 
-- [ ] Component barrel exports (HIGH - recommend creating `src/components/index.ts`)
-- [ ] ESLint/Prettier configuration (HIGH - recommend adding)
-- [ ] CHANGELOG.md (MEDIUM - recommend creating)
-- [ ] 500 error page (LOW - currently only 404 defined)
+- [x] Component barrel exports — ✅ Added in V1.1.0
+- [x] ESLint/Prettier configuration — ✅ Added in V1.1.0
+- [x] CHANGELOG.md — ✅ Created in V1.1.0
+- [x] 500 error page — ✅ Created in V1.1.0
 - [ ] Component duplicate colorClasses (LOW - low priority refactor)
 
 ---
